@@ -31,7 +31,7 @@ button::-moz-focus-inner  { border: 0; padding: 0; }
 /*  Remove default list styles, margins, and padding.*/
 ol, ul { margin: 0; padding: 0; list-style: none; }
 
-* { /* Safari/Chrome, other WebKit */ -moz-box-sizing: border-box; /* Firefox, other Gecko */ box-sizing: border-box; /* Opera/IE 8+ */ }
+* { -moz-box-sizing: border-box; box-sizing: border-box; }
 
 html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
 
@@ -39,29 +39,29 @@ body { background: #deedeb; }
 
 h2, p, a, #close button, #continue button, #blow_out button, #replay button { letter-spacing: normal; }
 
-h2, p { line-height: 1.45; margin: 1rem 0.5em; }
+h2, p { line-height: 1.45; margin: 0.625em 0.5rem; }
 
 h2, p, a { font-family: Verdana, "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif; }
 
 a, #close button, #continue button, #blow_out button, #replay button { text-decoration: none; }
 a:hover, #close button:hover, #continue button:hover, #blow_out button:hover, #replay button:hover { cursor: pointer; }
 
-h2 { font-size: 1.25rem; }
+h2 { font-size: 1.5rem; }
 
-p { font-size: 1rem; }
+p { font-size: 1.25rem; max-width: 50em; }
 
 #close, #continue { position: relative; display: block; z-index: 770; }
 
 #close button, #continue button, #blow_out button, #replay button { text-align: center; background: #fd7d50; color: white; }
 #close button:hover, #continue button:hover, #blow_out button:hover, #replay button:hover { background: #c32c48; }
 
-#blow_out button, #replay button { font-size: 1.125rem; letter-spacing: normal; padding-top: 0.5em; padding-bottom: 0.5em; padding-left: 1em; padding-right: 1em; text-align: center; border-radius: 0.25rem; border: none; box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); display: inline-block; }
+#blow_out button, #replay button { font-size: 1.375rem; letter-spacing: normal; padding-top: 0.5em; padding-bottom: 0.5em; padding-left: 1em; padding-right: 1em; text-align: center; border-radius: 0.25rem; border: none; box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); display: inline-block; }
 
-#close button, #continue button { font-size: 1.125rem; line-height: 2.53125rem; }
+#close button, #continue button { font-size: 1.375rem; line-height: 3.09375rem; }
 
 #close button, #continue button { display: inline-block; box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); border: none; }
 
-#continue button { letter-spacing: 0.05em; padding-left: 2.25rem; padding-right: 2.25rem; text-align: center; border-radius: 0.25rem; }
+#continue button { letter-spacing: 0.05em; padding-left: 2.75rem; padding-right: 2.75rem; text-align: center; border-radius: 0.25rem; }
 
 #body_wrapper { margin-left: auto; margin-right: auto; max-width: 62.4375em; width: 100%; display: block; }
 
@@ -71,7 +71,7 @@ header { width: 100%; height: 4.125rem; }
 
 #body_wrapper { position: relative; min-height: 100%; }
 
-.sub_content_wrapper { position: absolute; top: 0; bottom: 0; background: #7bb7b1; width: 100%; box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
+.sub_content_wrapper { position: absolute; top: 0; bottom: 0; background: #acd2ce; width: 100%; box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
 #overlay { z-index: 750; }
 
@@ -96,10 +96,11 @@ footer { position: absolute; bottom: 0; left: 0; width: 100%; height: 4.125rem; 
 #blow_out, #replay { display: block; position: absolute; bottom: 1.125rem; left: 1.125rem; margin: auto; z-index: 20; }
 #blow_out button, #replay button { display: none; }
 
-.textbox { position: relative; display: block; padding: 0.6328125rem; max-width: 50em; margin: 1rem auto 2rem; }
+.textbox { position: relative; display: block; padding: 1.546875rem; max-width: 45em; margin: 1rem auto 2rem; }
+.textbox span { color: #e0e0e0; font-weight: lighter; }
 
-#close { text-align: right; height: 2.53125rem; }
-#close button { border-radius: 100%; position: absolute; top: 0; right: 0; width: 2.53125rem; height: 2.53125rem; }
+#close { text-align: right; height: 3.09375rem; }
+#close button { border-radius: 100%; position: absolute; top: 0; right: 0; margin: auto; width: 3.09375rem; height: 3.09375rem; }
 
 #continue { text-align: center; }
 
