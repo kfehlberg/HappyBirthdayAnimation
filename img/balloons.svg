@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="balloons_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="xMidYMax meet" version="1.1" xml:space="preserve" >
+	<style>
+		.color1 { fill: #C32C48; opacity: 0.8; }
+		.color2 { fill: #FD7D50; opacity: 0.8; }
+		.color3 { fill: #FFB154; opacity: 0.9; }
+		.color4 { fill: #F0E7C4; opacity: 0.9; }
+		.color5 { fill: #51948E; opacity: 0.8; }
+		.color6 { stroke: #A6A8AB; fill: none; opacity: 1; }
+	</style>
+	<defs>
+		<g id="defbgroup" >
+			<path id="defsting" d="M0 0q10 40 0 80q-10 40 0 80" class="color6" />
+			<path id="defballoon" d="M0 0c10 0 0 -6 4 -8 12-6 30-28 30-46 0-24-14-36-34-36-20 0-34 12-34 36 0 18 18 40 30 46 4 2-6 8 4 8z" /> 
+			<path id="deftie" d="M-5 -7q5 2 10 0" class="color6" />
+		</g>
+	</defs>
+	<g id="b_row">
+		<use xlink:href="#defbgroup" id="b1" class="color3" transform="translate(40 625) rotate(-20) " />
+		<use xlink:href="#defbgroup" id="b2" class="color4" transform="translate(95 600) rotate(-15)" />
+		<use xlink:href="#defbgroup" id="b3" class="color5" transform="translate(150 675) rotate(-10)" />
+		<use xlink:href="#defbgroup" id="b4" class="color1" transform="translate(205 700) rotate(-5)" />
+		<use xlink:href="#defbgroup" id="b5" class="color2" transform="translate(260 625)" />
+		<use xlink:href="#defbgroup" id="b6" class="color3" transform="translate(305 600) rotate(5)" />
+		<use xlink:href="#defbgroup" id="b7" class="color4" transform="translate(350 675) rotate(10)" />
+		<use xlink:href="#defbgroup" id="b8" class="color1" transform="translate(405 600) rotate(15)" />
+		<use xlink:href="#defbgroup" id="b9" class="color5" transform="translate(460 650) rotate(20)" />
+	</g>
+</svg>
+
+
+
+
+
+
+ 
