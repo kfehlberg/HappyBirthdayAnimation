@@ -6,6 +6,8 @@
         <title>Happy Birthday Dad!</title>
         <meta name="description" content="An interactive birthday greeting for my dad" />    
         <meta name="author" content="Katie Fehlberg" />
+<!--         // <script type="text/javascript" src="js/min/modernizr2.8.3dev-min.js"></script> -->
+        <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
         <link href="css/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
     </head>
     <body>
@@ -21,28 +23,28 @@
                     <div id="cake_container"> 
                         <object id="cake_obj" type="image/svg+xml" data="img/cake.svg" width="100%" height="100%">Your browser doesn't support SVG</object>
                     </div> 
-                    <a id="blow_out"><button type="button">Click here to blow out the candles!</button></a> 
-                    <a id="replay"><button type="button">Replay</button></a>
+                    <a id="blow_out">Click here to blow out the candles!</a> 
+                    <a id="replay">Replay</a>
                 </div>
             </div>
             <div id="overlay" class="sub_content_wrapper">
                 <div id="alert_box">
-                    <a href="#underlay" id="close"><button type="button">&#x2715;</button></a>
+                    <a href="#underlay" id="close"></a>
                     <div class="textbox">
                         <h2>Happy Birthday! </h2>
                         <p>This is my birthday card for you. It is short and sweet and made with love. </p>
-                        <p><span>* Click the ‘continue’ button below.  For best results, open in Firefox and have javaScript enabled in the browser. *<span></p> 
+<!--                         <p><span>(Click the ‘continue’ button to see the rest.  For best results, open in Firefox and have javaScript enabled in the browser.)<span></p>  -->
                         <p>Love always, Katie</p>
                     </div>
-                    <a href="#underlay" id="continue"><button type="button">Continue&nbsp;&#9656;</button></a>
-                    <!-- <div id="continue"><button type="button">Continue&nbsp;&#9656;</button></div> -->
+                    <a href="#underlay" id="continue">Continue&nbsp;&#9656;</a>
                 </div>
             </div>
         </div>
-        <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="//cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.ui.min.js"></script>
-        <script type="text/javascript" src="js/pageAnimate-min.js"></script>
+        <script src="//cdn.jsdelivr.net/velocity/1.1.0/velocity.ui.min.js"></script>
+<!--         // <script type="text/javascript" src="js/min/velocity-min.js"></script>
+        // <script type="text/javascript" src="js/min/velocity.ui-min.js"></script> -->
+        <script type="text/javascript" src="js/min/bday_animate-min.js"></script>
     </body>
 </html>
