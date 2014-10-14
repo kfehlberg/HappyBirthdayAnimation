@@ -1,0 +1,93 @@
+//================================================
+// LAYOUT VARIABLES
+//================================================
+	// $headerHeight: 4.125rem;
+	// $footerHeight: $headerHeight; //2.75rem;
+	// $box-shadow1: 1px 1px 6px 0px rgba(50, 50, 50, 0.75);
+	// %box-shadow1 {
+	// 	box-shadow: $box-shadow1
+	// }
+	// %inset-box-shadow1 {
+	// 	box-shadow: inset $box-shadow1;
+	// }
+
+//================================================
+// LAYOUT EXTENDERS
+//================================================
+%wrapper {
+	margin-left: auto;
+	margin-right: auto;
+    max-width: $bp-medium-max;
+    width: 100%;
+    display: block;
+}
+%_box {
+	position: relative;
+	margin: auto;
+	height: 100%;
+	width: 100%;
+}
+//================================================
+// APPLIED LAYOUT
+//================================================
+// header {
+// 	width: 100%;
+// 	height: $headerHeight;
+// }
+#body_wrapper {
+	@extend %wrapper;
+	position: relative;
+	min-height: 100%;
+}
+.sub_content_wrapper {
+	@extend %box_shadow1;
+	@extend %bg_color_light_primary;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	// background: $lighterColor5;
+	width: 100%;
+	// box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75);
+
+}
+#overlay {
+	z-index: 750;
+}
+.no-js #underlay {
+	&:target {
+		z-index: 800;
+	}
+ }
+
+#scene_box {
+	@extend %_box ;
+	@extend %inset_box_shadow1;
+	@extend %primaryFontColor;
+	// box-shadow: inset 1px 1px 6px 0px rgba(50, 50, 50, 0.75);
+	// color: white;
+	// border: solid 1rem $color5;
+	border: $scene_box_border;
+	z-index: 30;
+}
+
+#alert_box {
+	@extend %_box ;
+	@extend %primaryFontColor;
+	@extend %bg_color_dark_primary;
+	text-align: center; //so that #continue button is centered horizontally
+	overflow-y: auto;
+	// background: $color5;
+	// color: $white;
+	padding: 2rem;
+}
+// footer {
+// 	position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     // right: 0;
+//     // margin: auto;
+//     width: 100%;
+// 	height: $footerHeight;
+// 	// background: $color2;
+
+// }

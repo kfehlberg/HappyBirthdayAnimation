@@ -1,0 +1,127 @@
+//================================================
+// COLOR BASE VARIABLES
+//================================================
+	$white: rgb(255, 255, 255);
+    $darkenWhite : darken($white, 12%);
+	$black: rgb(0, 0, 0);
+
+	// //VIEW OVER THE TOWN
+	// $color1: rgb(255, 83, 53);
+	// $color2: rgb(179, 156, 133);
+	// $color3: rgb(48, 110, 115);
+	// $color3: rgb(59, 66, 77);
+	// $color5: rgb(29, 24, 31);
+
+    //MIXED CANDY
+    $color1: rgb(195,44,72); //   #C32C48; 
+    $color2: rgb(253,125,80); //   #FD7D50; 
+    $color3: rgb(255,177,84); //   #FFB154;
+    $color4: rgb(240,231,196); //   #F0E7C4;
+    $color5: rgb(81,148,142); //    #51948E;
+
+	////FINE AND MELLOW
+	// $color1:#fff4c2;
+	// $color2:#cdd1a4;
+	// $color3:#99ca9f;
+	// $color4:#614842;
+	// $color5:#3b2828;
+
+	////PEACHES AND MINT
+	// $color1: rgb(113, 169, 106);
+	// $color2: rgb(163, 195, 68);
+	// $color3: rgb(133, 138, 116);
+	// $color4: rgb(255, 77, 75);
+	// //    rgb(242, 71, 56);
+	// $color5: rgb(248, 141, 105);
+    
+//================================================
+// COLOR ALTERATED VARIABLES
+//================================================
+    $lightColor1: lighten($color1, 15%);
+    $lighterColor1: lighten($color1, 30%);
+    $lightestColor1: lighten($color1, 45%);
+
+    $darkColor1: darken($color1, 15%);
+
+    $lightColor2: lighten($color2, 15%);
+    $lighterColor2: lighten($color2, 30%);
+    $lightestColor2: lighten($color2, 45%);
+
+    $lightColor3: lighten($color3, 15%);
+    $lighterColor3: lighten($color3, 30%);
+    $lightestColor3: lighten($color3, 45%);
+
+    $lightColor4: lighten($color4, 15%);
+    $lighterColor4: lighten($color4, 30%);
+    $lightestColor4: lighten($color4, 45%);
+
+    $lightColor5: lighten($color5, 15%);
+    $lighterColor5: lighten($color5, 30%);
+    $lightestColor5: lighten($color5, 45%);
+
+//================================================
+// COLOR ASSIGNED COMPONENTS VARIABLES
+//================================================
+    $primaryFontColor: $white;
+    $shadowColor1: rgba(50, 50, 50, 0.75);
+
+//==========================================================================
+//   TEXT SIZES VARIABLES
+//========================================================================== 
+    //----------------------------------------------------------------------
+    //BASE SIZES DEFINED
+    //$root-font-size:1em; /*set at 100% in _normalize.  will size based on user preferences*/
+    //---------------------------------------------------------------------
+    //FONT-SIZE SCALE
+//        $fontSize6: .375rem;
+//        $fontSize7: .4375rem;
+        $fontSize8: 0.5rem;
+        $fontSize9: 0.5625rem;
+        $fontSize10: 0.625rem;
+        $fontSize11: 0.6875rem;
+        $fontSize12: 0.75rem;
+        $fontSize13: 0.8125rem;
+        $fontSize14: 0.875rem;
+        $fontSize15: 0.9375rem;
+        $fontSize16: 1rem;
+        $fontSize17: 1.0625rem;
+        $fontSize18: 1.125rem;
+        $fontSize19: 1.1875rem;
+        $fontSize20: 1.25rem;
+        $fontSize21: 1.3125rem;
+        $fontSize22: 1.375rem;
+        $fontSize23: 1.4375rem;
+        $fontSize24: 1.5rem;
+        $fontSize30: 1.875rem;
+        $fontSize32: 2rem;
+        $fontSize36: 2.25rem;
+        $fontSize40: 2.5rem;
+        $fontSize48: 3rem;
+        $fontSize60: 3.75rem;
+        $fontSize72: 4.5rem;
+
+    //---------------------------------------------------------------------
+    //APPLIED FONT SIZES
+        $captionFontSize: $fontSize18;
+        $pFontSize: $fontSize20;
+        // $smallLinkFontSize: $fontSize14;
+        $linkFontSize: $fontSize22;
+        // $navFontSize: $fontSize24;
+            // $nav-line-height: 2.75;
+                ///*$navFontSize * 2.5;*/
+        $hFontSize: $fontSize24;
+
+
+$headerHeight: 4.125rem;
+$footerHeight: $headerHeight; //2.75rem;
+// $iconHeight: $linkFontSize;
+// $iconWidth: $iconHeight;
+$buttonBorderWidth: 0.125rem;
+$buttonHeight: $linkFontSize * 2.25;
+// $buttonTopPadding: (($buttonHeight - $linkFontSize) / 2) - ($buttonBorderWidth * 2);
+// $buttonBottomPadding: (($buttonHeight - $linkFontSize) / 2) + ($buttonBorderWidth * 2);
+// $buttonSidePadding: ($buttonHeight - $linkFontSize - ($buttonBorderWidth * 2)) / 2;
+
+// $buttonPadding:  $buttonTopPadding $buttonSidePadding $buttonBottomPadding $buttonSidePadding;
+// $closeWidth: $iconWidth / 2;
+// $iconTBPadding: ($buttonHeight - $iconHeight) / 2 ;

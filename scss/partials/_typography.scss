@@ -1,0 +1,65 @@
+//================================================
+// TYPOGRAPHY VARIABLES
+//================================================
+	$lineHeight: 1.45;
+	$primaryFontFamily: Verdana, "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif;
+
+//================================================
+// TYPOGRAPHY EXTENDERS
+//================================================
+	//---------- General Settings ----------
+
+	%letterSpacingNormal { letter-spacing: normal; }
+	%letterSpacingMore { letter-spacing: 0.025em; }
+
+	%typeSpacingStandard {
+	    @extend %letterSpacingNormal;   
+	    line-height: $lineHeight;
+	    margin: 0.625em 0.5rem;
+	}
+
+	%text_center { text-align: center; }
+
+	//---------- Font Families ----------
+
+	%primaryFontFamily { font-family: $primaryFontFamily; }
+
+	//---------- Font Colors ----------
+
+	%primaryFontColor { color: $primaryFontColor; }
+
+	//---------- Font Sizes ----------
+
+	%linkFontSize { font-size: $linkFontSize; }
+	
+	//---------- Specific Elements ----------
+
+	%link {
+	    @extend %letterSpacingNormal; 
+	    text-decoration: none;
+	    &:hover { cursor: pointer; }
+	}
+
+//================================================
+// FONT AND TYPOGRAPHY DECLARATIONS
+//================================================
+	//---------- Global ----------
+
+	//---------- Headings ----------
+	h2 {
+	    @extend %typeSpacingStandard;
+	    @extend %primaryFontFamily;
+	    font-size: $hFontSize;
+	}
+	//---------- Paragraph ----------
+	p {
+	    @extend %typeSpacingStandard;
+	    @extend %primaryFontFamily;
+	    font-size: $pFontSize;
+	}
+
+	//---------- Links ----------
+	a {
+	    @extend %link;
+	    @extend %primaryFontFamily;
+	}
