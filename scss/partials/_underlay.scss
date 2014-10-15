@@ -1,14 +1,16 @@
 %scene_box_contents_pos {
 	position: absolute;
 	margin: auto;
-
 }
-#banner_container {
-	@extend %scene_box_contents_pos;
+%scene_box_contents_top_pos {
 	top: 0;
 	bottom: 5%;
 	left: 0;
 	right: 0;
+}
+#banner_container {
+	@extend %scene_box_contents_pos;
+	@extend %scene_box_contents_top_pos;
 	z-index: 15;
 }
 // #banner_obj {
@@ -16,12 +18,12 @@
 
 #cake_container {
 	@extend %scene_box_contents_pos;
-	top: 15%;
+	top: 20%;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	padding: 1rem;
-	z-index: 5;
+	z-index: 10;
 }
 #cake_obj {
 	overflow: visible;
@@ -32,7 +34,8 @@
 	background-image: url(img/cake.png);
 }
 #balloon_container {
-	@extend %absoluteCenter;
+	@extend %scene_box_contents_pos;
+	@extend %scene_box_contents_top_pos;
 	z-index: 5;
 }
 // #balloons_obj {
