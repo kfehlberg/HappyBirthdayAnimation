@@ -16,7 +16,18 @@
 			<path id="deftie" d="M-5 -7q5 2 10 0" class="color6" />
 		</g>
 	</defs>
-	<g id="b_row">
+		<g id="b_row">
+		<use xlink:href="#defbgroup" id="b1" class="color3" transform="translate(40 125) rotate(-20) " />
+		<use xlink:href="#defbgroup" id="b2" class="color4" transform="translate(95 100) rotate(-15)" />
+		<use xlink:href="#defbgroup" id="b3" class="color5" transform="translate(150 175) rotate(-10)" />
+		<use xlink:href="#defbgroup" id="b4" class="color1" transform="translate(205 200) rotate(-5)" />
+		<use xlink:href="#defbgroup" id="b5" class="color2" transform="translate(260 125)" />
+		<use xlink:href="#defbgroup" id="b6" class="color3" transform="translate(305 100) rotate(5)" />
+		<use xlink:href="#defbgroup" id="b7" class="color4" transform="translate(350 175) rotate(10)" />
+		<use xlink:href="#defbgroup" id="b8" class="color1" transform="translate(405 100) rotate(15)" />
+		<use xlink:href="#defbgroup" id="b9" class="color5" transform="translate(460 150) rotate(20)" />
+	</g>
+<!-- 	<g id="b_row">
 		<use xlink:href="#defbgroup" id="b1" class="color3" transform="translate(40 625) rotate(-20) " />
 		<use xlink:href="#defbgroup" id="b2" class="color4" transform="translate(95 600) rotate(-15)" />
 		<use xlink:href="#defbgroup" id="b3" class="color5" transform="translate(150 675) rotate(-10)" />
@@ -26,7 +37,7 @@
 		<use xlink:href="#defbgroup" id="b7" class="color4" transform="translate(350 675) rotate(10)" />
 		<use xlink:href="#defbgroup" id="b8" class="color1" transform="translate(405 600) rotate(15)" />
 		<use xlink:href="#defbgroup" id="b9" class="color5" transform="translate(460 650) rotate(20)" />
-	</g>
+	</g> -->
 </svg>
 
 
