@@ -7,13 +7,10 @@
 		.color3 { fill: #FFB154; opacity: 1; }
 		.color4 { fill: #F0E7C4; opacity: 1; }
 		.color5 { fill: #51948E; opacity: 1; }
-		.ribbon { stroke: #51948E ; stroke-width: 1; fill: #51948E; opacity: 1; }
 	</style>
 	<g id="banner">
-		<path id="bannershape" class="color2" d="M250,125c-110,0-200-18-200-40v-60c0,22,90,40,200,40s200-18,200-40v60c0 20-88 41 -200 40z "/> 
-		<path class="ribbon" d="M50 0v28q0 10 -10 20v-5q10 -10 10 -20q0 10 10 20v5q-10 -10 -10 -20q-10-6 -10 -2v2q0 6 10 0q10 -6 10 -2v2q0 6 -10 0v-28z" />
-		<path class="ribbon" d="M450 0v28q0 10 -10 20v-5q10 -10 10 -20q0 10 10 20v5q-10 -10 -10 -20q-10-6 -10 -2v2q0 6 10 0q10 -6 10 -2v2q0 6 -10 0v-28z" />
-		<path id="pathfortext" fill="none" d="M50,65c0,22.1 90,40 200,40s200-18,200-40"/>
+		<path id="bannershape" class="color2" d="M475,65c0,0-21-25-53-25s-90,25-172 25s-140-25-172-25s-53,25-53,25l25,10l-25,50c0,0,21-25,53-25s89,25,172,25s140-25,172-25s53,25,53,25l-25-50l25,-10z"/>
+		<path id="pathfortext" fill="none" d="M50,90c8-4,18-7,29-7c32,0,90,25,172,25s139-25,172-25c11,0,21,3,28,7"/>
 		<text text-anchor="middle">
 			<textPath  xlink:href="#pathfortext" startOffset="50%">
 				<tspan font-family="Verdana, 'sans-serif' " font-size="32" class="color4">Happy Birthday Dad!</tspan>
