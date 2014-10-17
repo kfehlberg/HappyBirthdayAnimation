@@ -123,6 +123,21 @@ $( window ).load(function() {
       console.log('Event listener added via IE attachEvent fallback');  
     }
   }
+  //http://blog.patricktresp.de/2012/02/internet-explorer-8-and-all-the-fun-stuff-e-stoppropagation-e-preventdefault-mousedown/
+  function stopEvent( evt ) {
+    if(!evt) {
+      var evt = window.event;
+      evt.cancelBubble = true;
+      evt.returnValue = false;
+    }
+    if (evt.stopPropagation) { 
+      evt.stopPropagation(); 
+    }
+    if (evt.preventDefault) {
+      evt.preventDefault();
+    }
+    return false;
+  }
   //================================================ 
   // FUNCTION DEF ANIMATION 
   //================================================ 
@@ -189,7 +204,9 @@ $( window ).load(function() {
     if (event.target.id === 'continue' || 'close') {    //when #continue or #close are clicked
       determineOpeningAnimation();
     } 
-    event.stopPropagation();                            //event to stop traversing the DOM under all situations once it gets overheard
+    stopEvent(event);
+    // event.stopPropagation(); 
+                             //event to stop traversing the DOM under all situations once it gets overheard
   }
   function continuedAnimation(event) {
     if (event.target.id === 'blow_out' ) {              //when #blow_out is clicked
@@ -197,7 +214,8 @@ $( window ).load(function() {
     } else if (event.target.id === 'replay') {          //when #replay is clicked
       window.location.reload();                         //reload the page
     } 
-    event.stopPropagation();                            //event to stop traversing the DOM under all situations once it gets overheard
+    // event.stopPropagation();                            //event to stop traversing the DOM under all situations once it gets overheard
+    stopEvent(event);
   }
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //        FUNCTIONS CALLED
