@@ -73,7 +73,9 @@ $( window ).load(function() {
       var objType = obj.getAttribute('type');
       if (objType === 'image/svg+xml') {
         var objDoc = obj.contentDocument;
-        if (objDoc !== null) {
+        if (objDoc == null) {
+          console.log('Changing svg to png. obj.contentDocument is null or undef so we do not change the visibility');
+        } else {
           var svgElem = objDoc.querySelector('svg');
           svgElem.setAttribute('visibility', 'hidden');
         }
