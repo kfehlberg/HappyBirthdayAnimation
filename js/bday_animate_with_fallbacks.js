@@ -4,6 +4,11 @@
 /* velocity.ui.js */
 
 /*global Modernizr:true */
+var noSmil = true;
+var yesSmil = false;
+// var yesSmil = Modernizr.smil;
+// var noSmil = !Modernizr.smil;
+// var !Modernizr.smil === true;
 
 $( window ).load(function() {
   console.log( 'window loaded' );
@@ -27,12 +32,7 @@ $( window ).load(function() {
     var minYDistance = (function() {
       var body = document.body;
       var bodyHeight = $(body).height();
-      var underlayHeight = $(underlay).height();
-      if (bodyHeight > underlayHeight) {
-        return ( bodyHeight + 100 ) ;
-      } else {
-        return ( bodyHeight + 100 );
-      }
+      return bodyHeight;
     }() );
     //---------------------------------------
     var openingSequence = [
@@ -61,19 +61,48 @@ $( window ).load(function() {
   // FUNCTION DEF objSvgToPng
   //    -replace svg with png
   //================================================ 
+  // type="image/svg+xml" data="img/cake.svg" class="svg"
   function objSvgToPng(obj) { 
-    if (obj.hasAttribute('data')) {
-      obj.removeAttribute('data');
-    }
     if (obj.hasAttribute('type')) {
-      obj.removeAttribute('type');
+      var objType = obj.getAttribute('type');
+      if (objType === 'image/svg+xml') {
+        var objDoc = obj.contentDocument;
+        var svgElem = objDoc.querySelector('svg');
+        svgElem.setAttribute('visibility', 'hidden');
+        obj.removeAttribute('type');
+      }
     }
+    if (obj.hasAttribute('data')) {
+        var objData = obj.getAttribute('data');
+        console.log('Original objData = ' + objData);
+        obj.removeAttribute('data');
+    }
+    // if (obj.hasAttribute('data')) {
+    //   var objData = obj.getAttribute('data');
+    //   console.log('Original objData = ' + objData);
+
+    //   // obj.removeAttribute('data');
+    //   // var newobjData = obj.getAttribute('data');
+    //   // console.log('new objData = ' + newobjData);
+    // }
+    // if (obj.hasAttribute('type')) {
+    //   var objType = obj.getAttribute('type');
+    //   console.log('Original objType = ' + objType);
+    //   obj.removeAttribute('type');
+    //   var newobjType = obj.getAttribute('type');
+    //   console.log('new objType = ' + newobjType);
+    // }
     if (obj.className === 'svg') {
+      var objClass = obj.getAttribute('class');
+      console.log('Original objClass = ' + objClass);
       obj.className = 'svgfallback';
+      var newobjClass = obj.className;
+      console.log('new objClass = ' + newobjClass);
     }
   }
   function imageFallback() {
-    if (!Modernizr.smil) {  //does not support SMIL
+    // if (!Modernizr.smil) {  //does not support SMIL
+    if (noSmil === true ) {  //does not support SMIL
       if (Modernizr.svg) {  //but does support SVG
         objSvgToPng(cakeObj);
         console.log('Boo.  SMIL animation not supported. But the good news is that SVG IS!');
@@ -126,7 +155,8 @@ $( window ).load(function() {
     $(flames).velocity( { translateX: [ 0.8 , 0 ], translateY: [ 4.8 , 0 ] , scale: [ 0.8 , 1 ]  }, { duration:1000, loop: true });
   }
   function determineOpeningAnimation() {
-    if (Modernizr.smil) {
+    // if (Modernizr.smil) {
+    if (yesSmil === true) {
     // if (cakeObj.className === 'svg') { //if the svg has not been replaced by png (imageFallback determined svg and smil were supported)
       smilOpeningAnimation();
     } else if (Modernizr.cssanimations) {
@@ -140,7 +170,8 @@ $( window ).load(function() {
   function scFinishingAnimation() {
     $(blowOutButton).velocity( "fadeOut" , { duration: 500, display: "none" } );
     // if (cakeObj.className === 'svg') { //if the svg has not been replaced by png (imageFallback determined svg and smil were supported)
-    if (Modernizr.smil) {
+    if (yesSmil === true) {
+    // if (Modernizr.smil) {
       $(flames).velocity( "stop");        //stop running looped animation on flames
       $(flames).velocity({ translateX: [ 4 , 0 ] , translateY: [ 24 , 0 ]  , scale: [ 0 , 1 ] }, 1000, function() {
         $(smokes).velocity( { strokeDashoffset: [ "0", "110"] }, 1500 ).velocity( { strokeDashoffset: [ "-110", "0"] }, 1500 );
