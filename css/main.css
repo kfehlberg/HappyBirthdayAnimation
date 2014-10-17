@@ -26,7 +26,7 @@ body { background: #deedeb; }
 
 * { -moz-box-sizing: border-box; box-sizing: border-box; }
 
-#close:after, .svgfallback, .no-smil #cake_obj, .no-svg .svg { margin: auto; top: 0; left: 0; bottom: 0; right: 0; position: absolute; }
+#close:after, .svgfallback, .no-svg .svg, .no-smil #cake_obj { margin: auto; top: 0; left: 0; bottom: 0; right: 0; position: absolute; }
 
 html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
 
@@ -93,8 +93,13 @@ p { font-size: 1.25rem; }
 
 .svg { width: 100%; height: 100%; }
 
-.svgfallback, .no-smil #cake_obj, .no-svg .svg { text-indent: 500px; overflow: hidden; width: 500px; height: 500px; }
-.svgfallback#cake_obj, .no-smil #cake_obj, .no-svg #cake_obj.svg { background: url(../img/cake.png) no-repeat top left; }
+.svgfallback, .no-svg .svg, .no-smil #cake_obj { text-indent: 500px; overflow: hidden; width: 500px; height: 500px; }
+
+.svgfallback#cake_obj, .no-svg #cake_obj.svg, .no-smil #cake_obj { background: url(../img/cake.png) no-repeat top left; }
+
+.svgfallback#balloons_obj, .no-svg #balloons_obj.svg { background: url(../img/balloons.png) no-repeat top left; }
+
+.svgfallback#banner_obj, .no-svg #banner_obj.svg { background: url(../img/banner.png) no-repeat top left; }
 
 .showUnderlay, .no-js #underlay:target { z-index: 800; }
 

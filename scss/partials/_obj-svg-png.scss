@@ -2,26 +2,45 @@
 	width: 100%;
 	height: 100%;
 }
-.svgfallback {
+%svgfallbackPositioning {
 	@extend %absoluteCenter;
 	text-indent: 500px;		//move the YourBrowserDoesNotSupportSVG text out of box
 	overflow: hidden;		//hide the text and rest of sprite
 	width: 500px;
-	height: 500px;
+	height: 500px;	
+}
+%cakefallback {
+	background: url(../img/cake.png) no-repeat top left;
+}
+%balloonsfallback {
+	background: url(../img/balloons.png) no-repeat top left;
+}
+%bannerfallback {
+	background: url(../img/banner.png) no-repeat top left;
+}
+.svgfallback {
+	@extend %svgfallbackPositioning;
+	// @extend %absoluteCenter;
+	// text-indent: 500px;		//move the YourBrowserDoesNotSupportSVG text out of box
+	// overflow: hidden;		//hide the text and rest of sprite
+	// width: 500px;
+	// height: 500px;
 	&#cake_obj {
-		background: url(../img/cake.png) no-repeat top left;
+		@extend %cakefallback;
 	}
-	// &#balloons_obj {
-
-	// }
-	// &#banner_obj {
-
-	// }
+	&#balloons_obj {
+		@extend %balloonsfallback;
+	}
+	&#banner_obj {
+		@extend %bannerfallback;
+	}
 }
 
 .no-smil {
-	#cake_obj{
-		@extend .svgfallback;
+	#cake_obj {
+		@extend %svgfallbackPositioning;
+		@extend %cakefallback;
+		// @extend .svgfallback;
 	}
 }
 .no-svg { 
