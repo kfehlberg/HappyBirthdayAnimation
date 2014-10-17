@@ -51,7 +51,10 @@ $( window ).load(function() {
   // SMIL ANIMATION VARIABLES
   //================================================ 
     var svgCakeDoc = cakeObj.contentDocument; // Get the SVG document inside the Object tag
-    if ( svgCakeDoc !== null ) {
+    if ( svgCakeDoc == null ) {
+      console.log('oops. cakeObj.contentDocument is null or undefined - ' + svgCakeDoc );
+    } else {
+      console.log('awesome. cakeObj.contentDocument does have a value');
       var flames = svgCakeDoc.querySelectorAll(".flame_group");
       var smokes = svgCakeDoc.querySelectorAll(".smoke");
     }
