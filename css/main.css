@@ -95,7 +95,7 @@ p { font-size: 1.25rem; }
 
 .svgfallback, .no-svg .svg, .no-smil #cake_obj { text-indent: 500px; overflow: hidden; width: 500px; height: 500px; }
 
-.svgfallback#cake_obj, .no-svg #cake_obj.svg, .no-smil #cake_obj { background: url(../img/cake.png) no-repeat top left; }
+.svgfallback#cake_obj, .no-svg #cake_obj.svg, .no-smil #cake_obj { background: url(../img/cake500.png) no-repeat top left; }
 
 .svgfallback#balloons_obj, .no-svg #balloons_obj.svg { background: url(../img/balloons.png) no-repeat top left; }
 
