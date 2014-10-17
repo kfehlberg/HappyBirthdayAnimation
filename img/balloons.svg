@@ -16,8 +16,6 @@
 			<path id="deftie" d="M-5 -7q5 2 10 0" class="color6" />
 		</g>
 	</defs>
-<!-- 	<rect x="0" y="0" width="500" height="5" class="color1" />
-	<rect x="0" y="495" width="500" height="5" class="color1" /> -->
 	<g id="b_row">
 		<use xlink:href="#defbgroup" id="b1" class="color3" transform="translate(40 125) rotate(-20) " />
 		<use xlink:href="#defbgroup" id="b2" class="color4" transform="translate(95 100) rotate(-15)" />
