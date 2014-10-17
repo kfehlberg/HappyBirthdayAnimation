@@ -119,7 +119,8 @@ $( window ).load(function() {
     if (element.addEventListener) {                      //if addEventListener is supported
       element.addEventListener( 'click' , functionName, false );
     } else {                                             //else IE fallback
-      element.attachEvent( 'click' , functionName );       
+      element.attachEvent( 'onclick' , functionName );     
+      console.log('Event listener added via IE attachEvent fallback');  
     }
   }
   //================================================ 
@@ -156,7 +157,7 @@ $( window ).load(function() {
       scOpeningAnimation();
     } else {
       $(overlay).velocity("fadeOut");
-      $(underlay).addClassName("showUnderlay");
+      // $(underlay).addClassName("showUnderlay");
       // overlay.style.zIndex="0";
       // underlay.style.zIndex="1";
       console.log('No animation support');
@@ -184,6 +185,7 @@ $( window ).load(function() {
   //    - (http://www.kirupa.com/html5/handling_events_for_many_elements.htm)
   //================================================ 
   function initialAnimation(event) {
+    // if (addEventListener)
     if (event.target.id === 'continue' || 'close') {    //when #continue or #close are clicked
       determineOpeningAnimation();
     } 
