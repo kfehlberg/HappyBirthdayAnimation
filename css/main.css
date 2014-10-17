@@ -69,8 +69,6 @@ p { font-size: 1.25rem; }
 
 #overlay { z-index: 750; }
 
-.no-js #underlay:target { z-index: 800; }
-
 #scene_box { border: 1rem solid #51948e; z-index: 30; }
 
 #alert_box { text-align: center; overflow-y: auto; padding: 2rem; }
@@ -97,6 +95,8 @@ p { font-size: 1.25rem; }
 
 .svgfallback, .no-smil #cake_obj, .no-svg .svg { text-indent: 500px; overflow: hidden; width: 500px; height: 500px; }
 .svgfallback#cake_obj, .no-smil #cake_obj, .no-svg #cake_obj.svg { background: url(../img/cake.png) no-repeat top left; }
+
+.showUnderlay, .no-js #underlay:target { z-index: 800; }
 
 @media only screen and (max-width: 30em) { html { font-size: 65%; }
   #blow_out, #replay { right: 1.125rem; left: 1.125rem; text-align: center; margin: 0 auto; letter-spacing: normal; } }
