@@ -11,19 +11,20 @@ var noSmil = !Modernizr.smil;
 
 $( window ).load(function() {
   console.log( 'window loaded' );
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //                             GLOBAL VARS DEFINED
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //        GLOBAL VARS DEFINED
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   var overlay = document.getElementById("overlay");
   var cakeObj = document.getElementById("cake_obj");
   var bannerObj = document.getElementById("banner_obj"); 
   var balloonsObj = document.getElementById("balloons_obj");
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //                             ANIMATION VARIABLES DEFINED
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //        ANIMATION VARIABLES DEFINED
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //================================================ 
   // ALL ANIMATION VARIABLES
   //================================================ 
+
     var underlay = document.getElementById("underlay");
     var blowOutButton = document.getElementById("blow_out");
     var replayButton = document.getElementById("replay");
@@ -52,15 +53,15 @@ $( window ).load(function() {
     var svgCakeDoc = cakeObj.contentDocument; // Get the SVG document inside the Object tag
     var flames = svgCakeDoc.querySelectorAll("svg .flame_group");
     var smokes = svgCakeDoc.querySelectorAll("svg .smoke");
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //                                FUNCTIONS DEFINED
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //        FUNCTIONS DEFINED
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   //================================================ 
   // FUNCTION DEF objSvgToPng
   //    -replace svg with png
   //================================================ 
-  // type="image/svg+xml" data="img/cake.svg" class="svg"
   function objSvgToPng(obj) { 
     if (obj.hasAttribute('type')) {
       var objType = obj.getAttribute('type');
@@ -185,9 +186,9 @@ $( window ).load(function() {
     } 
     event.stopPropagation();                            //event to stop traversing the DOM under all situations once it gets overheard
   }
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //                          FUNCTIONS CALLED
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //        FUNCTIONS CALLED
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   imageFallback();
   eventsFallback(overlay, initialAnimation);
   eventsFallback(underlay, continuedAnimation);
