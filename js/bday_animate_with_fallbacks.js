@@ -58,8 +58,6 @@ $( window ).load(function() {
       var flames = svgCakeDoc.querySelectorAll(".flame_group");
       var smokes = svgCakeDoc.querySelectorAll(".smoke");
     }
-    // var flames = svgCakeDoc.querySelectorAll("svg .flame_group");
-    // var smokes = svgCakeDoc.querySelectorAll("svg .smoke");
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //        FUNCTIONS DEFINED
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -158,6 +156,8 @@ $( window ).load(function() {
       scOpeningAnimation();
     } else {
       $(overlay).velocity("fadeOut");
+      overlay.style.zIndex="0";
+      underlay.style.zIndex="1";
       console.log('No animation support');
     }
   }
