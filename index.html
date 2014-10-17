@@ -6,8 +6,8 @@
         <title>Happy Birthday Dad!</title>
         <meta name="description" content="An interactive birthday greeting for my dad" />    
         <meta name="author" content="Katie Fehlberg" />
-<!--         // <script type="text/javascript" src="js/min/modernizr2.8.3dev-min.js"></script> -->
-        <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
+        <script type="text/javascript" src="js/min/modernizr_dev2_8_3-min.js"></script>
+        <!-- // <script src="http://modernizr.com/downloads/modernizr-latest.js"></script> -->
         <link href="css/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
     </head>
     <body>
@@ -15,13 +15,19 @@
             <div id="underlay" class="sub_content_wrapper">
                 <div id="scene_box">
                     <div id="banner_container">
-                        <object id="banner_obj" type="image/svg+xml" data="img/banner.svg" width="100%" height="100%">Your browser doesn't support SVG</object>
+                        <object id="banner_obj" type="image/svg+xml" data="img/banner.svg" class="svg">
+                            Your&nbsp;browser&nbsp;doesn't&nbsp;support&nbsp;SVG
+                        </object>
                     </div>
                     <div id="balloon_container">
-                        <object id="balloons_obj" type="image/svg+xml" data="img/balloons.svg" width="100%" height="100%">Your browser doesn't support SVG</object>
+                        <object id="balloons_obj" type="image/svg+xml" data="img/balloons.svg" class="svg">
+                            Your&nbsp;browser&nbsp;doesn't&nbsp;support&nbsp;SVG
+                        </object>
                     </div>
                     <div id="cake_container"> 
-                        <object id="cake_obj" type="image/svg+xml" data="img/cake.svg" width="100%" height="100%">Your browser doesn't support SVG</object>
+                        <object id="cake_obj" type="image/svg+xml" data="img/cake.svg" class="svg">
+                            Your&nbsp;browser&nbsp;doesn't&nbsp;support&nbsp;SVG
+                        </object>
                     </div> 
                     <a id="blow_out">Click here to blow out the candles!</a> 
                     <a id="replay">Replay</a>
@@ -45,6 +51,6 @@
         <script src="//cdn.jsdelivr.net/velocity/1.1.0/velocity.ui.min.js"></script>
 <!--         // <script type="text/javascript" src="js/min/velocity-min.js"></script>
         // <script type="text/javascript" src="js/min/velocity.ui-min.js"></script> -->
-        <script type="text/javascript" src="js/min/bday_animate-min.js"></script>
+        <script type="text/javascript" src="js/min/bday_animate_with_fallbacks-min.js"></script>
     </body>
 </html>
