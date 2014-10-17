@@ -157,7 +157,7 @@ $( window ).load(function() {
     } else if (Modernizr.cssanimations) {
       scOpeningAnimation();
     } else {
-      $(overlay).velocity("fadeOut", { display: "none" });
+      $(overlay).velocity("fadeOut");
       console.log('No animation support');
     }
   }
