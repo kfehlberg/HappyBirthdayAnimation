@@ -53,12 +53,12 @@
 #overlay {
 	z-index: 750;
 }
-.no-js #underlay {
-	&:target {
-		z-index: 800;
-	}
- }
-
+// .no-js #underlay {
+// 	&:target {
+// 		z-index: 800;
+// 	}
+//  }
+ 
 #scene_box {
 	@extend %_box ;
 	@extend %inset_box_shadow1;

@@ -1,0 +1,10 @@
+.showUnderlay {
+	z-index: 800;
+}
+.no-js {
+	#underlay {
+		&:target {
+			@extend .showUnderlay;
+		}
+	}	
+ }

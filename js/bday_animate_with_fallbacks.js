@@ -156,8 +156,9 @@ $( window ).load(function() {
       scOpeningAnimation();
     } else {
       $(overlay).velocity("fadeOut");
-      overlay.style.zIndex="0";
-      underlay.style.zIndex="1";
+      $(underlay).addClassName("showUnderlay");
+      // overlay.style.zIndex="0";
+      // underlay.style.zIndex="1";
       console.log('No animation support');
     }
   }
