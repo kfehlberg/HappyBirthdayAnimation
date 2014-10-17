@@ -7,6 +7,7 @@
 	bottom: 5%;
 	left: 0;
 	right: 0;
+	overflow: hidden;		//hide balloons and banner when transitioned out of view for animation
 }
 #banner_container {
 	@extend %scene_box_contents_pos;
@@ -25,14 +26,21 @@
 	padding: 1rem;
 	z-index: 10;
 }
-#cake_obj {
-	overflow: visible;
-}
-.no-svg #cake_obj {
-	width: 100%;
-	height: 100%;
-	background-image: url(img/cake.png);
-}
+// #cake_obj {
+// 	overflow: visible;
+// }
+// .no-smil,
+// .no-svg { 
+// 	#cake_obj {
+// 		@extend %absoluteCenter;
+// 		text-indent: 500px;		//move the YourBrowserDoesNotSupportSVG text out of box
+// 		overflow: hidden;		//hide the text and rest of sprite
+// 		width: 500px;
+// 		height: 500px;
+// 		background: url(../img/cake.png) no-repeat top left;
+// 		// animation: blowOut 1s steps(6) 2s 1 normal forwards; //animation class is added in javascript
+// 	}
+// }
 #balloon_container {
 	@extend %scene_box_contents_pos;
 	@extend %scene_box_contents_top_pos;
