@@ -4,11 +4,10 @@
 /* velocity.ui.js */
 
 /*global Modernizr:true */
-var noSmil = true;
-var yesSmil = false;
-// var yesSmil = Modernizr.smil;
-// var noSmil = !Modernizr.smil;
-// var !Modernizr.smil === true;
+// var noSmil = true;
+// var yesSmil = false;
+var yesSmil = Modernizr.smil;
+var noSmil = !Modernizr.smil;
 
 $( window ).load(function() {
   console.log( 'window loaded' );
@@ -77,21 +76,6 @@ $( window ).load(function() {
         console.log('Original objData = ' + objData);
         obj.removeAttribute('data');
     }
-    // if (obj.hasAttribute('data')) {
-    //   var objData = obj.getAttribute('data');
-    //   console.log('Original objData = ' + objData);
-
-    //   // obj.removeAttribute('data');
-    //   // var newobjData = obj.getAttribute('data');
-    //   // console.log('new objData = ' + newobjData);
-    // }
-    // if (obj.hasAttribute('type')) {
-    //   var objType = obj.getAttribute('type');
-    //   console.log('Original objType = ' + objType);
-    //   obj.removeAttribute('type');
-    //   var newobjType = obj.getAttribute('type');
-    //   console.log('new objType = ' + newobjType);
-    // }
     if (obj.className === 'svg') {
       var objClass = obj.getAttribute('class');
       console.log('Original objClass = ' + objClass);
@@ -102,7 +86,7 @@ $( window ).load(function() {
   }
   function imageFallback() {
     // if (!Modernizr.smil) {  //does not support SMIL
-    if (noSmil === true ) {  //does not support SMIL
+    if (noSmil && true ) {  //does not support SMIL
       if (Modernizr.svg) {  //but does support SVG
         objSvgToPng(cakeObj);
         console.log('Boo.  SMIL animation not supported. But the good news is that SVG IS!');
@@ -156,7 +140,7 @@ $( window ).load(function() {
   }
   function determineOpeningAnimation() {
     // if (Modernizr.smil) {
-    if (yesSmil === true) {
+    if (yesSmil && true) {
     // if (cakeObj.className === 'svg') { //if the svg has not been replaced by png (imageFallback determined svg and smil were supported)
       smilOpeningAnimation();
     } else if (Modernizr.cssanimations) {
@@ -170,7 +154,7 @@ $( window ).load(function() {
   function scFinishingAnimation() {
     $(blowOutButton).velocity( "fadeOut" , { duration: 500, display: "none" } );
     // if (cakeObj.className === 'svg') { //if the svg has not been replaced by png (imageFallback determined svg and smil were supported)
-    if (yesSmil === true) {
+    if (yesSmil && true) {
     // if (Modernizr.smil) {
       $(flames).velocity( "stop");        //stop running looped animation on flames
       $(flames).velocity({ translateX: [ 4 , 0 ] , translateY: [ 24 , 0 ]  , scale: [ 0 , 1 ] }, 1000, function() {
