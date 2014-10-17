@@ -51,9 +51,12 @@ $( window ).load(function() {
   // SMIL ANIMATION VARIABLES
   //================================================ 
     var svgCakeDoc = cakeObj.contentDocument; // Get the SVG document inside the Object tag
-    var flames = svgCakeDoc.querySelectorAll("svg .flame_group");
-    var smokes = svgCakeDoc.querySelectorAll("svg .smoke");
-    
+    if ( svgCakeDoc !== null ) {
+      var flames = svgCakeDoc.querySelectorAll(".flame_group");
+      var smokes = svgCakeDoc.querySelectorAll(".smoke");
+    }
+    // var flames = svgCakeDoc.querySelectorAll("svg .flame_group");
+    // var smokes = svgCakeDoc.querySelectorAll("svg .smoke");
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //        FUNCTIONS DEFINED
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,8 +70,10 @@ $( window ).load(function() {
       var objType = obj.getAttribute('type');
       if (objType === 'image/svg+xml') {
         var objDoc = obj.contentDocument;
-        var svgElem = objDoc.querySelector('svg');
-        svgElem.setAttribute('visibility', 'hidden');
+        if (objDoc !== null) {
+          var svgElem = objDoc.querySelector('svg');
+          svgElem.setAttribute('visibility', 'hidden');
+        }
         obj.removeAttribute('type');
       }
     }
