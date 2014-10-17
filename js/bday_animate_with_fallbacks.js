@@ -126,7 +126,8 @@ $( window ).load(function() {
     $(flames).velocity( { translateX: [ 0.8 , 0 ], translateY: [ 4.8 , 0 ] , scale: [ 0.8 , 1 ]  }, { duration:1000, loop: true });
   }
   function determineOpeningAnimation() {
-    if (cakeObj.className === 'svg') { //if the svg has not been replaced by png (imageFallback determined svg and smil were supported)
+    if (Modernizr.smil) {
+    // if (cakeObj.className === 'svg') { //if the svg has not been replaced by png (imageFallback determined svg and smil were supported)
       smilOpeningAnimation();
     } else if (Modernizr.cssanimations) {
       scOpeningAnimation();
@@ -138,8 +139,8 @@ $( window ).load(function() {
   //------------------------------------------------
   function scFinishingAnimation() {
     $(blowOutButton).velocity( "fadeOut" , { duration: 500, display: "none" } );
-    if (cakeObj.className === 'svg') { //if the svg has not been replaced by png (imageFallback determined svg and smil were supported)
-    // if (Modernizr.smil) {
+    // if (cakeObj.className === 'svg') { //if the svg has not been replaced by png (imageFallback determined svg and smil were supported)
+    if (Modernizr.smil) {
       $(flames).velocity( "stop");        //stop running looped animation on flames
       $(flames).velocity({ translateX: [ 4 , 0 ] , translateY: [ 24 , 0 ]  , scale: [ 0 , 1 ] }, 1000, function() {
         $(smokes).velocity( { strokeDashoffset: [ "0", "110"] }, 1500 ).velocity( { strokeDashoffset: [ "-110", "0"] }, 1500 );
