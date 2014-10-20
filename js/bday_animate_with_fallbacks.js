@@ -10,7 +10,7 @@ var yesSmil = Modernizr.smil;
 var noSmil = !Modernizr.smil;
 
 $( window ).load(function() {
-  console.log( 'window loaded' );
+  // console.log( 'window loaded' );
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //        GLOBAL VARS DEFINED
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,9 +52,9 @@ $( window ).load(function() {
   //================================================ 
     var svgCakeDoc = cakeObj.contentDocument; // Get the SVG document inside the Object tag
     if ( svgCakeDoc == null ) {
-      console.log('oops. cakeObj.contentDocument is null or undefined - ' + svgCakeDoc );
+      // console.log('oops. cakeObj.contentDocument is null or undefined - ' + svgCakeDoc );
     } else {
-      console.log('awesome. cakeObj.contentDocument does have a value');
+      // console.log('awesome. cakeObj.contentDocument does have a value');
       var flames = svgCakeDoc.querySelectorAll(".flame_group");
       var smokes = svgCakeDoc.querySelectorAll(".smoke");
     }
@@ -72,7 +72,7 @@ $( window ).load(function() {
       if (objType === 'image/svg+xml') {
         var objDoc = obj.contentDocument;
         if (objDoc == null) {
-          console.log('Changing svg to png. obj.contentDocument is null or undef so we do not change the visibility');
+          // console.log('Changing svg to png. obj.contentDocument is null or undef so we do not change the visibility');
         } else {
           var svgElem = objDoc.querySelector('svg');
           svgElem.setAttribute('visibility', 'hidden');
@@ -81,16 +81,16 @@ $( window ).load(function() {
       }
     }
     if (obj.hasAttribute('data')) {
-        var objData = obj.getAttribute('data');
-        console.log('Original objData = ' + objData);
+        // var objData = obj.getAttribute('data');
+        // console.log('Original objData = ' + objData);
         obj.removeAttribute('data');
     }
     if (obj.className === 'svg') {
-      var objClass = obj.getAttribute('class');
-      console.log('Original objClass = ' + objClass);
+      // var objClass = obj.getAttribute('class');
+      // console.log('Original objClass = ' + objClass);
       obj.className = 'svgfallback';
-      var newobjClass = obj.className;
-      console.log('new objClass = ' + newobjClass);
+      // var newobjClass = obj.className;
+      // console.log('new objClass = ' + newobjClass);
     }
   }
   function imageFallback() {
@@ -98,7 +98,7 @@ $( window ).load(function() {
     if (noSmil && true ) {  //does not support SMIL
       if (Modernizr.svg) {  //but does support SVG
         objSvgToPng(cakeObj);
-        console.log('Boo.  SMIL animation not supported. But the good news is that SVG IS!');
+        // console.log('Boo.  SMIL animation not supported. But the good news is that SVG IS!');
       } else {
         var svgObjs = [ cakeObj, bannerObj , balloonsObj ];
         var numSvgObjs = svgObjs.length;
@@ -106,10 +106,10 @@ $( window ).load(function() {
         for (i=0; i < numSvgObjs; i++) {
           objSvgToPng(svgObjs[i]);
         }
-        console.log('Boo. SMIL and SVG are not supported');
+        // console.log('Boo. SMIL and SVG are not supported');
       }
     } else {
-      console.log('YAY! SMIL animation supported!');
+      // console.log('YAY! SMIL animation supported!');
     }
   }
   //================================================
@@ -126,7 +126,7 @@ $( window ).load(function() {
   function getTarget(e) {
     if (!e) {
       e = window.event;
-      console.log('event target for IE5-8 = ' + e.srcElement.id);
+      // console.log('event target for IE5-8 = ' + e.srcElement.id);
     }
     // console.log('event target = ' + e.target.id + ' or for IE5-8 = ' + e.srcElement.id);
     return e.target || e.srcElement;                //e.target  is the target of the event e.srcElement is IE5-8 equivalent
@@ -237,7 +237,7 @@ $( window ).load(function() {
       // $(underlay).addClassName("showUnderlay");
       // overlay.style.zIndex="0";
       // underlay.style.zIndex="1";
-      console.log('No animation support');
+      // console.log('No animation support');
     }
   }
   //------------------------------------------------
