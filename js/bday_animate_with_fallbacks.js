@@ -126,8 +126,9 @@ $( window ).load(function() {
   function getTarget(e) {
     if (!e) {
       e = window.event;
+      console.log('event target for IE5-8 = ' + e.srcElement.id);
     }
-    console.log('event target = ' + e.target.id + ' or for IE5-8 = ' + e.srcElement.id);
+    // console.log('event target = ' + e.target.id + ' or for IE5-8 = ' + e.srcElement.id);
     return e.target || e.srcElement;                //e.target  is the target of the event e.srcElement is IE5-8 equivalent
   }
   function stopEvent(e) {
