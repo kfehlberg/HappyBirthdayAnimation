@@ -1,4 +1,8 @@
 @import 'partials/_normalize.scss' ;
+
+@import 'partials/_rem-sizes.scss' ;			//includes rem units *see ie8-and-less.scss for non-rem sizes
+
+@import 'partials/_sizes.scss' ;				//* requires either '_rem-sizes.scss' or '_non-rem-sizes.scss' *
 @import 'partials/_variables.scss' ;
 @import 'partials/_mixins.scss' ;
 
