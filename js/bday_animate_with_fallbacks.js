@@ -231,15 +231,16 @@ $( window ).load(function() {
     // if (cakeObj.className === 'svg') { //if the svg has not been replaced by png (imageFallback determined svg and smil were supported)
       smilOpeningAnimation();
     // } else if (Modernizr.cssanimations) {
-    } else if (Modernizr.csstransforms) {
+    } else  {
       scOpeningAnimation();
-    } else {
-      $(overlay).velocity("fadeOut");
-      // $(underlay).addClassName("showUnderlay");
-      // overlay.style.zIndex="0";
-      // underlay.style.zIndex="1";
-      // console.log('No animation support');
-    }
+    } 
+    // else {
+    //   $(overlay).velocity("fadeOut");
+    //   // $(underlay).addClassName("showUnderlay");
+    //   // overlay.style.zIndex="0";
+    //   // underlay.style.zIndex="1";
+    //   // console.log('No animation support');
+    // }
   }
   //------------------------------------------------
   function scFinishingAnimation() {
