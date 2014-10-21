@@ -10,3 +10,4 @@
 .sass-cache/
 .codekit-config.json
 config.codekit
+*.scss
