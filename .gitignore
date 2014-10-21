@@ -9,3 +9,5 @@
 .sass-cache
 .sass-cache/
 .codekit-config.json
+
+scss/partials/_ie8-and-less-variables.scss
