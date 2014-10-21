@@ -6,7 +6,7 @@ a:active, a:hover { outline: 0; }
 
 #blow_out, #replay, #continue { border-radius: 0.25rem; }
 
-#blow_out, #replay, #close, #continue, .sub_content_wrapper { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
+#blow_out, #replay { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
 #scene_box { box-shadow: inset 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
@@ -106,5 +106,5 @@ p { font-size: 1.25rem; }
 @media only screen and (max-width: 30rem) { html { font-size: 65%; }
   #blow_out, #replay { right: 1.125rem; left: 1.125rem; text-align: center; margin: 0 auto; letter-spacing: normal; } }
 @media only screen and (max-width: 40rem) { html { font-size: 75%; } }
-@media only screen and (min-width: 62.5rem) { .sub_content_wrapper { border-radius: 0.25rem; top: 3.75rem; bottom: 3.75rem; }
+@media only screen and (min-width: 62.5rem) { .sub_content_wrapper { border-radius: 0.25rem; top: 3.75rem; bottom: 3.75rem; box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
   #scene_box, #alert_box { border-radius: 0.25rem; } }

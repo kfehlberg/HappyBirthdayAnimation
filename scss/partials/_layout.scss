@@ -62,7 +62,8 @@
 	// @extend %inset_box_shadow1;
 	@extend %primaryFontColor;
 	border: $scene_box_border;
-	@extend %inset_box_shadow1;
+	// @extend %inset_box_shadow1;
+	@include inset_box_shadow1;
 	z-index: 30;
 }
 

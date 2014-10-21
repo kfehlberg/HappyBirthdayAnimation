@@ -15,24 +15,35 @@
 	// %box_shadow1 {
 	// 	box-shadow: $box_shadow1
 	// }
-	%box_shadow1 {
-	   zoom: 1;
-	   // filter: progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=0),
-	   //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=90),
-	   //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=180),
-	   //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=270);
-	   filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90),
+
+	@mixin box_shadow1 {
+		zoom: 1;
+	   	filter:progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90),
 	           progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=180);
 	}
-	%inset_box_shadow1 {
+	@mixin inset_box_shadow1 {
 		zoom: 1;
-	   // filter: progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=0),
-	   //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=90),
-	   //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=180),
-	   //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=270);
-	   filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=0),
+	   	filter:progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=0),
 	           progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=270);
 	}
+	// %box_shadow1 {
+	//    zoom: 1;
+	//    // filter: progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=0),
+	//    //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=90),
+	//    //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=180),
+	//    //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=270);
+	//    filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90),
+	//            progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=180);
+	// }
+	// %inset_box_shadow1 {
+	// 	zoom: 1;
+	//    // filter: progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=0),
+	//    //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=90),
+	//    //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=180),
+	//    //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=270);
+	//    filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=0),
+	//            progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=270);
+	// }
 
 	// //VISIBILITY
 	// .no-js {

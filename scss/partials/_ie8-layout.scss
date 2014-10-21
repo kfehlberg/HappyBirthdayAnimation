@@ -2,10 +2,11 @@
 		// border-radius: $border_radius_standard;
 	top: $headerHeight;
 	bottom: $footerHeight;
-	@extend %box_shadow1; 	//needs to be after size has been declared for ie filter to work
+	@include box_shadow1;
+	// @extend %box_shadow1; 	//needs to be after size has been declared for ie filter to work
 }
-#scene_box,
-#alert_box {
-	// border-radius: 0.25rem;
-	// border-radius: $fontSize4;
-}
+// #scene_box,
+// #alert_box {
+// 	// border-radius: 0.25rem;
+// 	// border-radius: $fontSize4;
+// }

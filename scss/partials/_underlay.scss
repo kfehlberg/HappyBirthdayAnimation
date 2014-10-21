@@ -58,10 +58,12 @@
 #blow_out {
 	@extend %scene_box_contents_pos;
 	@extend %animationButton;
+	@include box_shadow1;
 }
 #replay {
 	@extend %scene_box_contents_pos;
 	@extend %animationButton;
+	@include box_shadow1;
 }
 
 

@@ -23,7 +23,7 @@
 
 	%buttonC-Link {
 		@extend %buttonBase;
-		@extend %box_shadow1;
+		// @extend %box_shadow1;
 		@extend %button_border;
 		@extend %linkFontSize;
 		display: inline-block;	

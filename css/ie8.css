@@ -14,14 +14,6 @@ a:hover {
 #blow_out, #replay, #continue {
   border-radius: none; }
 
-#blow_out, #replay, #close, #continue, .sub_content_wrapper {
-  zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=180); }
-
-#scene_box {
-  zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=0), progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=270); }
-
 #alert_box {
   background: #51948e; }
 
@@ -44,7 +36,6 @@ body {
   border: 2px solid white; }
 
 * {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -139,6 +130,8 @@ p {
 
 #scene_box {
   border: 16px solid #51948e;
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=0), progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=270);
   z-index: 30; }
 
 #alert_box {
@@ -148,7 +141,9 @@ p {
 
 .sub_content_wrapper {
   top: 60px;
-  bottom: 60px; }
+  bottom: 60px;
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=180); }
 
 #banner_container, #cake_container, #balloon_container, #blow_out, #replay {
   position: absolute;
@@ -174,6 +169,14 @@ p {
 
 #balloon_container {
   z-index: 5; }
+
+#blow_out {
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=180); }
+
+#replay {
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=180); }
 
 .textbox {
   position: relative;

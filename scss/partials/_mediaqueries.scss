@@ -1,9 +1,7 @@
 //================================================
 // MEDIAQUERIES
 //================================================
-.sub_content_wrapper {
-	@extend %box_shadow1; 
-}
+
 @include mq-xsmall-max {
 	html {
 		font-size: 65%;
@@ -36,6 +34,7 @@
 		border-radius: $border_radius_standard;
 		top: $headerHeight;
 		bottom: $footerHeight;
+		box-shadow: $box_shadow1;
 	}
 	#scene_box,
 	#alert_box {
