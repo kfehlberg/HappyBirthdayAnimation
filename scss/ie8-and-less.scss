@@ -1,0 +1,21 @@
+@import 'partials/_normalize.scss' ;
+
+@import 'partials/_non-rem-sizes.scss' ;	//SPECIFIC FOR IE8 and less
+@import 'partials/_sizes.scss' ;				//* requires either '_rem-sizes.scss' or '_non-rem-sizes.scss' *
+@import 'partials/_variables.scss' ;
+@import 'partials/_mixins.scss' ;
+
+@import 'partials/_borders-backgrounds.scss ';
+
+@import 'partials/_globals.scss' ;
+@import 'partials/_typography.scss' ;
+@import 'partials/_buttons.scss' ;
+
+@import 'partials/_layout.scss' ;
+
+@import 'partials/_underlay.scss' ;
+@import 'partials/_overlay.scss' ;
+
+@import 'partials/_obj-svg-png.scss' ;			// <object> svg styling and png fallbacks
+@import 'partials/_visibility.scss' ;			//no-js fallbacks 
+// @import 'partials/_mediaqueries.scss' ;		//no mediaqueries support in IE8
