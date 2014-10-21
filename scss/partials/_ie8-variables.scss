@@ -17,14 +17,18 @@
 	// }
 
 	@mixin box_shadow1 {
+		margin-left: -5px;
+   		margin-top: -5px;
 		zoom: 1;
-	   	filter:progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90),
-	           progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=180);
+	   	filter:progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=90),
+	           progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=180);
 	}
 	@mixin inset_box_shadow1 {
+		margin-left: -5px;
+   		margin-top: -5px;
 		zoom: 1;
-	   	filter:progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=0),
-	           progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=270);
+	   	filter:progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=0),
+	           progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=270);
 	}
 	// %box_shadow1 {
 	//    zoom: 1;

@@ -130,8 +130,10 @@ p {
 
 #scene_box {
   border: 16px solid #51948e;
+  margin-left: -5px;
+  margin-top: -5px;
   zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=0), progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=270);
+  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=0), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=270);
   z-index: 30; }
 
 #alert_box {
@@ -142,8 +144,10 @@ p {
 .sub_content_wrapper {
   top: 60px;
   bottom: 60px;
+  margin-left: -5px;
+  margin-top: -5px;
   zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=180); }
+  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=180); }
 
 #banner_container, #cake_container, #balloon_container, #blow_out, #replay {
   position: absolute;
@@ -171,12 +175,16 @@ p {
   z-index: 5; }
 
 #blow_out {
+  margin-left: -5px;
+  margin-top: -5px;
   zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=180); }
+  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=180); }
 
 #replay {
+  margin-left: -5px;
+  margin-top: -5px;
   zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=180); }
+  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=180); }
 
 .textbox {
   position: relative;
