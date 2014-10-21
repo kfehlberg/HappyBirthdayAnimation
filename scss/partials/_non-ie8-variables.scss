@@ -18,9 +18,9 @@
 	%inset_box_shadow1 {
 		box-shadow: inset $box_shadow1;
 	}
-	@mixin box_shadow1 {
-		@extend %box_shadow1;
-	}
-	@mixin inset_box_shadow1 {
-		@extend %inset_box_shadow1;
-	}
+	// @mixin box_shadow1 {
+	// 	@extend %box_shadow1;
+	// }
+	// @mixin inset_box_shadow1 {
+	// 	@extend %inset_box_shadow1;
+	// }

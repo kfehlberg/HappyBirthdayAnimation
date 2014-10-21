@@ -1,8 +1,9 @@
 .sub_content_wrapper {
 		// border-radius: $border_radius_standard;
+	position: absolute;
 	top: $headerHeight;
 	bottom: $footerHeight;
-	@include box_shadow1;
+	// @include box_shadow1;
 	// @extend %box_shadow1; 	//needs to be after size has been declared for ie filter to work
 }
 // #scene_box,

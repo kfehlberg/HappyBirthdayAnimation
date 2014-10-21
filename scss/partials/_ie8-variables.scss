@@ -11,65 +11,36 @@
 // BOX SHADOWS
 //================================================
 	// $shadowColor1: #323232;
-	// $box_shadow1: 1px 1px 6px 0px $shadowColor1;
-	// %box_shadow1 {
-	// 	box-shadow: $box_shadow1
-	// }
+	// // $box_shadow1: 1px 1px 6px 0px $shadowColor1;
+	// // %box_shadow1 {
+	// // 	box-shadow: $box_shadow1
+	// // }
 
-   // margin-left: -5px;
-   // margin-top: -5px;
-   // zoom: 1;
-   // filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0),
-   //       progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90),
-   //       progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180),
-   //       progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270);
+ //   // margin-left: -5px;
+ //   // margin-top: -5px;
+ //   // zoom: 1;
+ //   // filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0),
+ //   //       progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90),
+ //   //       progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180),
+ //   //       progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270);
 
-	@mixin box_shadow1 {
-		margin-left: -5px;
-   		margin-top: -5px;
-		zoom: 1;
-		filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0),
-         		progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90),
-         		progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180),
-         		progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270);
-	   	// filter:progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=90),
-	    //        progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=180);
+
+	%box_shadow1 {
+		/* no box-shadow for ie8 */
+		// zoom: 1;
+
 	}
-	@mixin inset_box_shadow1 {
-		margin-left: -5px;
-   		margin-top: -5px;
+	%inset_box_shadow1 {
+		/* no box-shadow for ie8 */
 		zoom: 1;
-		filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0),
-		        progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90),
-		        progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180),
-		        progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270);
-	   	// filter:progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=0),
-	    //        progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=270);
-	}
-	// %box_shadow1 {
-	//    zoom: 1;
-	//    // filter: progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=0),
-	//    //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=90),
-	//    //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=180),
-	//    //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=270);
-	//    filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90),
-	//            progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=180);
-	// }
-	// %inset_box_shadow1 {
-	// 	zoom: 1;
-	//    // filter: progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=0),
-	//    //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=90),
-	//    //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=180),
-	//    //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=270);
-	//    filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=0),
-	//            progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=270);
-	// }
 
-	// //VISIBILITY
-	// .no-js {
-	// 	#underlay {
-	// 		&:target {
-	// 			@extend .showUnderlay;
-	// 		}
-	// 	}	
-	//  }
+	}
+
+	// // //VISIBILITY
+	// // .no-js {
+	// // 	#underlay {
+	// // 		&:target {
+	// // 			@extend .showUnderlay;
+	// // 		}
+	// // 	}	
+	// //  }
