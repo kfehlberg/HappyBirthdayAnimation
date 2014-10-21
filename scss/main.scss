@@ -3,6 +3,9 @@
 @import 'partials/_rem-sizes.scss' ;			//includes rem units *see ie8-and-less.scss for non-rem sizes
 
 @import 'partials/_sizes.scss' ;				//* requires either '_rem-sizes.scss' or '_non-rem-sizes.scss' *
+
+@import 'partials/_non-ie8-variables.scss' ;	//*styles that can't be used in ie8 like, border-radius, box-shadow, etc *
+
 @import 'partials/_variables.scss' ;
 @import 'partials/_mixins.scss' ;
 

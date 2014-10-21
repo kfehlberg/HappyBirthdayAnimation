@@ -20,7 +20,7 @@
 	// right: 2rem;
 	top: $fontSize32;
 	right: $fontSize32;
-	border-radius: 100%;
+	border-radius: $border_radius_circle;
 	&:after {
 		@extend %absoluteCenter;
 		content: "\2715";

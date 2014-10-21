@@ -1,0 +1,20 @@
+// ================================================
+// BORDER RADIUS
+//================================================
+	$border_radius_circle: 100%;
+	// $border_radius_standard: 0.25rem;
+	$border_radius_standard: $fontSize4;
+
+	%border_radius_standard { border-radius: $border_radius_standard; }
+
+//================================================
+// BOX SHADOWS
+//================================================
+	$shadowColor1: rgba(50, 50, 50, 0.75);
+	$box_shadow1: 1px 1px 6px 0px $shadowColor1;
+	%box_shadow1 {
+		box-shadow: $box_shadow1
+	}
+	%inset_box_shadow1 {
+		box-shadow: inset $box_shadow1;
+	}

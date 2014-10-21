@@ -4,6 +4,12 @@ a { background: transparent; }
 
 a:active, a:hover { outline: 0; }
 
+#blow_out, #replay, #continue { border-radius: 0.25rem; }
+
+#blow_out, #replay, #close, #continue, .sub_content_wrapper { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
+
+#scene_box { box-shadow: inset 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
+
 #alert_box { background: #51948e; }
 
 .sub_content_wrapper { background: #acd2ce; }
@@ -17,12 +23,6 @@ body { background: #deedeb; }
 #blow_out:active, #replay:active, #close:active, #continue:active { background: #851e31; }
 
 #blow_out, #replay, #close, #continue { border: 0.125rem solid white; }
-
-#blow_out, #replay, #continue { border-radius: 0.25rem; }
-
-#blow_out, #replay, #close, #continue, .sub_content_wrapper { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
-
-#scene_box { box-shadow: inset 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
 * { -moz-box-sizing: border-box; box-sizing: border-box; }
 

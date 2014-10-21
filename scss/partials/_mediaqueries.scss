@@ -30,14 +30,12 @@
 @include mq-large-min {
 	//if less than this size, default value pushes header and footer out of document. 
 	.sub_content_wrapper {
-		// border-radius: 0.25rem;
-		border-radius: $fontSize4;
+		border-radius: $border_radius_standard;
 		top: $headerHeight;
 		bottom: $footerHeight;
 	}
 	#scene_box,
 	#alert_box {
-		// border-radius: 0.25rem;
-		border-radius: $fontSize4;
+		border-radius: $border_radius_standard;
 	}
 }
