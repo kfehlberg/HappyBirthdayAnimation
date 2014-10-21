@@ -15,7 +15,8 @@
 	%typeSpacingStandard {
 	    @extend %letterSpacingNormal;   
 	    line-height: $lineHeight;
-	    margin: 0.625em 0.5rem;
+	    // margin: 0.625em 0.5rem;
+	    margin: $fontSize10 $fontSize8;
 	}
 
 	%text_center { text-align: center; }

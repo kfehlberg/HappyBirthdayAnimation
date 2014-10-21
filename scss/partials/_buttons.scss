@@ -38,7 +38,9 @@
 	@extend %buttonC-Link;
 	@extend %textButton;
 	display: none; //revealed in javaScript 
-	bottom: 1.125rem;
-	left: 1.125rem;
+	bottom: $fontSize18;
+	left: $fontSize18;
+	// bottom: 1.125rem;
+	// left: 1.125rem;
 	z-index: 20;
 }
