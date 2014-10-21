@@ -1,7 +1,9 @@
 //================================================
 // MEDIAQUERIES
 //================================================
-
+.sub_content_wrapper {
+	@extend %box_shadow1; 
+}
 @include mq-xsmall-max {
 	html {
 		font-size: 65%;
@@ -30,6 +32,7 @@
 @include mq-large-min {
 	//if less than this size, default value pushes header and footer out of document. 
 	.sub_content_wrapper {
+		// @extend %box_shadow1; 
 		border-radius: $border_radius_standard;
 		top: $headerHeight;
 		bottom: $footerHeight;

@@ -40,14 +40,12 @@
 	min-height: 100%;
 }
 .sub_content_wrapper {
-	@extend %box_shadow1;
+	// @extend %box_shadow1;			//is in _mediaqueries.scss
 	@extend %bg_color_light_primary;
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	// background: $lighterColor5;
 	width: 100%;
-	// box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75);
 
 }
 #overlay {
@@ -61,12 +59,10 @@
  
 #scene_box {
 	@extend %_box ;
-	@extend %inset_box_shadow1;
+	// @extend %inset_box_shadow1;
 	@extend %primaryFontColor;
-	// box-shadow: inset 1px 1px 6px 0px rgba(50, 50, 50, 0.75);
-	// color: white;
-	// border: solid 1rem $color5;
 	border: $scene_box_border;
+	@extend %inset_box_shadow1;
 	z-index: 30;
 }
 
@@ -76,9 +72,6 @@
 	@extend %bg_color_dark_primary;
 	text-align: center; //so that #continue button is centered horizontally
 	overflow-y: auto;
-	// background: $color5;
-	// color: $white;
-	// padding: 2rem;
 	padding: $fontSize32;
 }
 // footer {

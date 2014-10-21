@@ -3,7 +3,7 @@
 @import 'partials/_non-rem-sizes.scss' ;	//SPECIFIC FOR IE8 and less
 @import 'partials/_sizes.scss' ;				//* requires either '_rem-sizes.scss' or '_non-rem-sizes.scss' *
 
-@import 'partials/_ie8-variables.scss' ;	//* conunterpart of '_non-ie8-variables.scss' for border-radius, box-shadow, etc *
+@import 'partials/_ie8-variables.scss' ;	//* counterpart of '_non-ie8-variables.scss' for border-radius, box-shadow, etc *
 @import 'partials/_variables.scss' ;
 // @import 'partials/_mixins.scss' ;		//only contains mediaqueries- which are not supported in ie8
 
