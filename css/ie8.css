@@ -14,6 +14,12 @@ a:hover {
 #blow_out, #replay, #continue {
   border-radius: none; }
 
+#blow_out, #replay, #close, #continue {
+  /* no box-shadow for ie8 */ }
+
+#scene_box {
+  /* no box-shadow for ie8 */ }
+
 #alert_box {
   background: #51948e; }
 
@@ -130,10 +136,6 @@ p {
 
 #scene_box {
   border: 16px solid #51948e;
-  margin-left: -5px;
-  margin-top: -5px;
-  zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270);
   z-index: 30; }
 
 #alert_box {
@@ -142,12 +144,9 @@ p {
   padding: 32px; }
 
 .sub_content_wrapper {
+  position: absolute;
   top: 60px;
-  bottom: 60px;
-  margin-left: -5px;
-  margin-top: -5px;
-  zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270); }
+  bottom: 60px; }
 
 #banner_container, #cake_container, #balloon_container, #blow_out, #replay {
   position: absolute;
@@ -173,18 +172,6 @@ p {
 
 #balloon_container {
   z-index: 5; }
-
-#blow_out {
-  margin-left: -5px;
-  margin-top: -5px;
-  zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270); }
-
-#replay {
-  margin-left: -5px;
-  margin-top: -5px;
-  zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180), progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270); }
 
 .textbox {
   position: relative;

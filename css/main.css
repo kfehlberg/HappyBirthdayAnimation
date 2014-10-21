@@ -6,7 +6,7 @@ a:active, a:hover { outline: 0; }
 
 #blow_out, #replay, #continue { border-radius: 0.25rem; }
 
-#blow_out, #replay { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
+#blow_out, #replay, #close, #continue { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
 #scene_box { box-shadow: inset 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
