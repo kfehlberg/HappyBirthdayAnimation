@@ -9,10 +9,12 @@
         <meta name="author" content="Katie Fehlberg" />
         <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
         <!-- // <script type="text/javascript" src="js/min/modernizr_dev2_8_3-min.js"></script> -->
-        <!--[if lte IE 8]> 
-            <link href="css/ie8-and-less.css" rel="stylesheet" type="text/css" />
+        <!--[if IE 8]> 
+            <link href="css/ie8.css" rel="stylesheet" type="text/css" />
         <![endif]-->
-        <link href="css/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <!--[if !IE 8]><!-->
+            <link href="css/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <!--<![endif]-->
     </head>
     <body>
         <div id="body_wrapper">

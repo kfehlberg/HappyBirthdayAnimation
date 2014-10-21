@@ -2,11 +2,11 @@
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
 "creatorBuild": "18027",
 "files": {
-	"\/css\/ie8-and-less.css": {
+	"\/css\/ie8.css": {
 		"fileType": 16,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/ie8-and-less.css",
+		"inputAbbreviatedPath": "\/css\/ie8.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -173,15 +173,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/scss\/ie8-and-less.scss": {
+	"\/scss\/ie8.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/scss\/ie8-and-less.scss",
-		"outputAbbreviatedPath": "\/css\/ie8-and-less.css",
+		"inputAbbreviatedPath": "\/scss\/ie8.scss",
+		"outputAbbreviatedPath": "\/css\/ie8.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -253,15 +253,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/scss\/partials\/_ie8-and-less-variables.scss": {
+	"\/scss\/partials\/_ie8-layout.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/scss\/partials\/_ie8-and-less-variables.scss",
-		"outputAbbreviatedPath": "\/scss\/css\/_ie8-and-less-variables.css",
+		"inputAbbreviatedPath": "\/scss\/partials\/_ie8-layout.scss",
+		"outputAbbreviatedPath": "\/scss\/css\/_ie8-layout.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -269,15 +269,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/scss\/partials\/_ie8layout.scss": {
+	"\/scss\/partials\/_ie8-variables.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/scss\/partials\/_ie8layout.scss",
-		"outputAbbreviatedPath": "\/scss\/css\/_ie8layout.css",
+		"inputAbbreviatedPath": "\/scss\/partials\/_ie8-variables.scss",
+		"outputAbbreviatedPath": "\/scss\/css\/_ie8-variables.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
