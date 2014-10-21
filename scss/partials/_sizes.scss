@@ -1,0 +1,36 @@
+//requires either '_non-rem-sizes.scss' or '_rem-sizes.scss'
+//all sizing should be based on that font scale so that units are appropriate for browser
+
+//---------------------------------------------------------------------
+//APPLIED FONT SIZES
+    $pFontSize: $fontSize20;
+    $linkFontSize: $fontSize22;
+    $hFontSize: $fontSize24;
+
+// $headerHeight: 4.125rem; 
+$headerHeight: $fontSize60;
+$footerHeight: $headerHeight; 
+$buttonBorderWidth: $fontSize2;
+$buttonHeight: $linkFontSize * 2.25;
+
+//==========================================================================
+//   BREAKPOINTS and TWEAKPOINTS
+//========================================================================== 
+//target / context
+
+$bp-xsmall-min: $fontSize1 * 320 ;       //*320px*/
+$bp-xsmall-max: $fontSize1 * 480 ;       //*480px*/
+
+$bp-small-min: $fontSize1 * 481 ;     //*481px*/
+$bp-small-max: $fontSize1 * 640 ;         //*640px*/
+
+
+$bp-medium-min: $fontSize1 * 641 ;    //*641px*/
+$bp-medium-max: $fontSize1 * 999 ;   //*999px*/
+
+$bp-large-min: $fontSize1 * 1000 ;       //*1000px*/
+// $bp-large-max: 75em;        //*1200px*/
+$bp-large-max: $fontSize1 * 1440 ;        //*1440px*/
+
+// $bp-xlarge-min: 75.0625em;   //*1201px*/
+$bp-xlarge-min: $fontSize1 * 1441 ;   //*1441px*/
