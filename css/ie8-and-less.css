@@ -11,6 +11,17 @@ a:active,
 a:hover {
   outline: 0; }
 
+#blow_out, #replay, #continue {
+  border-radius: none; }
+
+#blow_out, #replay, #close, #continue, .sub_content_wrapper {
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.Shadow(Color=$shadowColor1, Strength=15, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=$shadowColor1 Strength=15, Direction=180); }
+
+#scene_box {
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.Shadow(Color=$shadowColor1, Strength=15, Direction=0), progid:DXImageTransform.Microsoft.Shadow(Color=$shadowColor1, Strength=15, Direction=270); }
+
 #alert_box {
   background: #51948e; }
 
@@ -31,15 +42,6 @@ body {
 
 #blow_out, #replay, #close, #continue {
   border: 2px solid white; }
-
-#blow_out, #replay, #continue {
-  border-radius: 0.25rem; }
-
-#blow_out, #replay, #close, #continue, .sub_content_wrapper {
-  box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
-
-#scene_box {
-  box-shadow: inset 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
 * {
   -webkit-box-sizing: border-box;
@@ -136,13 +138,17 @@ p {
   z-index: 750; }
 
 #scene_box {
-  border: 1rem solid #51948e;
+  border: 16px solid #51948e;
   z-index: 30; }
 
 #alert_box {
   text-align: center;
   overflow-y: auto;
   padding: 32px; }
+
+.sub_content_wrapper {
+  top: 60px;
+  bottom: 60px; }
 
 #banner_container, #cake_container, #balloon_container, #blow_out, #replay {
   position: absolute;
@@ -185,7 +191,7 @@ p {
   position: absolute;
   top: 32px;
   right: 32px;
-  border-radius: 100%; }
+  border-radius: none; }
   #close:after {
     content: "\2715"; }
 

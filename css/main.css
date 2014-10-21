@@ -4,6 +4,12 @@ a { background: transparent; }
 
 a:active, a:hover { outline: 0; }
 
+#blow_out, #replay, #continue { border-radius: 0.25rem; }
+
+#blow_out, #replay, #close, #continue, .sub_content_wrapper { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
+
+#scene_box { box-shadow: inset 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
+
 #alert_box { background: #51948e; }
 
 .sub_content_wrapper { background: #acd2ce; }
@@ -17,12 +23,6 @@ body { background: #deedeb; }
 #blow_out:active, #replay:active, #close:active, #continue:active { background: #851e31; }
 
 #blow_out, #replay, #close, #continue { border: 0.125rem solid white; }
-
-#blow_out, #replay, #continue { border-radius: 0.25rem; }
-
-#blow_out, #replay, #close, #continue, .sub_content_wrapper { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
-
-#scene_box { box-shadow: inset 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
 * { -moz-box-sizing: border-box; box-sizing: border-box; }
 
@@ -108,4 +108,3 @@ p { font-size: 1.25rem; }
 @media only screen and (max-width: 40rem) { html { font-size: 75%; } }
 @media only screen and (min-width: 62.5rem) { .sub_content_wrapper { border-radius: 0.25rem; top: 3.75rem; bottom: 3.75rem; }
   #scene_box, #alert_box { border-radius: 0.25rem; } }
-
