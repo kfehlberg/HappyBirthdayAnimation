@@ -10,7 +10,7 @@
 //================================================
 // BOX SHADOWS
 //================================================
-	$shadowColor1: rgb(50, 50, 50);
+	// $shadowColor1: #323232;
 	// $box_shadow1: 1px 1px 6px 0px $shadowColor1;
 	// %box_shadow1 {
 	// 	box-shadow: $box_shadow1
@@ -21,8 +21,8 @@
 	   //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=90),
 	   //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=180),
 	   //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=270);
-	   filter: progid:DXImageTransform.Microsoft.Shadow(Color=$shadowColor1, Strength=15, Direction=90),
-	           progid:DXImageTransform.Microsoft.Shadow(Color=$shadowColor1 Strength=15, Direction=180);
+	   filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=90),
+	           progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=180);
 	}
 	%inset_box_shadow1 {
 		zoom: 1;
@@ -30,8 +30,8 @@
 	   //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=90),
 	   //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=180),
 	   //         progid:DXImageTransform.Microsoft.Shadow(Color=#eeeeee, Strength=15, Direction=270);
-	   filter: progid:DXImageTransform.Microsoft.Shadow(Color=$shadowColor1, Strength=15, Direction=0),
-	           progid:DXImageTransform.Microsoft.Shadow(Color=$shadowColor1, Strength=15, Direction=270);
+	   filter: progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=0),
+	           progid:DXImageTransform.Microsoft.Shadow(Color=#323232, Strength=15, Direction=270);
 	}
 
 	// //VISIBILITY
