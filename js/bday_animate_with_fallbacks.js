@@ -230,7 +230,8 @@ $( window ).load(function() {
     if (yesSmil && true) {
     // if (cakeObj.className === 'svg') { //if the svg has not been replaced by png (imageFallback determined svg and smil were supported)
       smilOpeningAnimation();
-    } else if (Modernizr.cssanimations) {
+    // } else if (Modernizr.cssanimations) {
+    } else if (Modernizr.csstransforms) {
       scOpeningAnimation();
     } else {
       $(overlay).velocity("fadeOut");
@@ -269,7 +270,7 @@ $( window ).load(function() {
     // if (e.target.id === 'continue' || 'close') {    //when #continue or #close are clicked
       // determineOpeningAnimation();
     // } 
-    stopEvent(event);
+    stopEvent(e);
     // event.stopPropagation(); 
                              //event to stop traversing the DOM under all situations once it gets overheard
   }
