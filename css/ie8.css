@@ -7,6 +7,10 @@ html {
 a {
   background: transparent; }
 
+p a { color: #fd7d50; }
+
+p { line-height: 1.5; }
+
 a:active,
 a:hover {
   outline: 0; }
