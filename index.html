@@ -9,10 +9,10 @@
         <meta name="author" content="Katie Fehlberg" />
         <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
         <!-- // <script type="text/javascript" src="js/min/modernizr_dev2_8_3-min.js"></script> -->
-        <!--[if IE 8]> 
+        <!--[if lte IE 8]> 
             <link href="css/ie8.css" rel="stylesheet" type="text/css" />
         <![endif]-->
-        <!--[if !IE 8]><!-->
+        <!--[if !(lte IE 8)]><!-->
             <link href="css/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <!--<![endif]-->
     </head>
@@ -39,9 +39,11 @@
                             <!-- <param name="src" value="img/cake.svg"> -->
                         </object>
                     </div> 
-                    <a id="blow_out">Click here to blow out the candles!</a> 
-                    <a href="index.html" id="replay" >Replay</a>
-                    <a href="https://github.com/kfehlberg/HappyBirthdayAnimation" id="github">View on GitHub</a>
+                    <a id="blow_out">Click to blow out the candles!</a> 
+                    <div class="button_group">
+                        <a href="index.html" id="replay" >Replay</a>
+                        <a href="https://github.com/kfehlberg/HappyBirthdayAnimation" id="github">View on GitHub</a>
+                    </div>
                 </div>
             </div>
             <div id="overlay" class="sub_content_wrapper">
@@ -55,14 +57,14 @@
                 </div>
             </div>
         </div>
-        <!--[if !IE]> --> 
+        <!--[if !(lte IE 8)]> --> 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
         <!-- <![endif]--> 
-        <!--[if IE]> 
+        <!--[if lte IE 8]> 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
         <![endif]--> 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js"></script>
+        <script src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>
+        <script src="//cdn.jsdelivr.net/velocity/1.2.2/velocity.ui.min.js"></script>
         <script type="text/javascript" src="js/min/bday_animate_with_fallbacks-min.js"></script>
     </body>
 </html>
