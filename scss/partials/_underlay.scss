@@ -14,8 +14,6 @@
 	@extend %scene_box_contents_top_pos;
 	z-index: 15;
 }
-// #banner_obj {
-// }
 
 #cake_container {
 	@extend %scene_box_contents_pos;
@@ -23,47 +21,26 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	// padding: 1rem;
 	padding: $fontSize16;
 	z-index: 10;
 }
-// #cake_obj {
-// 	overflow: visible;
-// }
-// .no-smil,
-// .no-svg { 
-// 	#cake_obj {
-// 		@extend %absoluteCenter;
-// 		text-indent: 500px;		//move the YourBrowserDoesNotSupportSVG text out of box
-// 		overflow: hidden;		//hide the text and rest of sprite
-// 		width: 500px;
-// 		height: 500px;
-// 		background: url(../img/cake.png) no-repeat top left;
-// 		// animation: blowOut 1s steps(6) 2s 1 normal forwards; //animation class is added in javascript
-// 	}
-// }
 #balloon_container {
 	@extend %scene_box_contents_pos;
 	@extend %scene_box_contents_top_pos;
 	z-index: 5;
 }
-// #balloons_obj {
-// }
-// .no-svg #balloons_obj {
-// 	width: 100%;
-// 	height: 100%;
-// 	background-image: url(balloons.png);
-// }
 
-#blow_out {
+#blow_out { //button
 	@extend %scene_box_contents_pos;
 	@extend %animationButton;
-	// @include box_shadow1;
 }
-#replay {
+#replay { //button
 	@extend %scene_box_contents_pos;
 	@extend %animationButton;
-	// @include box_shadow1;
+}
+#github {
+	@extend %scene_box_contents_pos;
+	@extend %animationButton;
 }
 
 

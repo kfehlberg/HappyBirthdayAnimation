@@ -1,39 +1,16 @@
 //================================================
 // COLOR BASE VARIABLES
 //================================================
-	$white: rgb(255, 255, 255);
+	$white: rgb(250, 250, 250);
     $darkenWhite : darken($white, 12%);
 	$black: rgb(0, 0, 0);
 
-	// //VIEW OVER THE TOWN
-	// $color1: rgb(255, 83, 53);
-	// $color2: rgb(179, 156, 133);
-	// $color3: rgb(48, 110, 115);
-	// $color3: rgb(59, 66, 77);
-	// $color5: rgb(29, 24, 31);
-
-    //MIXED CANDY
     $color1: rgb(195,44,72); //   #C32C48; 
     $color2: rgb(253,125,80); //   #FD7D50; 
     $color3: rgb(255,177,84); //   #FFB154;
     $color4: rgb(240,231,196); //   #F0E7C4;
     $color5: rgb(81,148,142); //    #51948E;
-
-	////FINE AND MELLOW
-	// $color1:#fff4c2;
-	// $color2:#cdd1a4;
-	// $color3:#99ca9f;
-	// $color4:#614842;
-	// $color5:#3b2828;
-
-	////PEACHES AND MINT
-	// $color1: rgb(113, 169, 106);
-	// $color2: rgb(163, 195, 68);
-	// $color3: rgb(133, 138, 116);
-	// $color4: rgb(255, 77, 75);
-	// //    rgb(242, 71, 56);
-	// $color5: rgb(248, 141, 105);
-    
+ 
 //================================================
 // COLOR ALTERATED VARIABLES
 //================================================
@@ -63,5 +40,3 @@
 // COLOR ASSIGNED COMPONENTS VARIABLES
 //================================================
     $primaryFontColor: $white;
-    // $shadowColor1: rgba(50, 50, 50, 0.75);              //will not work in ie8
-

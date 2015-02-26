@@ -1,46 +1,17 @@
- // *is in gitignore file- remember to remove when actually using*
 //================================================
 // BORDER RADIUS
 //================================================
 	$border_radius_circle: none;
 	$border_radius_standard: none;
-
 	%border_radius_standard { border-radius: $border_radius_standard; }
-
 //================================================
 // BOX SHADOWS
 //================================================
-	// $shadowColor1: #323232;
-	// // $box_shadow1: 1px 1px 6px 0px $shadowColor1;
-	// // %box_shadow1 {
-	// // 	box-shadow: $box_shadow1
-	// // }
-
- //   // margin-left: -5px;
- //   // margin-top: -5px;
- //   // zoom: 1;
- //   // filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0),
- //   //       progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90),
- //   //       progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180),
- //   //       progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270);
-
-
 	%box_shadow1 {
 		/* no box-shadow for ie8 */
 		// zoom: 1;
-
 	}
 	%inset_box_shadow1 {
 		/* no box-shadow for ie8 */
 		zoom: 1;
-
 	}
-
-	// // //VISIBILITY
-	// // .no-js {
-	// // 	#underlay {
-	// // 		&:target {
-	// // 			@extend .showUnderlay;
-	// // 		}
-	// // 	}	
-	// //  }

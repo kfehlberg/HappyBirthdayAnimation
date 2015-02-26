@@ -4,8 +4,8 @@
 %buttonBase {
 	@extend %link;
 	@extend %button_bg_color_primary;
-	@extend %primaryFontColor;
-	@extend %text_center;
+	// @extend %primaryFontColor;
+	// @extend %text_center;
 	&:hover, &:focus {
 		@extend %button_bg_color_secondary;
 	}
@@ -40,7 +40,5 @@
 	display: none; //revealed in javaScript 
 	bottom: $fontSize18;
 	left: $fontSize18;
-	// bottom: 1.125rem;
-	// left: 1.125rem;
 	z-index: 20;
 }

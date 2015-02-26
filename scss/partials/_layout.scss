@@ -60,16 +60,16 @@
 #scene_box {
 	@extend %_box ;
 	@extend %inset_box_shadow1;
-	@extend %primaryFontColor;
+	// @extend %primaryFontColor;
 	border: $scene_box_border;
 	z-index: 30;
 }
 
 #alert_box {
 	@extend %_box ;
-	@extend %primaryFontColor;
+	// @extend %primaryFontColor;
 	@extend %bg_color_dark_primary;
-	text-align: center; //so that #continue button is centered horizontally
+	// text-align: center; //so that #continue button is centered horizontally
 	overflow-y: auto;
 	padding: $fontSize32;
 }
