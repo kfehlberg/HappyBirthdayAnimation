@@ -1,12 +1,16 @@
 //================================================
 // TYPOGRAPHY VARIABLES
 //================================================
-	$lineHeight: 1.45;
+	$lineHeight: 1.5;
 	$primaryFontFamily: Verdana, "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif;
 
 //================================================
 // TYPOGRAPHY EXTENDERS
 //================================================
+//---------- Font Families ----------
+
+	%primaryFontFamily { font-family: $primaryFontFamily; }
+
 	//---------- General Settings ----------
 
 	%letterSpacingNormal { letter-spacing: normal; }
@@ -15,20 +19,16 @@
 	%typeSpacingStandard {
 	    @extend %letterSpacingNormal;   
 	    line-height: $lineHeight;
-	    // margin: 0.625em 0.5rem;
 	    margin: $fontSize10 $fontSize8;
 	}
-
-	%text_center { text-align: center; }
-
-	//---------- Font Families ----------
-
-	%primaryFontFamily { font-family: $primaryFontFamily; }
-
+	
 	//---------- Font Colors ----------
-
-	%primaryFontColor { color: $primaryFontColor; }
-
+	// %lightTextOnDarkBg { -webkit-font-smoothing: antialiased; }
+    // %darkTextOnLightBg { -webkit-font-smoothing: subpixel-antialiased; }
+	%primaryFontColor { 
+		color: $primaryFontColor; 
+		-webkit-font-smoothing: antialiased; 
+	}
 	//---------- Font Sizes ----------
 
 	%linkFontSize { font-size: $linkFontSize; }
@@ -45,22 +45,28 @@
 // FONT AND TYPOGRAPHY DECLARATIONS
 //================================================
 	//---------- Global ----------
+	html {
+		@extend %primaryFontFamily;
+		@extend %primaryFontColor;
+		text-align: center;
+	}
 
 	//---------- Headings ----------
-	h2 {
+	h1 {
 	    @extend %typeSpacingStandard;
-	    @extend %primaryFontFamily;
 	    font-size: $hFontSize;
 	}
 	//---------- Paragraph ----------
 	p {
 	    @extend %typeSpacingStandard;
-	    @extend %primaryFontFamily;
 	    font-size: $pFontSize;
 	}
 
 	//---------- Links ----------
 	a {
 	    @extend %link;
-	    @extend %primaryFontFamily;
+	    @extend %primaryFontColor;
+	    p & {
+	    	font-weight: bold;
+	    }
 	}
