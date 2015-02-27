@@ -1,0 +1,73 @@
+//================================================
+// TYPOGRAPHY VARIABLES
+//================================================
+	$lineHeight: 1.5;
+	$primaryFontFamily: "Century Gothic", CenturyGothic, AppleGothic, Helvetica, "Trebuchet MS", Verdana, sans-serif;
+
+//================================================
+// TYPOGRAPHY EXTENDERS
+//================================================
+//---------- Font Families ----------
+
+	%primaryFontFamily { font-family: $primaryFontFamily; }
+
+	//---------- General Settings ----------
+
+	%letterSpacingNormal { letter-spacing: normal; }
+	%letterSpacingMore { letter-spacing: 0.025em; }
+
+	%typeSpacingStandard {
+	    @extend %letterSpacingNormal;   
+	    line-height: $lineHeight;
+	    margin: 1em $fontSize8;
+	}
+	//---------- Font Colors ----------
+	// %lightTextOnDarkBg { -webkit-font-smoothing: antialiased; }
+    // %darkTextOnLightBg { -webkit-font-smoothing: subpixel-antialiased; }
+	%primaryFontColor { 
+		color: $primaryFontColor; 
+		-webkit-font-smoothing: antialiased; 
+	}
+	//---------- Font Sizes ----------
+
+	%linkFontSize { font-size: $linkFontSize; }
+	
+	//---------- Specific Elements ----------
+
+	%link {
+	    // @extend %letterSpacingNormal; 
+	    text-decoration: none;
+	    &:hover { cursor: pointer; }
+	}
+
+//================================================
+// FONT AND TYPOGRAPHY DECLARATIONS
+//================================================
+	//---------- Global ----------
+	html {
+		@extend %primaryFontFamily;
+		@extend %primaryFontColor;
+		text-align: center;
+	}
+
+	//---------- Headings ----------
+	h1 {
+	    @extend %typeSpacingStandard;
+	    font-size: $hFontSize;
+	}
+	//---------- Paragraph ----------
+	p {
+	    @extend %typeSpacingStandard;
+	    font-size: $pFontSize;
+	}
+
+	//---------- Links ----------
+	a {
+	    @extend %link;
+	    @extend %primaryFontColor; 
+	    font-weight: bold;
+	  	p & {
+	  		&:hover, &:focus { color: $color1; }
+	  		&:active { color: $darkColor1; }
+	  	}
+	}

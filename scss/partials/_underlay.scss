@@ -1,0 +1,66 @@
+%scene_box_contents_pos {
+	position: absolute;
+	margin: auto;
+}
+%scene_box_contents_top_pos {
+	top: 0;
+	bottom: 5%;
+	left: 0;
+	right: 0;
+	overflow: hidden;		//hide balloons and banner when transitioned out of view for animation
+}
+#banner_container {
+	@extend %scene_box_contents_pos;
+	@extend %scene_box_contents_top_pos;
+	z-index: 15;
+}
+
+#cake_container {
+	@extend %scene_box_contents_pos;
+	top: 20%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: $fontSize16;
+	z-index: 10;
+}
+#balloon_container {
+	@extend %scene_box_contents_pos;
+	@extend %scene_box_contents_top_pos;
+	z-index: 5;
+}
+
+#blow_out { //button
+	@extend %scene_box_contents_pos;
+	@extend %animationButton;
+	@extend %animationButtonPos;
+}
+//----------------------
+// #replay and #github on one line
+.button_group {
+	@extend %scene_box_contents_pos;
+	@extend %animationButtonPos;
+	display: block;
+}
+#replay { //button
+	@extend %inlineAnimationButton;
+}
+#github { //button
+	@extend %inlineAnimationButton;
+}
+
+
+.js {
+	//if ( javascript in enabled in browser (html class ="js" declared by modernizr) ) 
+	//then the following buttons  and objects are hidden until revealed through animation in 'bday_animate_with_fallbacks.js'
+	#blow_out,
+	#replay, 
+	#github,
+	#balloons_obj,
+	#banner_obj
+	{ 
+		display: none; //revealed by js
+	}
+}
+
+
