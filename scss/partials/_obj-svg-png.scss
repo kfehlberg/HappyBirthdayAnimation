@@ -1,0 +1,76 @@
+.svg {
+	width: 100%;
+	height: 100%;
+}
+%svgfallbackPositioning {
+	@extend %absoluteCenter;
+	text-indent: 500px;		//move the YourBrowserDoesNotSupportSVG text out of box
+	overflow: hidden;		//hide the text and rest of sprite
+	width: 500px;
+	height: 500px;	
+}
+%cakefallback {
+	background: url(../img/cake500.png) no-repeat top left;
+}
+%balloonsfallback {
+	background: url(../img/balloons.png) no-repeat top left;
+}
+%bannerfallback {
+	background: url(../img/banner.png) no-repeat top left;
+}
+.svgfallback {
+	@extend %svgfallbackPositioning;
+	// @extend %absoluteCenter;
+	// text-indent: 500px;		//move the YourBrowserDoesNotSupportSVG text out of box
+	// overflow: hidden;		//hide the text and rest of sprite
+	// width: 500px;
+	// height: 500px;
+	&#cake_obj {
+		@extend %cakefallback;
+	}
+	&#balloons_obj {
+		@extend %balloonsfallback;
+	}
+	&#banner_obj {
+		@extend %bannerfallback;
+	}
+}
+
+.no-smil {
+	#cake_obj {
+		@extend %svgfallbackPositioning;
+		@extend %cakefallback;
+		// @extend .svgfallback;
+	}
+}
+.no-svg { 
+	.svg {
+		@extend .svgfallback;
+	}
+}
+
+	// #cake_obj {
+	// 	@extend .svgfallback;
+	// 	// @extend %absoluteCenter;
+	// 	// text-indent: 500px;		//move the YourBrowserDoesNotSupportSVG text out of box
+	// 	// overflow: hidden;		//hide the text and rest of sprite
+	// 	// width: 500px;
+	// 	// height: 500px;
+	// 	background: url(../img/cake.png) no-repeat top left;
+	// 	// animation: blowOut 1s steps(6) 2s 1 normal forwards; //animation class is added in javascript
+	// }
+// @keyframes blowOut {
+// 	from { background-position: 0px ; }
+// 	to { background-position: -3000px ; }
+// }
+// .blow_out_animation {
+// 	animation: blowOut 1s steps(6) 2s 1 normal forwards;
+// 	// animation-name: blowOut;
+// 	// animation-duration: 5s;
+// 	// animation-delay: 1s;
+// 	// animation-iteration-count: 1;
+// 	// animation-direction: normal;
+// 	// animation-timing-function: steps(6);
+// 	// animation-fill-mode: forwards;
+// 	// animation-play-state: paused;
+// }

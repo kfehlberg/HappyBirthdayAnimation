@@ -1,0 +1,49 @@
+//================================================
+//	BUTTON EXTENDERS
+//================================================
+%buttonBase {
+	@extend %link;
+	@extend %button_bg_color_primary;
+	&:hover, &:focus {
+		@extend %button_bg_color_secondary;
+	}
+	&:active {
+		@extend %button_bg_color_tertiary;
+	}
+}
+
+// %buttonLink {
+// 	@extend %buttonBase;
+// 	@extend %linkFontSize;
+// 	line-height: $buttonHeight;
+// }
+
+	%buttonC-Link {
+		@extend %buttonBase;
+		@extend %box_shadow1;
+		@extend %button_border;
+		@extend %linkFontSize;
+		display: inline-block;	
+		z-index: 770;
+	}
+	%textButton {
+		@extend %letterSpacingMore;
+		@extend %border_radius_standard;
+		padding: ($linkFontSize / 2) $linkFontSize ;
+	}
+
+
+%animationButton {
+	@extend %buttonC-Link;
+	@extend %textButton;
+}
+	%animationButtonPos {
+		bottom: $fontSize18;
+		left: $fontSize18;
+		z-index: 20;
+	}
+
+%inlineAnimationButton {
+	@extend %animationButton;
+	margin: $fontSize9;
+}

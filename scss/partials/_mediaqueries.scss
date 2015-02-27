@@ -1,0 +1,41 @@
+//================================================
+// MEDIAQUERIES
+//================================================
+
+@include mq-xsmall-max {
+	// html {
+	// 	// font-size: 65%;
+	// }
+	#blow_out,
+	.button_group {
+		right: $fontSize18;
+		left: $fontSize18;
+		// text-align: center;
+		margin: 0 auto;
+	}
+}
+@include mq-small-max {
+	html {
+		font-size: 90%;
+	}
+
+
+
+}
+// @include mq-medium-max {
+
+// }
+@include mq-large-min {
+	//if less than this size, default value pushes header and footer out of document. 
+	.sub_content_wrapper {
+		// @extend %box_shadow1; 
+		border-radius: $border_radius_standard;
+		top: $headerHeight;
+		bottom: $footerHeight;
+		box-shadow: $box_shadow1;
+	}
+	#scene_box,
+	#alert_box {
+		border-radius: $border_radius_standard;
+	}
+}

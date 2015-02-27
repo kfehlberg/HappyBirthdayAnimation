@@ -1,0 +1,108 @@
+// //==========================================================================
+// //   BREAKPOINTS and TWEAKPOINTS
+// //========================================================================== 
+// //target / context
+
+// $bp-xsmall-min: 20em;       //*320px*/
+// $bp-xsmall-max: 30em;       //*480px*/
+
+// $bp-small-max: 40em;        //*640px*/
+// $bp-small-min: 30.063em;    //*481px*/
+
+// $bp-medium-min: 40.063em;   //*641px*/
+// $bp-medium-max: 62.4375em;  //*999px*/
+
+// $bp-large-min: 62.5em;      //*1000px*/
+// // $bp-large-max: 75em;        //*1200px*/
+// $bp-large-max: 90em;        //*1440px*/
+
+// // $bp-xlarge-min: 75.0625em;   //*1201px*/
+// $bp-xlarge-min: 90.063em;   //*1441px*/
+
+//==========================================================================
+//MEDIA QUERIES
+//========================================================================== 
+
+///*-------------------------------------
+//    XSMALL SCREENS
+//-------------------------------------*/
+@mixin mq-xsmall-min /* min-width 320px, xsmall screens */{
+    @media only screen and (min-width: $bp-xsmall-min) { 
+        @content;
+    } 
+}
+@mixin mq-xsmall-min2max /*min-width: 320px and max-width 480px */ {
+    @media only screen and (min-width: $bp-xsmall-min) and (max-width: $bp-xsmall-max) { 
+         @content;
+    }    
+}
+@mixin mq-xsmall-max /* max-width 480px, mobile-only styles*/{
+    @media only screen and (max-width: $bp-xsmall-max) { 
+        @content;
+    } 
+}
+///*-------------------------------------
+//    SMALL SCREENS
+//-------------------------------------*/
+@mixin mq-small-min /* min-width 481px, small screens */{
+    @media only screen and (min-width: $bp-small-min) { 
+        @content;
+    } 
+}
+@mixin mq-small-min2max /*min-width: 481px and max-width 640px */ {
+    @media only screen and (min-width: $bp-small-min) and (max-width: $bp-small-max) { 
+         @content;
+    }    
+}
+@mixin mq-small-max /* max-width 640px */{
+    @media only screen and (max-width: $bp-small-max) { 
+        @content;
+    } 
+}
+///*-------------------------------------
+//    MEDIUM SCREENS
+//-------------------------------------*/
+// Medium screens
+@mixin mq-medium-min /* min-width 641px, medium screens */{
+    @media only screen and (min-width: $bp-medium-min) { 
+        @content;
+    } 
+}
+@mixin mq-medium-min2max /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */ {
+    @media only screen and (min-width: $bp-medium-min) and (max-width: $bp-medium-max) { 
+         @content;
+    } 
+} 
+@mixin mq-medium-max {
+    @media only screen and (max-width: $bp-medium-max) { 
+        @content;
+    } 
+}
+///*-------------------------------------
+//    LARGE SCREENS
+//-------------------------------------*/
+// Large screens
+@mixin mq-large-min /* min-width 1025px, large screens */ {
+    @media only screen and (min-width:$bp-large-min) { 
+        @content;
+    } 
+}
+@mixin mq-large-min2max/* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */{
+    @media only screen and (min-width: $bp-large-min) and (max-width: $bp-large-max) { 
+        @content;
+    } 
+}
+///*-------------------------------------
+//    XLARGE SCREENS
+//-------------------------------------*/
+// XLarge screens
+@mixin mq-xlarge-min/* min-width 1441px, xlarge screens */{
+    @media only screen and (min-width: $bp-xlarge-min) { 
+        @content;
+    } 
+}
+
+//@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+//
+//// XXLarge screens
+//@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */
