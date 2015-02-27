@@ -4,8 +4,6 @@
 /* velocity.ui.js */
 
 /*global Modernizr:true */
-// var noSmil = true;
-// var yesSmil = false;
 var yesSmil = Modernizr.smil;
 var noSmil = !Modernizr.smil;
 
@@ -128,30 +126,41 @@ $( window ).load(function() {
     // console.log('event target = ' + e.target.id + ' or for IE5-8 = ' + e.srcElement.id);
     return e.target || e.srcElement;  //e.target  is the target of the event e.srcElement is IE5-8 equivalent
   }
-  function stopPropagationOnly(e) {
-    if (!e) {                         //IE5-8
-      e.cancelBubble = true;          //IE5-8 equivalent to stopPropagation()
-    } else if (e.stopPropagation) {
-      e.stopPropagation();            //Stops event bubbling or capturing further
-    } else {
-      return false;
-    }
-  }
-  function stopEvent(e) {
+  function stopProp(e) {
     if (!e) {                         //  * IE5-8
       e.cancelBubble = true;          //    IE5-8 equivalent to stopPropagation()
-      e.returnValue = false;          //    IE5-8 equivalent to preventDefault()
-    }
-    if (e.stopPropagation) {          //  * Browser supports .stopProp
+    } else if (e.stopPropagation) {   //  * Supports .stopPropagation 
       e.stopPropagation();            //    Stops event bubbling or capturing further
+    } else {                          //  * if none of these options work- 
+      return false;                   //    return false will preventDefault and stopPropagation
+      //works in all browsers BUT will stop interpreter from processing any subsequent code within function
     }
-    if (e.preventDefault) {           //  * Browser supports .preventDef
-      e.preventDefault();             //    cancel default behavior of event
-    } else {
-      return false;                   //if none of these options work- return: false prevents default behavior and further bubbling
-                                      //works in all browsers BUT will stop interpreter from processing any subsequent code within function
-    } 
   }
+  function prevDef(e) {
+    if (!e) {                         //  * IE5-8
+      e.returnValue = false;          //    IE5-8 equivalent to preventDefault()
+    } else if (e.preventDefault) {    //  * Supports .preventDefault
+      e.preventDefault();             //    cancel default behavior of event
+    } else {                          //  * if none of these options work- 
+      return false;                   //    - return false will preventDefault and stopPropagation
+      //works in all browsers BUT will stop interpreter from processing any subsequent code within function
+    }
+  }
+  // function stopEvent(e) {
+  //   if (!e) {                         //  * IE5-8
+  //     e.cancelBubble = true;          //    IE5-8 equivalent to stopPropagation()
+  //     e.returnValue = false;          //    IE5-8 equivalent to preventDefault()
+  //   }
+  //   if (e.stopPropagation) {          //  * Browser supports .stopProp
+  //     e.stopPropagation();            //    Stops event bubbling or capturing further
+  //   }
+  //   if (e.preventDefault) {           //  * Browser supports .preventDef
+  //     e.preventDefault();             //    cancel default behavior of event
+  //   } else {
+  //     return false;                   //if none of these options work- return: false prevents default behavior and further bubbling
+  //                                     //works in all browsers BUT will stop interpreter from processing any subsequent code within function
+  //   } 
+  // }
     //http://ejohn.org/projects/flexible-javascript-events/#postcomment
   function addEvent(element, eventType, callbackFunc) {
     if (element.addEventListener) { 
@@ -192,16 +201,16 @@ $( window ).load(function() {
     });
   //------------------------------------------------
   function scOpeningAnimation() { //used in browsers that support SMIL animation(smilOpeningAnimation) AND in browsers that do not
-    $.Velocity( bannerObj, { translateY: [ -minYDistance , "0px" ] } ); //move out of view.  animated back to place in cakeContainerSequence
-    $.Velocity( balloonsObj, { translateY: [ minYDistance , "0px" ] } ); //move out of view.  animated back to place in blowOutSequence
+    $.Velocity( bannerObj, { translateY: [ -minYDistance , "0px" ] } );   //  move out of view.  animated back to place in cakeContainerSequence
+    $.Velocity( balloonsObj, { translateY: [ minYDistance , "0px" ] } );  //  move out of view.  animated back to place in blowOutSequence
     $.Velocity.RunSequence(openingSequence);
   }
   function smilOpeningAnimation() {
     scOpeningAnimation();
-    $(flames).velocity( { translateX: [ 0.8 , 0 ], translateY: [ 4.8 , 0 ] , scale: [ 0.8 , 1 ]  }, { duration:1000, loop: true });
+    $(flames).velocity( { translateX: [ 0.8 , 0 ], translateY: [ 4.8 , 0 ] , scale: [ 0.8 , 1 ]  }, { duration:1000, loop: true }); // flickering flame animation
   }
   function determineOpeningAnimation() {
-    if (yesSmil && true) { //if smil is supported
+    if (yesSmil && true) { //if SMIL is supported
       smilOpeningAnimation();
     } else  {
       scOpeningAnimation();
@@ -217,46 +226,44 @@ $( window ).load(function() {
   //------------------------------------------------
   function scFinishingAnimation() {
     $(blowOutButton).velocity( "fadeOut" , { duration: 500, display: "none" } );
-    if (yesSmil && true) {                                      //if smil animation is supported
-      $(flames).velocity( "stop");                              //stop running looped animation on flames
-      //sequence of flames blown out and smoke rising
+    if (yesSmil && true) {                                      //  * if SMIL animation is supported
+      $(flames).velocity( "stop");                              //    stop running looped animation on flames
       $(flames).velocity({ translateX: [ 4 , 0 ] , translateY: [ 24 , 0 ]  , scale: [ 0 , 1 ] }, 1000, function() {
         $(smokes).velocity( { strokeDashoffset: [ "0", "110"] }, 1500 ).velocity( { strokeDashoffset: [ "-110", "0"] }, 1500 );
-      });
-      $.Velocity.RunSequence(finishingSequence);
-    } else {                                                    //if SMIL animation is not supported,
-      $(cakeObj).velocity( "spriteSmotherNSmoke" );             //use sprite animation for blowing out candles
-      $.Velocity.RunSequence(finishingSequence);
+      });                                                       //    sequence of flames blown out and smoke rising 
+      $.Velocity.RunSequence(finishingSequence);                //    call finishing sequence
+    } else {                                                    //  * if SMIL animation is NOT supported,
+      $(cakeObj).velocity( "spriteSmotherNSmoke" );             //    use sprite animation for blowing out candles
+      $.Velocity.RunSequence(finishingSequence);                //    then call finishing sequence
     }
   }
   //================================================
   //  FUNCTION DEFS animation functions called by event listeners
   //    - event listeners are added to a parent of the buttons that are clicked 
-  //    - (http://www.kirupa.com/html5/handling_events_for_many_elements.htm)
+  //    - http://www.kirupa.com/html5/handling_events_for_many_elements.htm
   //================================================ 
   function initialAnimation(e) {
     var targetObj = getTarget(e);
     if (targetObj.id === 'continue') {                        //  * when #continue is clicked
-      determineOpeningAnimation();                            //    - figure out which animation to use/use it
-      stopEvent(e);                                           //    - event to stop traversing the DOM under all situations once it gets overheard
+      determineOpeningAnimation();                            //    call function to figure out which animation to use/use it
+      prevDef(e);                                             //    prevent default click behavior
     } else if (targetObj.id === 'modernizr' || 'velocity') {  //  * when user clicks on #modernizr or #velocity links
-      stopPropagationOnly(e);                                 //    - stops Propagation so that user may follow link
-    } else {                                                  //  * other cases
-      stopEvent(e);                                           //    - event to stop traversing the DOM under all situations once it gets overheard
+      stopProp(e);                                            //    stops Propagation so that user may follow link
+    } else {                                                  //  * when user clicks somewhere in #overlay that is not one of the links or buttons above
+      prevDef(e);
     }
   }
   function continuedAnimation(e) {
     var targetObj = getTarget(e);
-    if (targetObj.id === 'blow_out' ) {              // * when #blow_out is clicked
-      scFinishingAnimation();                        //   - call to determine which animation to use/use it
-      stopEvent(e);                                  //   - event to stop traversing the DOM under all situations once it gets overheard
-    } else if (targetObj.id === 'replay') {          // * when #replay is clicked
-      window.location.reload();                         //reload the page
-      stopEvent(e);   //event to stop traversing the DOM under all situations once it gets overheard
-    } else if (targetObj.id === 'github') {
-      stopPropagationOnly(e); //stops Propagation so that user may follow link
-    } else {
-      stopEvent(e);   //event to stop traversing the DOM under all situations once it gets overheard
+    if (targetObj.id === 'blow_out' ) {             //  * when #blow_out is clicked
+      scFinishingAnimation();                       //    call to determine which animation to use/use it
+      prevDef(e);                                   //    prevent default click behavior
+    } else if (targetObj.id === 'replay') {         //  * when #replay is clicked
+      window.location.reload();                     //    reload the page
+    } else if (targetObj.id === 'github') {         //  * when #github link is clicked
+      stopProp(e);                                  //    stops Propagation so that user may follow link
+    } else {                                        //  * other cases
+      prevDef(e);
     } 
   }
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
