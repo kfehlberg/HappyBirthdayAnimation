@@ -262,7 +262,7 @@ $( window ).load(function() {
       window.location.reload();                     //    reload the page
     } else if (targetObj.id === 'github') {         //  * when #github link is clicked
       stopProp(e);                                  //    stops Propagation so that user may follow link
-    } else {                                        //  * other cases
+    } else {                                        //  * when user clicks somewhere in #underlay that is not one of the links or buttons above
       prevDef(e);
     } 
   }
