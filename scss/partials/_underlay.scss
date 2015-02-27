@@ -33,14 +33,34 @@
 #blow_out { //button
 	@extend %scene_box_contents_pos;
 	@extend %animationButton;
+	@extend %animationButtonPos;
+}
+//----------------------
+// #replay and #github on one line
+.button_group {
+	@extend %scene_box_contents_pos;
+	@extend %animationButtonPos;
+	display: block;
 }
 #replay { //button
-	@extend %scene_box_contents_pos;
-	@extend %animationButton;
+	@extend %inlineAnimationButton;
 }
-#github {
-	@extend %scene_box_contents_pos;
-	@extend %animationButton;
+#github { //button
+	@extend %inlineAnimationButton;
+}
+
+
+.js {
+	//if ( javascript in enabled in browser (html class ="js" declared by modernizr) ) 
+	//then the following buttons  and objects are hidden until revealed through animation in 'bday_animate_with_fallbacks.js'
+	#blow_out,
+	#replay, 
+	#github,
+	#balloons_obj,
+	#banner_obj
+	{ 
+		display: none; //revealed by js
+	}
 }
 
 

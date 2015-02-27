@@ -11,15 +11,14 @@ a:active,
 a:hover {
   outline: 0; }
 
-#blow_out, #replay, #github, #continue {
-  border-radius: none; }
+#replay, #github, #blow_out, #continue {
+  border-radius: 4px; }
 
-#blow_out, #replay, #github, #close, #continue {
-  /* no box-shadow for ie8 */ }
+#replay, #github, #blow_out, #continue {
+  box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
 #scene_box {
-  /* no box-shadow for ie8 */
-  zoom: 1; }
+  box-shadow: inset 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
 #alert_box {
   background: #51948e; }
@@ -30,22 +29,22 @@ a:hover {
 body {
   background: #deedeb; }
 
-#blow_out, #replay, #github, #close, #continue {
+#replay, #github, #blow_out, #continue {
   background: #fd7d50; }
 
-#blow_out:hover, #replay:hover, #github:hover, #close:hover, #continue:hover, #blow_out:focus, #replay:focus, #github:focus, #close:focus, #continue:focus {
+#replay:hover, #github:hover, #blow_out:hover, #continue:hover, #replay:focus, #github:focus, #blow_out:focus, #continue:focus {
   background: #c32c48; }
 
-#blow_out:active, #replay:active, #github:active, #close:active, #continue:active {
+#replay:active, #github:active, #blow_out:active, #continue:active {
   background: #851e31; }
 
-#blow_out, #replay, #github, #close, #continue {
-  border: 2px solid #fafafa; }
+#replay, #github, #blow_out, #continue {
+  border: 2px solid white; }
 
 * {
   box-sizing: border-box; }
 
-#close:after, .svgfallback, .no-svg .svg, .no-smil #cake_obj {
+.svgfallback, .no-svg .svg, .no-smil #cake_obj {
   margin: auto;
   top: 0;
   left: 0;
@@ -60,28 +59,28 @@ html, body {
   padding: 0; }
 
 html {
-  font-family: Verdana, "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif; }
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, Helvetica, "Trebuchet MS", Verdana, sans-serif; }
 
-h1, p, a, #blow_out, #replay, #github, #close, #continue {
+h1, p {
   letter-spacing: normal; }
 
-#blow_out, #replay, #github, #continue {
+#replay, #github, #blow_out, #continue {
   letter-spacing: 0.025em; }
 
 h1, p {
   line-height: 1.5;
-  margin: 10px 8px; }
+  margin: 1em 8px; }
 
 html, a {
-  color: #fafafa;
+  color: white;
   -webkit-font-smoothing: antialiased; }
 
-#blow_out, #replay, #github, #close, #continue {
+#replay, #github, #blow_out, #continue {
   font-size: 22px; }
 
-a, #blow_out, #replay, #github, #close, #continue {
+a, #replay, #github, #blow_out, #continue {
   text-decoration: none; }
-  a:hover, #blow_out:hover, #replay:hover, #github:hover, #close:hover, #continue:hover {
+  a:hover, #replay:hover, #github:hover, #blow_out:hover, #continue:hover {
     cursor: pointer; }
 
 html {
@@ -93,24 +92,27 @@ h1 {
 p {
   font-size: 20px; }
 
-p a {
+a {
   font-weight: bold; }
+  p a:hover, p a:focus {
+    color: #c32c48; }
+  p a:active {
+    color: #851e31; }
 
-#blow_out:active, #replay:active, #github:active, #close:active, #continue:active {
-  border-color: #dbdbdb; }
-
-#blow_out, #replay, #github, #close, #continue {
+#replay, #github, #blow_out, #continue {
   display: inline-block;
   z-index: 770; }
 
-#blow_out, #replay, #github, #continue {
+#replay, #github, #blow_out, #continue {
   padding: 11px 22px; }
 
-#blow_out, #replay, #github {
-  display: none;
+#blow_out, .button_group {
   bottom: 18px;
   left: 18px;
   z-index: 20; }
+
+#replay, #github {
+  margin: 9px; }
 
 #body_wrapper {
   margin-left: auto;
@@ -151,7 +153,7 @@ p a {
   top: 60px;
   bottom: 60px; }
 
-#banner_container, #cake_container, #balloon_container, #blow_out, #replay, #github {
+#banner_container, #cake_container, #balloon_container, #blow_out, .button_group {
   position: absolute;
   margin: auto; }
 
@@ -176,23 +178,22 @@ p a {
 #balloon_container {
   z-index: 5; }
 
+.button_group {
+  display: block; }
+
+.js #blow_out,
+.js #replay,
+.js #github,
+.js #balloons_obj,
+.js #banner_obj {
+  display: none; }
+
 .textbox {
   position: relative;
   display: block;
   padding: 24.75px;
   max-width: 45em;
   margin: 16px auto 32px; }
-
-#close {
-  width: 33px;
-  height: 33px;
-  line-height: 1.3;
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  border-radius: none; }
-  #close:after {
-    content: "\2715"; }
 
 #continue {
   position: relative; }

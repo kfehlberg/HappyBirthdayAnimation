@@ -2,7 +2,7 @@
 // TYPOGRAPHY VARIABLES
 //================================================
 	$lineHeight: 1.5;
-	$primaryFontFamily: Verdana, "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif;
+	$primaryFontFamily: "Century Gothic", CenturyGothic, AppleGothic, Helvetica, "Trebuchet MS", Verdana, sans-serif;
 
 //================================================
 // TYPOGRAPHY EXTENDERS
@@ -19,9 +19,8 @@
 	%typeSpacingStandard {
 	    @extend %letterSpacingNormal;   
 	    line-height: $lineHeight;
-	    margin: $fontSize10 $fontSize8;
+	    margin: 1em $fontSize8;
 	}
-	
 	//---------- Font Colors ----------
 	// %lightTextOnDarkBg { -webkit-font-smoothing: antialiased; }
     // %darkTextOnLightBg { -webkit-font-smoothing: subpixel-antialiased; }
@@ -36,7 +35,7 @@
 	//---------- Specific Elements ----------
 
 	%link {
-	    @extend %letterSpacingNormal; 
+	    // @extend %letterSpacingNormal; 
 	    text-decoration: none;
 	    &:hover { cursor: pointer; }
 	}
@@ -65,8 +64,10 @@
 	//---------- Links ----------
 	a {
 	    @extend %link;
-	    @extend %primaryFontColor;
-	    p & {
-	    	font-weight: bold;
-	    }
+	    @extend %primaryFontColor; 
+	    font-weight: bold;
+	  	p & {
+	  		&:hover, &:focus { color: $color1; }
+	  		&:active { color: $darkColor1; }
+	  	}
 	}

@@ -4,22 +4,19 @@
 %buttonBase {
 	@extend %link;
 	@extend %button_bg_color_primary;
-	// @extend %primaryFontColor;
-	// @extend %text_center;
 	&:hover, &:focus {
 		@extend %button_bg_color_secondary;
 	}
 	&:active {
 		@extend %button_bg_color_tertiary;
-		border-color: $darkenWhite;
 	}
 }
 
-%buttonLink {
-	@extend %buttonBase;
-	@extend %linkFontSize;
-	line-height: $buttonHeight;
-}
+// %buttonLink {
+// 	@extend %buttonBase;
+// 	@extend %linkFontSize;
+// 	line-height: $buttonHeight;
+// }
 
 	%buttonC-Link {
 		@extend %buttonBase;
@@ -34,11 +31,19 @@
 		@extend %border_radius_standard;
 		padding: ($linkFontSize / 2) $linkFontSize ;
 	}
+
+
 %animationButton {
 	@extend %buttonC-Link;
 	@extend %textButton;
-	display: none; //revealed in javaScript 
-	bottom: $fontSize18;
-	left: $fontSize18;
-	z-index: 20;
+}
+	%animationButtonPos {
+		bottom: $fontSize18;
+		left: $fontSize18;
+		z-index: 20;
+	}
+
+%inlineAnimationButton {
+	@extend %animationButton;
+	margin: $fontSize9;
 }

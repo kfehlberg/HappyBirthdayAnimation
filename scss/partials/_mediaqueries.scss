@@ -3,24 +3,22 @@
 //================================================
 
 @include mq-xsmall-max {
-	html {
-		font-size: 65%;
-	}
+	// html {
+	// 	// font-size: 65%;
+	// }
 	#blow_out,
-	#replay {
-		// right: 1.125rem;
-		// left: 1.125rem;
+	.button_group {
 		right: $fontSize18;
 		left: $fontSize18;
-		text-align: center;
+		// text-align: center;
 		margin: 0 auto;
-		letter-spacing: normal;
 	}
 }
 @include mq-small-max {
 	html {
-		font-size: 75%;
+		font-size: 90%;
 	}
+
 
 
 }

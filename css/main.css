@@ -4,9 +4,9 @@ a { background: transparent; }
 
 a:active, a:hover { outline: 0; }
 
-#blow_out, #replay, #github, #continue { border-radius: 0.25rem; }
+#replay, #github, #blow_out, #continue { border-radius: 0.25rem; }
 
-#blow_out, #replay, #github, #close, #continue { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
+#replay, #github, #blow_out, #continue { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
 #scene_box { box-shadow: inset 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
@@ -16,34 +16,34 @@ a:active, a:hover { outline: 0; }
 
 body { background: #deedeb; }
 
-#blow_out, #replay, #github, #close, #continue { background: #fd7d50; }
+#replay, #github, #blow_out, #continue { background: #fd7d50; }
 
-#blow_out:hover, #replay:hover, #github:hover, #close:hover, #continue:hover, #blow_out:focus, #replay:focus, #github:focus, #close:focus, #continue:focus { background: #c32c48; }
+#replay:hover, #github:hover, #blow_out:hover, #continue:hover, #replay:focus, #github:focus, #blow_out:focus, #continue:focus { background: #c32c48; }
 
-#blow_out:active, #replay:active, #github:active, #close:active, #continue:active { background: #851e31; }
+#replay:active, #github:active, #blow_out:active, #continue:active { background: #851e31; }
 
-#blow_out, #replay, #github, #close, #continue { border: 0.125rem solid #fafafa; }
+#replay, #github, #blow_out, #continue { border: 0.125rem solid white; }
 
 * { box-sizing: border-box; }
 
-#close:after, .svgfallback, .no-svg .svg, .no-smil #cake_obj { margin: auto; top: 0; left: 0; bottom: 0; right: 0; position: absolute; }
+.svgfallback, .no-svg .svg, .no-smil #cake_obj { margin: auto; top: 0; left: 0; bottom: 0; right: 0; position: absolute; }
 
 html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
 
-html { font-family: Verdana, "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif; }
+html { font-family: "Century Gothic", CenturyGothic, AppleGothic, Helvetica, "Trebuchet MS", Verdana, sans-serif; }
 
-h1, p, a, #blow_out, #replay, #github, #close, #continue { letter-spacing: normal; }
+h1, p { letter-spacing: normal; }
 
-#blow_out, #replay, #github, #continue { letter-spacing: 0.025em; }
+#replay, #github, #blow_out, #continue { letter-spacing: 0.025em; }
 
-h1, p { line-height: 1.5; margin: 0.625rem 0.5rem; }
+h1, p { line-height: 1.5; margin: 1em 0.5rem; }
 
-html, a { color: #fafafa; -webkit-font-smoothing: antialiased; }
+html, a { color: white; -webkit-font-smoothing: antialiased; }
 
-#blow_out, #replay, #github, #close, #continue { font-size: 1.375rem; }
+#replay, #github, #blow_out, #continue { font-size: 1.375rem; }
 
-a, #blow_out, #replay, #github, #close, #continue { text-decoration: none; }
-a:hover, #blow_out:hover, #replay:hover, #github:hover, #close:hover, #continue:hover { cursor: pointer; }
+a, #replay, #github, #blow_out, #continue { text-decoration: none; }
+a:hover, #replay:hover, #github:hover, #blow_out:hover, #continue:hover { cursor: pointer; }
 
 html { text-align: center; }
 
@@ -51,15 +51,17 @@ h1 { font-size: 1.875rem; }
 
 p { font-size: 1.25rem; }
 
-p a { font-weight: bold; }
+a { font-weight: bold; }
+p a:hover, p a:focus { color: #c32c48; }
+p a:active { color: #851e31; }
 
-#blow_out:active, #replay:active, #github:active, #close:active, #continue:active { border-color: #dbdbdb; }
+#replay, #github, #blow_out, #continue { display: inline-block; z-index: 770; }
 
-#blow_out, #replay, #github, #close, #continue { display: inline-block; z-index: 770; }
+#replay, #github, #blow_out, #continue { padding: 0.6875rem 1.375rem; }
 
-#blow_out, #replay, #github, #continue { padding: 0.6875rem 1.375rem; }
+#blow_out, .button_group { bottom: 1.125rem; left: 1.125rem; z-index: 20; }
 
-#blow_out, #replay, #github { display: none; bottom: 1.125rem; left: 1.125rem; z-index: 20; }
+#replay, #github { margin: 0.5625rem; }
 
 #body_wrapper { margin-left: auto; margin-right: auto; max-width: 62.4375rem; width: 100%; display: block; }
 
@@ -75,7 +77,7 @@ p a { font-weight: bold; }
 
 #alert_box { overflow-y: auto; padding: 2rem; }
 
-#banner_container, #cake_container, #balloon_container, #blow_out, #replay, #github { position: absolute; margin: auto; }
+#banner_container, #cake_container, #balloon_container, #blow_out, .button_group { position: absolute; margin: auto; }
 
 #banner_container, #balloon_container { top: 0; bottom: 5%; left: 0; right: 0; overflow: hidden; }
 
@@ -85,10 +87,11 @@ p a { font-weight: bold; }
 
 #balloon_container { z-index: 5; }
 
-.textbox { position: relative; display: block; padding: 1.546875rem; max-width: 45em; margin: 1rem auto 2rem; }
+.button_group { display: block; }
 
-#close { width: 2.0625rem; height: 2.0625rem; line-height: 1.3; position: absolute; top: 2rem; right: 2rem; border-radius: 100%; }
-#close:after { content: "\2715"; }
+.js #blow_out, .js #replay, .js #github, .js #balloons_obj, .js #banner_obj { display: none; }
+
+.textbox { position: relative; display: block; padding: 1.546875rem; max-width: 45em; margin: 1rem auto 2rem; }
 
 #continue { position: relative; }
 
@@ -104,8 +107,7 @@ p a { font-weight: bold; }
 
 .showUnderlay, .no-js #underlay:target { z-index: 800; }
 
-@media only screen and (max-width: 30rem) { html { font-size: 65%; }
-  #blow_out, #replay { right: 1.125rem; left: 1.125rem; text-align: center; margin: 0 auto; letter-spacing: normal; } }
-@media only screen and (max-width: 40rem) { html { font-size: 75%; } }
+@media only screen and (max-width: 30rem) { #blow_out, .button_group { right: 1.125rem; left: 1.125rem; margin: 0 auto; } }
+@media only screen and (max-width: 40rem) { html { font-size: 90%; } }
 @media only screen and (min-width: 62.5rem) { .sub_content_wrapper { border-radius: 0.25rem; top: 3.75rem; bottom: 3.75rem; box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
   #scene_box, #alert_box { border-radius: 0.25rem; } }
