@@ -30,17 +30,19 @@
 	z-index: 5;
 }
 
-#blow_out { //button
-	@extend %scene_box_contents_pos;
-	@extend %animationButton;
-	@extend %animationButtonPos;
-}
+
 //----------------------
-// #replay and #github on one line
+// #replay and #github on one line *and blow_out just in case no-js
 .button_group {
 	@extend %scene_box_contents_pos;
 	@extend %animationButtonPos;
 	display: block;
+}
+#blow_out { //button
+	@extend %inlineAnimationButton;
+	// @extend %scene_box_contents_pos;
+	// @extend %animationButton;
+	// @extend %animationButtonPos;
 }
 #replay { //button
 	@extend %inlineAnimationButton;
@@ -50,17 +52,18 @@
 }
 
 
-.js {
-	//if ( javascript in enabled in browser (html class ="js" declared by modernizr) ) 
-	//then the following buttons  and objects are hidden until revealed through animation in 'bday_animate_with_fallbacks.js'
-	#blow_out,
-	#replay, 
-	#github,
-	#balloons_obj,
-	#banner_obj
-	{ 
-		display: none; //revealed by js
-	}
-}
+// .js.smil.svg {
+// // 	//if ( javascript in enabled in browser (html class ="js" declared by modernizr) ) 
+// // 	//then the following buttons  and objects are hidden until revealed through animation in 'bday_animate_with_fallbacks.js'
+// 	#blow_out,
+// 	#replay, 
+// 	#github,
+// // 	#balloons_obj,
+// // #banner_obj,
+// // 	#cake_obj
+// 	{ 
+// 		display: none; //revealed by js
+// 	}
+// }
 
 

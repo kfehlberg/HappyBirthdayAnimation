@@ -6,9 +6,10 @@
 /*jslint browser: true, plusplus: true */
 /*global $, jQuery, alert, console,  Modernizr*/
 
-var smilSupport = Modernizr.smil ? true : false,
-    svgSupport = Modernizr.svg ? true : false;
-
+var smilSupport = Modernizr.smil,
+    svgSupport = Modernizr.svg;
+    // console.log('smilSupport = ' + smilSupport);
+    // console.log('svgSupport = ' + svgSupport);
 $(window).load(function () {
     // console.log( 'window loaded' );
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -41,9 +42,10 @@ $(window).load(function () {
             { elements: githubButton, properties: "fadeIn", options: { duration: 500, display: "inline-block", sequenceQueue: false } } //show github button at end of animation
         ],
         //__________SMIL ANIMATION VARS____________
-        svgCakeDoc = svgSupport ? cakeObj.contentDocument : null,                   //    Get the SVG document inside the Object tag  
+        svgCakeDoc = svgSupport ? cakeObj.contentDocument : null,                 //    if SVG is supported, Get the SVG document inside the Object tag  
         flames = smilSupport ? svgCakeDoc.querySelectorAll(".flame_group") : null,//    if SMIL animation is supported, any svg element in cake.svg w/ .flame_group
         smokes = smilSupport ? svgCakeDoc.querySelectorAll(".smoke") : null;      //    if SMIL animation is supported, any svg element in cake.svg w/ .smoke
+        // console.log('flames defined as ' + flames);
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //        FUNCTIONS DEFINED
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,7 +76,7 @@ $(window).load(function () {
         if (obj.hasAttribute('data')) {
             obj.removeAttribute('data');
         }
-        if (obj.className === 'svg') {
+        if (obj.className === 'obSvg') {
             obj.className = 'svgfallback';
             // var newobjClass = obj.className;
             // console.log('new objClass = ' + newobjClass);

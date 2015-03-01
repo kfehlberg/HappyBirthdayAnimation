@@ -1,0 +1,101 @@
+/*no-js fallbacks */
+//==================================
+//	extenders and keyframes
+//==================================
+@keyframes blowOut {
+	from { background-position: 0px ; }
+	to { background-position: -3000px ; }
+}
+
+//====================================================================
+//	.no-js transitions, transforms, and animation fallbacks
+//====================================================================
+%noShow {
+	visibility: hidden;
+	opacity: 0;
+	// transition-duration: 0.5s;
+}
+%visible {
+	visibility: visible;
+	opacity: 1;
+}
+.no-js {
+	//==================================
+	//	Initial states before transitions
+	//==================================
+	#balloons_obj { //	hide until #underlay:target, then transition to visible
+		@extend %noShow;
+		// visibility: hidden;
+		// opacity: 0;
+		transform: translateY(500px);
+	}
+	#replay,
+	#github,
+	#blow_out {	//	hide until, for #replay and #github - #underlay:target, for #blow_out - #demo:target
+		@extend %noShow;
+		// visibility: hidden;
+		// opacity: 0;
+		// transition: visibility 0s linear 1s, opacity 0.5s linear 1s;
+	}
+	#alert_box,
+	#overlay {	//inital opacity, to be transitioned when #demo:target
+		@extend %visible;
+		// opacity: 1;
+	}
+	//==================================
+	//	Effects of clicking the #continue button ("view demo")
+	//==================================
+	#demo {	
+		&:target {	//	happens when clicking #continue button 
+			#alert_box {
+				opacity: 0;
+				transition: opacity 1s ease;
+			}
+			#overlay {
+				opacity: 0;
+				z-index: -1;
+				transition: opacity 1s ease, z-index 0s linear 1s;
+			}
+			#blow_out {
+				@extend %visible;
+				// visibility: visible;
+				// opacity: 1;
+				transition: visibility 0s linear 1s, opacity 0.5s linear 1s;
+			}
+		}
+	}
+	//==================================
+	//	Effects of clicking the #blow_out button ("click to blow out the candles")
+	//==================================
+	#underlay {
+		&:target { 	//	happens when clicking the #blow_out button
+			@extend .showUnderlay; // z-index: 800;
+			#cake_fallback {
+				animation: blowOut 2s steps(6) 1s 1 normal forwards;
+				// animation-name: blowOut;
+				// animation-duration: 2s;
+				// animation-delay: 1s;
+				// animation-iteration-count: 1;
+				// animation-direction: normal;
+				// animation-timing-function: steps(6);
+				// animation-fill-mode: forwards;
+				// animation-play-state: paused;
+			}	
+			#blow_out { display: none; }// hide so that only the other buttons are seen
+			#replay, 
+			#github {	// transition in visibility after #cake_fallback blowOut animation occurs and the #balloons_obj transitions
+				@extend %visible;
+				// visibility: visible;
+				// opacity: 1;
+				transition: visibility 0s linear 4s, opacity 0.5s linear 4s;
+			}
+			#balloons_obj{ //transition in visiblity and create illusion of floating up after #cake_fallback blowOut animation occurs
+				@extend %visible;
+				// visibility: visible;
+				// opacity: 1;
+				transform: translateY(0px);
+				transition: visibility 0s linear 3s, opacity 0.5s linear 3s, transform 3s ease-out 3s;
+			}
+		}
+	}
+ }
