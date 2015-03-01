@@ -6,8 +6,7 @@
 /*jslint browser: true, plusplus: true */
 /*global $, jQuery, alert, console,  Modernizr*/
 
-var smilSupport = Modernizr.smil,
-    svgSupport = Modernizr.svg;
+
     // console.log('smilSupport = ' + smilSupport);
     // console.log('svgSupport = ' + svgSupport);
 $(window).load(function () {
@@ -15,7 +14,9 @@ $(window).load(function () {
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //        GLOBAL VARS DEFINED
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    var overlay = document.getElementById("overlay"),
+    var smilSupport = Modernizr.smil,
+        svgSupport = Modernizr.svg,
+        overlay = document.getElementById("overlay"),
         cakeObj = document.getElementById("cake_obj"),
         bannerObj = document.getElementById("banner_obj"),
         balloonsObj = document.getElementById("balloons_obj"),
@@ -67,7 +68,8 @@ $(window).load(function () {
                     var svgElem = objDoc.querySelector('svg');
                     svgElem.setAttribute('visibility', 'hidden');   //  hide svg (so that we can serve png image)
                 }
-                // } else {
+                // else {
+
                 //    console.log('Changing svg to png. obj.contentDocument is null or undef so we do not change the visibility');
                 // }
                 obj.removeAttribute('type');
