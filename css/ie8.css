@@ -8,8 +8,6 @@ a:active, a:hover { outline: 0; }
 
 #blow_out, #replay, #github, #continue { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
-#scene_box { box-shadow: inset 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
-
 #alert_box { background: #51948e; }
 
 .sub_content_wrapper { background: #acd2ce; }
@@ -24,19 +22,15 @@ body { background: #deedeb; }
 
 #blow_out, #replay, #github, #continue { border: 2px solid white; }
 
-* { box-sizing: border-box; }
-
-.svgfallback, .no-js #cake_fallback { margin: auto; top: 0; left: 0; bottom: 0; right: 0; position: absolute; }
+* { -moz-box-sizing: border-box; box-sizing: border-box; }
 
 html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
 
 html { font-family: "Century Gothic", CenturyGothic, AppleGothic, Helvetica, "Trebuchet MS", Verdana, sans-serif; }
 
-h1, p { letter-spacing: normal; }
-
 #blow_out, #replay, #github, #continue { letter-spacing: 0.025em; }
 
-h1, p { line-height: 1.5; margin: 1em 8px; }
+h1, p { letter-spacing: normal; line-height: 1.5; margin: 1em 8px; }
 
 html, a { color: white; -webkit-font-smoothing: antialiased; }
 
@@ -73,11 +67,9 @@ p a:active { color: #851e31; }
 
 #overlay { z-index: 750; }
 
-#scene_box { border: 16px solid #51948e; z-index: 30; }
+#scene_box { z-index: 30; }
 
 #alert_box { overflow-y: auto; padding: 32px; }
-
-.sub_content_wrapper { position: absolute; top: 60px; bottom: 60px; }
 
 #banner_container, #cake_container, #balloon_container, .button_group { position: absolute; margin: auto; }
 
@@ -95,20 +87,18 @@ p a:active { color: #851e31; }
 
 #continue { position: relative; }
 
-.obSvg { width: 100%; height: 100%; }
+.svg .obSvg { width: 100%; height: 100%; }
 
-.svgfallback, .no-js #cake_fallback { text-indent: 500px; overflow: hidden; width: 500px; height: 500px; }
+.svgfallback#cake_obj, .svgfallback#balloons_obj, .svgfallback#banner_obj, .no-svg #cake_obj, .no-svg #balloons_obj, .no-svg #banner_obj, .no-js #cake_fallback { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; display: block; width: 500px; height: 500px; text-indent: 500px; overflow: hidden; }
 
-.svgfallback#cake_obj, .no-js #cake_fallback { background: url(../img/cake500.png) no-repeat top left; }
+.svgfallback#cake_obj, .no-svg #cake_obj, .no-js #cake_fallback { background: url(../img/cake500.png) no-repeat top left; }
 
-.svgfallback#balloons_obj { background: url(../img/balloons.png) no-repeat top left; }
+.svgfallback#balloons_obj, .no-svg #balloons_obj { background: url(../img/balloons.png) no-repeat top left; }
 
-.svgfallback#banner_obj { background: url(../img/banner.png) no-repeat top left; }
+.svgfallback#banner_obj, .no-svg #banner_obj { background: url(../img/banner.png) no-repeat top left; }
 
-.js #cake_fallback { display: none; }
-
-.no-js #cake_obj { display: none; }
+.js #cake_fallback, .no-js #cake_obj { display: none; }
 
 .showUnderlay { z-index: 800; }
 
-.js #blow_out, .js #replay, .js #github, .js #balloons_obj, .js #banner_obj { display: none; }
+.svg #blow_out, .svg #replay, .svg #github, .svg #balloons_obj, .svg #banner_obj { display: none; }

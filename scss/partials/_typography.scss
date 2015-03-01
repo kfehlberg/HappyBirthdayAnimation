@@ -17,7 +17,8 @@
 	%letterSpacingMore { letter-spacing: 0.025em; }
 
 	%typeSpacingStandard {
-	    @extend %letterSpacingNormal;   
+	    // @extend %letterSpacingNormal;   
+	    letter-spacing: normal;
 	    line-height: $lineHeight;
 	    margin: 1em $fontSize8;
 	}

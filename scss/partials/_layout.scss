@@ -37,8 +37,8 @@
 
 #scene_box {
 	@extend %_box ;
-	@extend %inset_box_shadow1;
-	border: $scene_box_border;
+	// @extend %inset_box_shadow1;
+	// border: $scene_box_border;
 	z-index: 30;
 }
 

@@ -1,13 +1,17 @@
-.obSvg {
+.svg .obSvg {
 	width: 100%;
 	height: 100%;
 }
 %svgfallbackPositioning {
-	@extend %absoluteCenter;
-	text-indent: 500px;		//move the YourBrowserDoesNotSupportSVG text out of box
-	overflow: hidden;		//hide the text and rest of sprite
+	position: absolute;
+	top: 0; bottom: 0;
+	left: 0; right: 0;
+	margin: auto;  
+	display: block;
 	width: 500px;
 	height: 500px;	
+	text-indent: 500px;		//move the YourBrowserDoesNotSupportSVG text out of box
+	overflow: hidden;		//hide the text and rest of sprite	
 }
 %cakefallback {
 	background: url(../img/cake500.png) no-repeat top left;
@@ -19,38 +23,43 @@
 	background: url(../img/banner.png) no-repeat top left;
 }
 .svgfallback {
-	@extend %svgfallbackPositioning;
-	// @extend %absoluteCenter;
-	// text-indent: 500px;		//move the YourBrowserDoesNotSupportSVG text out of box
-	// overflow: hidden;		//hide the text and rest of sprite
-	// width: 500px;
-	// height: 500px;
 	&#cake_obj {
+		@extend %svgfallbackPositioning;
 		@extend %cakefallback;
 	}
 	&#balloons_obj {
+		@extend %svgfallbackPositioning;
 		@extend %balloonsfallback;
 	}
 	&#banner_obj {
+		@extend %svgfallbackPositioning;
 		@extend %bannerfallback;
 	}
 }
-.js {
-	#cake_fallback {
-		display: none;
+.no-svg {
+	#cake_obj {
+		@extend %svgfallbackPositioning;
+		@extend %cakefallback;
 	}
+	#balloons_obj {
+		@extend %svgfallbackPositioning;
+		@extend %balloonsfallback;
+	}
+	#banner_obj {
+		@extend %svgfallbackPositioning;
+		@extend %bannerfallback;
+	}
+}
+.js #cake_fallback,
+.no-js #cake_obj {
+	display: none;
 }
 .no-js {
 	#cake_fallback {
 		@extend %svgfallbackPositioning;
 		@extend %cakefallback;
 	}
-	#cake_obj {
-		display: none;
-	}
+	// #cake_obj {
+	// 	display: none;
+	// }
 }
-// .no-svg { 
-// 	.obSvg {
-// 		@extend .svgfallback;
-// 	}
-// }
