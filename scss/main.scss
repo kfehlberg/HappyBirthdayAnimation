@@ -1,11 +1,9 @@
 @import 'partials/_normalize.scss' ;
 
 @import 'partials/_rem-sizes.scss' ;			//includes rem units *see ie8.scss for non-rem sizes
-
 @import 'partials/_sizes.scss' ;				//* requires either '_rem-sizes.scss' or '_non-rem-sizes.scss' *
 @import 'partials/_variables.scss' ;
 @import 'partials/_mixins.scss' ;
-
 @import 'partials/_borders-backgrounds.scss ';
 
 @import 'partials/_globals.scss' ;
@@ -13,13 +11,10 @@
 @import 'partials/_buttons.scss' ;
 
 @import 'partials/_layout.scss' ;
-
 @import 'partials/_underlay.scss' ;
 @import 'partials/_overlay.scss' ;
 
 @import 'partials/_obj-svg-png.scss' ;			// <object> svg styling and png fallbacks
-@import 'partials/_visibility.scss' ;			//no-js fallbacks 
+@import 'partials/_visibility.scss' ;			
 @import 'partials/_mediaqueries.scss' ;
-
 @import 'partials/_no-js.scss' ;
-
