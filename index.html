@@ -7,7 +7,8 @@
         <title>Happy Birthday Animation</title>
         <meta name="description" content="An interactive animation using velocity.js with browser fallbacks" />    
         <meta name="author" content="Katie Fehlberg" />
-        <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
+        <!-- // <script src="http://modernizr.com/downloads/modernizr-latest.js"></script> -->
+        <script type="text/javascript" src="js/min/modernizr.custom.83638-min.js"></script> 
         <!--[if lte IE 8]> 
             <link href="css/ie8.css" rel="stylesheet" type="text/css" />
         <![endif]-->
@@ -15,30 +16,32 @@
             <link href="css/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <!--<![endif]-->
     </head>
-    <body>
+    <body id="demo">
         <div id="body_wrapper">
             <div id="underlay" class="sub_content_wrapper">
                 <div id="scene_box">
                     <div id="banner_container">
-                        <object id="banner_obj" type="image/svg+xml" data="img/banner.svg" class="svg">
+                        <object id="banner_obj" type="image/svg+xml" data="img/banner.svg" class="obSvg">
                             <!-- <param name="src" value="img/banner.svg"> -->
                             Your browser does&nbsp;NOT support SVG
                         </object>
                     </div>
                     <div id="balloon_container">
-                        <object id="balloons_obj" type="image/svg+xml" data="img/balloons.svg" class="svg">
+                        <object id="balloons_obj" type="image/svg+xml" data="img/balloons.svg" class="obSvg">
                             <!-- <param name="src" value="img/balloons.svg"> -->
                             Your browser does&nbsp;NOT support SVG
                         </object>
                     </div>
                     <div id="cake_container"> 
-                        <object id="cake_obj" type="image/svg+xml" data="img/cake.svg" class="svg">
+                        <div id="cake_fallback"></div>
+                        <object id="cake_obj" type="image/svg+xml" data="img/cake.svg" class="obSvg">
                             Your browser does&nbsp;NOT support SVG
                             <!-- <param name="src" value="img/cake.svg"> -->
                         </object>
                     </div> 
-                    <a id="blow_out">Click to blow out the candles!</a> 
                     <div class="button_group">
+                        <a href="#underlay" id="blow_out">Click to blow out the candles!</a> 
+                    <!-- <div class="button_group"> -->
                         <a href="index.html" id="replay" >Replay</a>
                         <a href="https://github.com/kfehlberg/HappyBirthdayAnimation" id="github">View on GitHub</a>
                     </div>
@@ -51,7 +54,7 @@
                         <h1>Happy Birthday Animation</h1>
                         <p>This birthday greeting is animated using various methods with fallbacks for older browsers. The SMIL animations are called for SVG objects using <a href="https://github.com/julianshapiro/velocity" id="velocity">Velocity.js</a>. There are PNG image fallbacks for browsers that do not support SVG images. Fallbacks for animation are provided through CSS transforms and animations as well as CSS sprite sheet animation. Support is detected using <a href="https://github.com/Modernizr/Modernizr" id="modernizr">Modernizr,</a> and the appropriate solution is applied via JavaScript</p>                         
                     </div>
-                    <a href="#underlay" id="continue">View Demo&nbsp;&#9656;</a>
+                    <a href="#demo" id="continue">View Demo&nbsp;&#9656;</a>
                 </div>
             </div>
         </div>
