@@ -22,7 +22,7 @@ body { background: #deedeb; }
 
 #blow_out, #replay, #github, #continue { border: 2px solid white; }
 
-* { -moz-box-sizing: border-box; box-sizing: border-box; }
+* { box-sizing: border-box; }
 
 html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
 
@@ -102,3 +102,5 @@ p a:active { color: #851e31; }
 .showUnderlay { z-index: 800; }
 
 .svg #blow_out, .svg #replay, .svg #github, .svg #balloons_obj, .svg #banner_obj { display: none; }
+
+#blow_out { display: none; }
