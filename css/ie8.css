@@ -87,9 +87,9 @@ p a:active { color: #851e31; }
 
 #continue { position: relative; }
 
-.svg .obSvg { width: 100%; height: 100%; }
+.svg .obsvg { width: 100%; height: 100%; }
 
-.svgfallback#cake_obj, .svgfallback#balloons_obj, .svgfallback#banner_obj, .no-svg #cake_obj, .no-svg #balloons_obj, .no-svg #banner_obj, .no-js #cake_fallback { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; display: block; width: 500px; height: 500px; text-indent: 500px; overflow: hidden; }
+.svgfallback#cake_obj, .svgfallback#balloons_obj, .svgfallback#banner_obj, .no-svg #cake_obj, .no-svg #balloons_obj, .no-svg #banner_obj, .no-js #cake_fallback { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; display: block; width: 500px; height: 500px; overflow: hidden; }
 
 .svgfallback#cake_obj, .no-svg #cake_obj, .no-js #cake_fallback { background: url(../img/cake500.png) no-repeat top left; }
 

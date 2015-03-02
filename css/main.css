@@ -22,7 +22,7 @@ body { background: #deedeb; }
 
 #blow_out, #replay, #github, #continue { border: 0.125rem solid white; }
 
-* { -moz-box-sizing: border-box; box-sizing: border-box; }
+* { box-sizing: border-box; }
 
 html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
 
@@ -87,9 +87,9 @@ p a:active { color: #851e31; }
 
 #continue { position: relative; }
 
-.svg .obSvg { width: 100%; height: 100%; }
+.svg .obsvg { width: 100%; height: 100%; }
 
-.svgfallback#cake_obj, .svgfallback#balloons_obj, .svgfallback#banner_obj, .no-svg #cake_obj, .no-svg #balloons_obj, .no-svg #banner_obj, .no-js #cake_fallback { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; display: block; width: 500px; height: 500px; text-indent: 500px; overflow: hidden; }
+.svgfallback#cake_obj, .svgfallback#balloons_obj, .svgfallback#banner_obj, .no-svg #cake_obj, .no-svg #balloons_obj, .no-svg #banner_obj, .no-js #cake_fallback { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; display: block; width: 500px; height: 500px; overflow: hidden; }
 
 .svgfallback#cake_obj, .no-svg #cake_obj, .no-js #cake_fallback { background: url(../img/cake500.png) no-repeat top left; }
 
@@ -105,11 +105,14 @@ p a:active { color: #851e31; }
 
 @media only screen and (max-width: 30rem) { #blow_out, .button_group { right: 1.125rem; left: 1.125rem; margin: 0 auto; } }
 @media only screen and (max-width: 40rem) { html { font-size: 90%; } }
-@media only screen and (min-width: 62.5rem) { .sub_content_wrapper { border-radius: 0.25rem; top: 3.75rem; bottom: 3.75rem; box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
+@media only screen and (min-width: 62.5rem) { .sub_content_wrapper { border-radius: 0.25rem; top: 1.875rem; bottom: 1.875rem; box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
   #scene_box, #alert_box { border-radius: 0.25rem; } }
 /*no-js fallbacks */
-@-webkit-keyframes blowOut { from { background-position: 0px; }
-  to { background-position: -3000px; } }
+@-webkit-keyframes blowOut {
+
+ from { background-position: 0px; }
+
+ to { background-position: -3000px; } }
 @keyframes blowOut { from { background-position: 0px; }
   to { background-position: -3000px; } }
 .no-js #balloons_obj, .no-js #replay, .no-js #github, .no-js #blow_out { visibility: hidden; opacity: 0; }
