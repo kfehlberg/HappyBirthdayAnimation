@@ -1,4 +1,4 @@
-.svg .obSvg {
+.svg .obsvg {
 	width: 100%;
 	height: 100%;
 }
@@ -10,7 +10,8 @@
 	display: block;
 	width: 500px;
 	height: 500px;	
-	text-indent: 500px;		//move the YourBrowserDoesNotSupportSVG text out of box
+	// text-align: left; 		//override default text-align center that was applied to <html>
+	// text-indent: 1000px;		//move the YourBrowserDoesNotSupportSVG text out of box
 	overflow: hidden;		//hide the text and rest of sprite	
 }
 %cakefallback {
@@ -50,6 +51,10 @@
 		@extend %bannerfallback;
 	}
 }
+// .no-smil.svg #cake_obj {
+// 	@extend %svgfallbackPositioning;
+// 	@extend %cakefallback;
+// }
 .js #cake_fallback,
 .no-js #cake_obj {
 	display: none;
