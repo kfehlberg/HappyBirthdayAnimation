@@ -70,11 +70,11 @@ $(window).load(function () {
                 if (objDoc != null) {                               //  if there is svg content in object (if svg is supported and displayed)
                     console.log(obj.id + ' contentDocument is not null or undef');
                     var svgElem = objDoc.querySelector('svg');      //  svg tag inside of object
-                    console.log('svgElem of ' + obj.id + ' is ' + svgElem);
+                    // console.log('svgElem of ' + obj.id + ' is ' + svgElem);
                     svgElem.setAttribute('visibility', 'hidden');   //  hide svg (so that we can serve png image)
                     console.log('set visibility of svg content in ' + obj.id + ' to hidden');
                 } else {
-                    console.log('Changing SVG to PNG.' + obj.id + ' contentDoc is null or undef, so we do not change the visibility of inner SVG');
+                    console.log('changing SVG to PNG.' + obj.id + ' contentDoc is null or undef, so we do not change the visibility of inner SVG');
                 }
                 obj.removeAttribute('type');
                 console.log('removed type attribute from ' + obj.id);
@@ -104,7 +104,7 @@ $(window).load(function () {
                     numSvgObjs = svgObjs.length,
                     i;
                 for (i = 0; i < numSvgObjs; i++) {
-                    console.log('calling objSvgToPng for ' + svgObjs[i]);
+                    console.log('calling objSvgToPng for ' + svgObjs[i].id);
                     objSvgToPng(svgObjs[i]);        //     Go through list of svg objects and change them to png
                 }
             }
@@ -118,9 +118,9 @@ $(window).load(function () {
     function getTarget(e) {
         if (!e) {
             e = window.event;
-            console.log('event target for IE5-8 = ' + e.srcElement.id);
+            // console.log('event target for IE5-8 = ' + e.srcElement.id);
         }
-        console.log('event target = ' + e.target.id + ' or for IE5-8 = ' + e.srcElement.id);
+        // console.log('event target = ' + e.target.id + ' or for IE5-8 = ' + e.srcElement.id);
         return e.target || e.srcElement;  //e.target  is the target of the event e.srcElement is IE5-8 equivalent
     }
     function stopProp(e) {
