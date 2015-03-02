@@ -65,7 +65,7 @@ $(window).load(function () {
             if (objType === 'image/svg+xml') {
                 var objDoc = obj.contentDocument;
                 if (objDoc != null) {                               //  if there is svg content in object (if svg is supported and displayed)
-                    var svgElem = objDoc.querySelector('svg');
+                    var svgElem = objDoc.querySelector('svg');      //  svg tag inside of object
                     svgElem.setAttribute('visibility', 'hidden');   //  hide svg (so that we can serve png image)
                 }
                 // else {
@@ -78,7 +78,7 @@ $(window).load(function () {
         if (obj.hasAttribute('data')) {
             obj.removeAttribute('data');
         }
-        if (obj.className === 'obSvg') {
+        if (obj.className === 'obsvg') {
             obj.className = 'svgfallback';
             // var newobjClass = obj.className;
             // console.log('new objClass = ' + newobjClass);
