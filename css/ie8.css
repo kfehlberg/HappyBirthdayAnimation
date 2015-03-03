@@ -102,5 +102,3 @@ p a:active { color: #851e31; }
 .showUnderlay { z-index: 800; }
 
 .svg #blow_out, .svg #replay, .svg #github, .svg #balloons_obj, .svg #banner_obj { display: none; }
-
-#blow_out { display: none; }
