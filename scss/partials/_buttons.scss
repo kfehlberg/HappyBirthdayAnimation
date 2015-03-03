@@ -1,49 +1,51 @@
 //================================================
 //	BUTTON EXTENDERS
 //================================================
-%buttonBase {
-	@extend %link;
-	@extend %button_bg_color_primary;
-	&:hover, &:focus {
-		@extend %button_bg_color_secondary;
-	}
-	&:active {
-		@extend %button_bg_color_tertiary;
-	}
-}
 
-// %buttonLink {
-// 	@extend %buttonBase;
-// 	@extend %linkFontSize;
-// 	line-height: $buttonHeight;
-// }
-
-	%buttonC-Link {
-		@extend %buttonBase;
+//base for colors, font, padding, borders, states
+// html has text-align: center declared, so there is no need to repeat it. 
+// if that changes though, be sure to update buttonBase with center alignment
+	%buttonBase {
+		@extend %link;
 		@extend %box_shadow1;
-		@extend %button_border;
-		@extend %linkFontSize;
-		display: inline-block;	
-		z-index: 770;
-	}
-	%textButton {
-		@extend %letterSpacingMore;
 		@extend %border_radius_standard;
-		padding: ($linkFontSize / 2) $linkFontSize ;
+		@extend %letterSpacingMore;
+		font-size: $linkFontSize;
+		padding: ($linkFontSize / 2) $linkFontSize;
+		background: $color2;
+		border: $buttonBorderWidth solid $primaryFontColor;
+		&:hover, &:focus {
+			background: $color1;
+		}
+		&:active {
+			background: $darkColor1;
+		}
 	}
 
+	// %overlayButtons {
+	// 	z-index: 770;
+	// }
 
-%animationButton {
-	@extend %buttonC-Link;
-	@extend %textButton;
-}
-	%animationButtonPos {
+//-------------Positioning--------------------
+// extended to parent of inline button groups
+
+	// applied to #underlay .button_group, which has 'position: absolute;' and 'display: block ' declared in _underlay.scss
+	// if appling in other places, be sure to use position: absolute or fixed
+	%buttonPosBottomLeft {
 		bottom: $fontSize18;
 		left: $fontSize18;
-		z-index: 20;
 	}
 
-%inlineAnimationButton {
-	@extend %animationButton;
-	margin: $fontSize9;
-}
+	//applied to #overlay .button_group
+	%buttonPosCenter {
+		position: relative;
+	}
+
+//-------------Buttons--------------------
+//extend to <a>, if additional positioning is required, position parent using extenders above.
+
+	%inlineButton {
+		@extend %buttonBase;
+		display: inline-block;	
+		margin: $fontSize9;
+	}

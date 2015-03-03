@@ -3,24 +3,25 @@
 //================================================
 	$lineHeight: 1.5;
 	$primaryFontFamily: "Century Gothic", CenturyGothic, AppleGothic, Helvetica, "Trebuchet MS", Verdana, sans-serif;
-
 //================================================
 // TYPOGRAPHY EXTENDERS
 //================================================
-//---------- Font Families ----------
+	//---------- Font Families ----------
 
 	%primaryFontFamily { font-family: $primaryFontFamily; }
 
-	//---------- General Settings ----------
+	//---------- Spacing ----------
 
 	%letterSpacingNormal { letter-spacing: normal; }
 	%letterSpacingMore { letter-spacing: 0.025em; }
 
 	%typeSpacingStandard {
-	    // @extend %letterSpacingNormal;   
 	    letter-spacing: normal;
 	    line-height: $lineHeight;
 	    margin: 1em $fontSize8;
+	}
+	%standardMargin {
+		margin: 0.75em $fontSize8;
 	}
 	//---------- Font Colors ----------
 	// %lightTextOnDarkBg { -webkit-font-smoothing: antialiased; }
@@ -29,14 +30,9 @@
 		color: $primaryFontColor; 
 		-webkit-font-smoothing: antialiased; 
 	}
-	//---------- Font Sizes ----------
-
-	%linkFontSize { font-size: $linkFontSize; }
-	
 	//---------- Specific Elements ----------
 
 	%link {
-	    // @extend %letterSpacingNormal; 
 	    text-decoration: none;
 	    &:hover { cursor: pointer; }
 	}
@@ -54,19 +50,22 @@
 	//---------- Headings ----------
 	h1 {
 	    @extend %typeSpacingStandard;
+	    @extend %standardMargin;
 	    font-size: $hFontSize;
 	}
 	//---------- Paragraph ----------
 	p {
 	    @extend %typeSpacingStandard;
+	    @extend %standardMargin;
 	    font-size: $pFontSize;
 	}
 
 	//---------- Links ----------
 	a {
 	    @extend %link;
-	    @extend %primaryFontColor; 
+	    @extend %primaryFontColor; //override default
 	    font-weight: bold;
+	    // p a refers to links inside text, other links are styled as buttons using style extenders in _buttons.scss
 	  	p & {
 	  		&:hover, &:focus { color: $color1; }
 	  		&:active { color: $darkColor1; }

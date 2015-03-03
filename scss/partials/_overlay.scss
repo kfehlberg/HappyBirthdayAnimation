@@ -1,25 +1,13 @@
 .textbox { 
 	position: relative;
 	display: block;
-	padding: $buttonHeight / 2;
+	padding: $fontSize8;
 	max-width: 45em;
-	margin: $fontSize16 auto $fontSize32;
+	margin: $fontSize16 auto;
 }
-// #close {
-// 	@extend %buttonC-Link;
-// 	width: $linkFontSize * 1.5;
-// 	height: $linkFontSize * 1.5;
-// 	line-height: 1.3;
-// 	position: absolute;
-// 	top: $fontSize32;
-// 	right: $fontSize32;
-// 	border-radius: $border_radius_circle;
-// 	&:after {
-// 		@extend %absoluteCenter;
-// 		content: "\2715";
-// 	}
-// }
-#continue {
-	@extend %animationButton;
-	position: relative;
+#overlay .button_group {
+	@extend %buttonPosCenter;
+	& a {
+		@extend %inlineButton;
+	}
 }

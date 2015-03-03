@@ -4,9 +4,9 @@ a { background: transparent; }
 
 a:active, a:hover { outline: 0; }
 
-#blow_out, #replay, #github, #continue { border-radius: 0.25rem; }
+#blow_out, #button_subg a, #overlay .button_group a { border-radius: 0.25rem; }
 
-#blow_out, #replay, #github, #continue { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
+#blow_out, #button_subg a, #overlay .button_group a { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
 
 #alert_box { background: #51948e; }
 
@@ -14,30 +14,22 @@ a:active, a:hover { outline: 0; }
 
 body { background: #deedeb; }
 
-#blow_out, #replay, #github, #continue { background: #fd7d50; }
-
-#blow_out:hover, #replay:hover, #github:hover, #continue:hover, #blow_out:focus, #replay:focus, #github:focus, #continue:focus { background: #c32c48; }
-
-#blow_out:active, #replay:active, #github:active, #continue:active { background: #851e31; }
-
-#blow_out, #replay, #github, #continue { border: 0.125rem solid white; }
-
 * { box-sizing: border-box; }
 
 html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
 
 html { font-family: "Century Gothic", CenturyGothic, AppleGothic, Helvetica, "Trebuchet MS", Verdana, sans-serif; }
 
-#blow_out, #replay, #github, #continue { letter-spacing: 0.025em; }
+#blow_out, #button_subg a, #overlay .button_group a { letter-spacing: 0.025em; }
 
 h1, p { letter-spacing: normal; line-height: 1.5; margin: 1em 0.5rem; }
 
+h1, p { margin: 0.75em 0.5rem; }
+
 html, a { color: white; -webkit-font-smoothing: antialiased; }
 
-#blow_out, #replay, #github, #continue { font-size: 1.375rem; }
-
-a, #blow_out, #replay, #github, #continue { text-decoration: none; }
-a:hover, #blow_out:hover, #replay:hover, #github:hover, #continue:hover { cursor: pointer; }
+a, #blow_out, #button_subg a, #overlay .button_group a { text-decoration: none; }
+a:hover, #blow_out:hover, #button_subg a:hover, #overlay .button_group a:hover { cursor: pointer; }
 
 html { text-align: center; }
 
@@ -49,61 +41,69 @@ a { font-weight: bold; }
 p a:hover, p a:focus { color: #c32c48; }
 p a:active { color: #851e31; }
 
-#blow_out, #replay, #github, #continue { display: inline-block; z-index: 770; }
+#blow_out, #button_subg a, #overlay .button_group a { font-size: 1.375rem; padding: 0.6875rem 1.375rem; background: #fd7d50; border: 0.125rem solid white; }
+#blow_out:hover, #button_subg a:hover, #overlay .button_group a:hover, #blow_out:focus, #button_subg a:focus, #overlay .button_group a:focus { background: #c32c48; }
+#blow_out:active, #button_subg a:active, #overlay .button_group a:active { background: #851e31; }
 
-#blow_out, #replay, #github, #continue { padding: 0.6875rem 1.375rem; }
+#underlay .button_group { bottom: 1.125rem; left: 1.125rem; }
 
-.button_group { bottom: 1.125rem; left: 1.125rem; z-index: 20; }
+#overlay .button_group { position: relative; }
 
-#blow_out, #replay, #github { margin: 0.5625rem; }
+#blow_out, #button_subg a, #overlay .button_group a { display: inline-block; margin: 0.5625rem; }
 
-#body_wrapper { margin-left: auto; margin-right: auto; max-width: 62.4375rem; width: 100%; display: block; }
+.body_wrapper { margin-left: auto; margin-right: auto; max-width: 62.4375rem; width: 100%; display: block; }
 
 #scene_box, #alert_box { position: relative; margin: auto; height: 100%; width: 100%; }
 
-#body_wrapper { position: relative; min-height: 100%; }
+.body_wrapper { position: relative; min-height: 100%; }
 
 .sub_content_wrapper { position: absolute; top: 0; bottom: 0; width: 100%; }
 
-#overlay { z-index: 750; }
-
-#scene_box { z-index: 30; }
-
 #alert_box { overflow-y: auto; padding: 2rem; }
 
-#banner_container, #cake_container, #balloon_container, .button_group { position: absolute; margin: auto; }
+#banner_container, #cake_container, #balloon_container, #underlay .button_group { position: absolute; margin: auto; }
 
 #banner_container, #balloon_container { top: 0; bottom: 5%; left: 0; right: 0; overflow: hidden; }
 
-#banner_container { z-index: 15; }
+#cake_container { top: 20%; bottom: 0; left: 0; right: 0; padding: 1rem; }
 
-#cake_container { top: 20%; bottom: 0; left: 0; right: 0; padding: 1rem; z-index: 10; }
+#underlay .button_group { display: block; }
 
-#balloon_container { z-index: 5; }
+#button_subg { display: inline-block; }
 
-.button_group { display: block; }
+.textbox { position: relative; display: block; padding: 0.5rem; max-width: 45em; margin: 1rem auto; }
 
-.textbox { position: relative; display: block; padding: 1.546875rem; max-width: 45em; margin: 1rem auto 2rem; }
+.svgfallback#cake_obj, .svgfallback#balloons_obj, .svgfallback#banner_obj, .no-js #cake_fallback, .no-js #balloons_fallback, .no-js #banner_fallback { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; display: block; width: 500px; height: 500px; overflow: hidden; }
 
-#continue { position: relative; }
+.svgfallback#cake_obj, .no-js #cake_fallback { background: url(../img/cake500.png) no-repeat top left; }
 
-.svg .obsvg { width: 100%; height: 100%; }
+.svgfallback#balloons_obj, .no-js #balloons_fallback { background: url(../img/balloons.png) no-repeat top left; }
 
-.svgfallback#cake_obj, .svgfallback#balloons_obj, .svgfallback#banner_obj, .no-svg #cake_obj, .no-svg #balloons_obj, .no-svg #banner_obj, .no-js #cake_fallback { position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; display: block; width: 500px; height: 500px; overflow: hidden; }
+.svgfallback#banner_obj, .no-js #banner_fallback { background: url(../img/banner.png) no-repeat top left; }
 
-.svgfallback#cake_obj, .no-svg #cake_obj, .no-js #cake_fallback { background: url(../img/cake500.png) no-repeat top left; }
+.js .obsvg { width: 100%; height: 100%; }
 
-.svgfallback#balloons_obj, .no-svg #balloons_obj { background: url(../img/balloons.png) no-repeat top left; }
+.no-js #cake_obj, .no-js #balloons_obj, .no-js #banner_obj { display: none; }
 
-.svgfallback#banner_obj, .no-svg #banner_obj { background: url(../img/banner.png) no-repeat top left; }
+.js #cake_fallback, .js #balloons_fallback, .js #banner_fallback { display: none; }
 
-.js #cake_fallback, .no-js #cake_obj { display: none; }
+#banner_container { z-index: 20; }
 
-.showUnderlay, .no-js #underlay:target { z-index: 800; }
+#cake_container { z-index: 15; }
 
-.svg #blow_out, .svg #replay, .svg #github, .svg #balloons_obj, .svg #banner_obj { display: none; }
+#balloon_container { z-index: 10; }
 
-@media only screen and (max-width: 30rem) { #blow_out, .button_group { right: 1.125rem; left: 1.125rem; margin: 0 auto; } }
+#underlay .button_group { z-index: 25; }
+
+#overlay { z-index: 30; }
+
+#demo:target #overlay, #final:target #overlay { z-index: -1; visibility: hidden; }
+
+#scene_box { z-index: 5; }
+
+.js #blow_out, .js #button_subg, .js #balloons_obj, .js #banner_obj { display: none; }
+
+@media only screen and (max-width: 30rem) { #blow_out, #underlay .button_group { right: 1.125rem; left: 1.125rem; margin: 0 auto; } }
 @media only screen and (max-width: 40rem) { html { font-size: 90%; } }
 @media only screen and (min-width: 62.5rem) { .sub_content_wrapper { border-radius: 0.25rem; top: 1.875rem; bottom: 1.875rem; box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); }
   #scene_box, #alert_box { border-radius: 0.25rem; } }
@@ -115,15 +115,15 @@ p a:active { color: #851e31; }
  to { background-position: -3000px; } }
 @keyframes blowOut { from { background-position: 0px; }
   to { background-position: -3000px; } }
-.no-js #balloons_obj, .no-js #replay, .no-js #github, .no-js #blow_out { visibility: hidden; opacity: 0; }
+.no-js #balloons_fallback, .no-js #button_subg, .no-js #blow_out { visibility: hidden; opacity: 0; }
 
-.no-js #alert_box, .no-js #overlay, .no-js #demo:target #blow_out, .no-js #underlay:target #replay, .no-js #underlay:target #github, .no-js #underlay:target #balloons_obj { visibility: visible; opacity: 1; }
+.no-js #alert_box, .no-js #overlay, .no-js #demo:target #blow_out, .no-js #final:target #button_subg, .no-js #final:target #balloons_fallback { visibility: visible; opacity: 1; }
 
-.no-js #balloons_obj { -webkit-transform: translateY(500px); -ms-transform: translateY(500px); transform: translateY(500px); }
+.no-js #balloons_fallback { -webkit-transform: translateY(500px); -ms-transform: translateY(500px); transform: translateY(500px); }
 .no-js #demo:target #alert_box { opacity: 0; -webkit-transition: opacity 1s ease; transition: opacity 1s ease; }
-.no-js #demo:target #overlay { opacity: 0; z-index: -1; -webkit-transition: opacity 1s ease, z-index 0s linear 1s; transition: opacity 1s ease, z-index 0s linear 1s; }
+.no-js #demo:target #overlay { visibility: hidden; opacity: 0; z-index: 0; -webkit-transition: opacity 1s ease, z-index 0s linear 1s; transition: opacity 1s ease, z-index 0s linear 1s; }
 .no-js #demo:target #blow_out { -webkit-transition: visibility 0s linear 1s, opacity 0.5s linear 1s; transition: visibility 0s linear 1s, opacity 0.5s linear 1s; }
-.no-js #underlay:target #cake_fallback { -webkit-animation: blowOut 2s steps(6) 1s 1 normal forwards; animation: blowOut 2s steps(6) 1s 1 normal forwards; }
-.no-js #underlay:target #blow_out { display: none; }
-.no-js #underlay:target #replay, .no-js #underlay:target #github { -webkit-transition: visibility 0s linear 4s, opacity 0.5s linear 4s; transition: visibility 0s linear 4s, opacity 0.5s linear 4s; }
-.no-js #underlay:target #balloons_obj { -webkit-transform: translateY(0px); -ms-transform: translateY(0px); transform: translateY(0px); -webkit-transition: visibility 0s linear 3s, opacity 0.5s linear 3s, -webkit-transform 3s ease-out 3s; transition: visibility 0s linear 3s, opacity 0.5s linear 3s, transform 3s ease-out 3s; }
+.no-js #final:target #cake_fallback { -webkit-animation: blowOut 2s steps(6) 1s 1 normal forwards; animation: blowOut 2s steps(6) 1s 1 normal forwards; }
+.no-js #final:target #blow_out { display: none; }
+.no-js #final:target #button_subg { -webkit-transition: visibility 0s linear 4s, opacity 0.5s linear 4s; transition: visibility 0s linear 4s, opacity 0.5s linear 4s; }
+.no-js #final:target #balloons_fallback { -webkit-transform: translateY(0px); -ms-transform: translateY(0px); transform: translateY(0px); -webkit-transition: visibility 0s linear 3s, opacity 0.5s linear 3s, -webkit-transform 3s ease-out 3s; transition: visibility 0s linear 3s, opacity 0.5s linear 3s, transform 3s ease-out 3s; }

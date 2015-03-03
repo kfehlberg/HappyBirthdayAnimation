@@ -17,7 +17,8 @@
 //================================================
 // APPLIED LAYOUT
 //================================================
-#body_wrapper {
+
+.body_wrapper {
 	@extend %wrapper;
 	position: relative;
 	min-height: 100%;
@@ -31,15 +32,13 @@
 	width: 100%;
 }
 
-#overlay {
-	z-index: 750;
-}
+// #overlay {
+// 	z-index: 750;
+// }
 
 #scene_box {
 	@extend %_box ;
-	// @extend %inset_box_shadow1;
-	// border: $scene_box_border;
-	z-index: 30;
+	// z-index: 30;
 }
 
 #alert_box {
