@@ -13,7 +13,6 @@
 %noShow {
 	visibility: hidden;
 	opacity: 0;
-	// transition-duration: 0.5s;
 }
 %visible {
 	visibility: visible;
@@ -23,24 +22,17 @@
 	//==================================
 	//	Initial states before transitions
 	//==================================
-	#balloons_obj { //	hide until #underlay:target, then transition to visible
+	#balloons_fallback { //	hide until #underlay:target, then transition to visible
 		@extend %noShow;
-		// visibility: hidden;
-		// opacity: 0;
 		transform: translateY(500px);
 	}
-	#replay,
-	#github,
+	#button_subg,
 	#blow_out {	//	hide until, for #replay and #github - #underlay:target, for #blow_out - #demo:target
 		@extend %noShow;
-		// visibility: hidden;
-		// opacity: 0;
-		// transition: visibility 0s linear 1s, opacity 0.5s linear 1s;
 	}
 	#alert_box,
 	#overlay {	//inital opacity, to be transitioned when #demo:target
 		@extend %visible;
-		// opacity: 1;
 	}
 	//==================================
 	//	Effects of clicking the #continue button ("view demo")
@@ -52,14 +44,13 @@
 				transition: opacity 1s ease;
 			}
 			#overlay {
+				visibility: hidden;
 				opacity: 0;
-				z-index: -1;
+				z-index: 0;
 				transition: opacity 1s ease, z-index 0s linear 1s;
 			}
 			#blow_out {
 				@extend %visible;
-				// visibility: visible;
-				// opacity: 1;
 				transition: visibility 0s linear 1s, opacity 0.5s linear 1s;
 			}
 		}
@@ -67,9 +58,9 @@
 	//==================================
 	//	Effects of clicking the #blow_out button ("click to blow out the candles")
 	//==================================
-	#underlay {
+	#final {
 		&:target { 	//	happens when clicking the #blow_out button
-			@extend .showUnderlay; // z-index: 800;
+			// #overlay { z-index: 0; visibility: hidden; opacity: 0; } // taken care of in _visibitily.scss
 			#cake_fallback {
 				animation: blowOut 2s steps(6) 1s 1 normal forwards;
 				// animation-name: blowOut;
@@ -82,17 +73,12 @@
 				// animation-play-state: paused;
 			}	
 			#blow_out { display: none; }// hide so that only the other buttons are seen
-			#replay, 
-			#github {	// transition in visibility after #cake_fallback blowOut animation occurs and the #balloons_obj transitions
+			#button_subg {	// transition in visibility after #cake_fallback blowOut animation occurs and the #balloons_fallback transitions
 				@extend %visible;
-				// visibility: visible;
-				// opacity: 1;
 				transition: visibility 0s linear 4s, opacity 0.5s linear 4s;
 			}
-			#balloons_obj{ //transition in visiblity and create illusion of floating up after #cake_fallback blowOut animation occurs
+			#balloons_fallback { //transition in visiblity and create illusion of floating up after #cake_fallback blowOut animation occurs
 				@extend %visible;
-				// visibility: visible;
-				// opacity: 1;
 				transform: translateY(0px);
 				transition: visibility 0s linear 3s, opacity 0.5s linear 3s, transform 3s ease-out 3s;
 			}

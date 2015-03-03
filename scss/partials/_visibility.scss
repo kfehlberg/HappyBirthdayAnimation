@@ -1,17 +1,30 @@
-.showUnderlay {
-	z-index: 800;
+//================================================
+//	Z-index
+//================================================
+#banner_container { z-index: 20; }
+#cake_container { z-index: 15; }
+#balloon_container { z-index: 10; }
+#underlay .button_group { z-index: 25; }
+#overlay { z-index: 30; } 
+// when #demo is target (#continue button was clicked)
+// when #final is target (#blow_out button was clicked)
+//	- z-index moves below all other layers and is hidden
+#demo:target #overlay,
+#final:target #overlay {
+	z-index: -1;
+	visibility: hidden;
+	// display: none;
 }
-.svg {
-// 	//if ( javascript in enabled in browser (html class ="js" declared by modernizr) ) 
-// 	//then the following buttons  and objects are hidden until revealed through animation in 'bday_animate_with_fallbacks.js'
+#scene_box { z-index: 5; }
+
+//if ( javascript in enabled in browser (html class ="js" declared by modernizr) ) 
+//then the following buttons  and objects are hidden until revealed through animation in 'bday_animate_with_fallbacks.js'
+// if(.svg) { javascript is enabled, modernizr.js has detected that svg is supported, }
+.js {
 	#blow_out,
-	#replay, 
-	#github,
+	#button_subg,	// includes #replay and 'view on github'
 	#balloons_obj,
-	#banner_obj,
-// 	#cake_obj
-	{ 
-		display: none; //revealed by js
-		
+	#banner_obj { 
+		display: none; //	revealed by js
 	}
 }

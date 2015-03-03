@@ -13,9 +13,9 @@ $box_shadow1: 1px 1px 6px 0px $shadowColor1;
 %box_shadow1 {
 	box-shadow: $box_shadow1
 }
-%inset_box_shadow1 {
-	box-shadow: inset $box_shadow1;
-}
+// %inset_box_shadow1 {
+// 	box-shadow: inset $box_shadow1;
+// }
 
 //================================================
 // BACKGROUND COLORS
@@ -27,20 +27,20 @@ $bg_color_lightest_primary: $lightestColor5;
 %bg_color_light_primary { background: $bg_color_light_primary; }
 %bg_color_lightest_primary { background: $bg_color_lightest_primary; }
 
-//================================================
-// BUTTON BACKGROUND COLORS
-//================================================
+// //================================================
+// // BUTTON BACKGROUND COLORS
+// //================================================
 
-$button_bg_color_primary: $color2;
-$button_bg_color_secondary: $color1;
-$button_bg_color_tertiary: $darkColor1;
-%button_bg_color_primary { background: $button_bg_color_primary; }
-%button_bg_color_secondary { background: $button_bg_color_secondary; }
-%button_bg_color_tertiary { background: $button_bg_color_tertiary; }
+// $button_bg_color_primary: $color2;
+// $button_bg_color_secondary: $color1;
+// $button_bg_color_tertiary: $darkColor1;
+// %button_bg_color_primary { background: $button_bg_color_primary; }
+// %button_bg_color_secondary { background: $button_bg_color_secondary; }
+// %button_bg_color_tertiary { background: $button_bg_color_tertiary; }
 
-//================================================
-// BORDERS
-//================================================
-$scene_box_border: $fontSize16 solid $color5 ;
-$button_border: $buttonBorderWidth solid $primaryFontColor ;
-%button_border { border: $button_border; }
+// //================================================
+// // BORDERS
+// //================================================
+// $scene_box_border: $fontSize16 solid $color5 ;
+// $button_border: $buttonBorderWidth solid $primaryFontColor ;
+// %button_border { border: $button_border; }

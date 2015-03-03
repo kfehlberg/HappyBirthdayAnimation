@@ -16,41 +16,40 @@
         <!--<![endif]-->
     </head>
     <body id="demo">
-        <div id="body_wrapper">
+        <div id="final" class="body_wrapper">
             <div id="underlay" class="sub_content_wrapper">
                 <div id="scene_box">
                     <div id="banner_container">
-                        <object id="banner_obj" type="image/svg+xml" data="img/banner.svg" class="obsvg">
-                            <!-- <param name="src" value="img/banner.svg"> -->
-                        </object>
+                        <div id="banner_fallback"></div>
+                        <object id="banner_obj" type="image/svg+xml" data="img/banner.svg" class="obsvg"></object>
                     </div>
                     <div id="balloon_container">
-                        <object id="balloons_obj" type="image/svg+xml" data="img/balloons.svg" class="obsvg">
-                            <!-- <param name="src" value="img/balloons.svg"> -->
-                        </object>
+                        <div id="balloons_fallback"></div>
+                        <object id="balloons_obj" type="image/svg+xml" data="img/balloons.svg" class="obsvg"></object>
                     </div>
                     <div id="cake_container"> 
                         <div id="cake_fallback"></div>
-                        <object id="cake_obj" type="image/svg+xml" data="img/cake.svg" class="obsvg">
-                            <!-- <param name="src" value="img/cake.svg"> -->
-                        </object>
+                        <object id="cake_obj" type="image/svg+xml" data="img/cake.svg" class="obsvg"></object>
                     </div> 
                     <div class="button_group">
-                        <a href="#underlay" id="blow_out">Click to blow out the candles!</a> 
-                    <!-- <div class="button_group"> -->
-                        <a href="index.html" id="replay" >Replay</a>
-                        <a href="https://github.com/kfehlberg/HappyBirthdayAnimation" id="github">View on GitHub</a>
+                        <a href="#final" id="blow_out">Click to blow out the candles!</a>
+                        <div id ="button_subg">
+                            <a href="index.html" id="replay">Replay</a>
+                            <a href="https://github.com/kfehlberg/HappyBirthdayAnimation">View on GitHub</a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div id="overlay" class="sub_content_wrapper">
                 <div id="alert_box">
-                    <!-- <a href="#underlay" id="close"></a> -->
                     <div class="textbox">
                         <h1>Happy Birthday Animation</h1>
                         <p>This birthday greeting is animated using various methods with fallbacks for older browsers. The SMIL animations are called for SVG objects using <a href="https://github.com/julianshapiro/velocity" id="velocity">Velocity.js</a>. There are PNG image fallbacks for browsers that do not support SVG images. Fallbacks for animation are provided through CSS transforms and animations as well as CSS sprite sheet animation. Support is detected using <a href="https://github.com/Modernizr/Modernizr" id="modernizr">Modernizr,</a> and the appropriate solution is applied via JavaScript</p>                         
                     </div>
-                    <a href="#demo" id="continue">View Demo&nbsp;&#9656;</a>
+                    <div class="button_group">
+                        <a href="https://github.com/kfehlberg/HappyBirthdayAnimation">View on GitHub</a>
+                        <a href="#demo" id="continue">View Demo&nbsp;&#9656;</a>
+                    </div>
                 </div>
             </div>
         </div>

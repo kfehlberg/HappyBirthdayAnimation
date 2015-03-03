@@ -1,7 +1,3 @@
-.svg .obsvg {
-	width: 100%;
-	height: 100%;
-}
 %svgfallbackPositioning {
 	position: absolute;
 	top: 0; bottom: 0;
@@ -14,6 +10,7 @@
 	// text-indent: 1000px;		//move the YourBrowserDoesNotSupportSVG text out of box
 	overflow: hidden;		//hide the text and rest of sprite	
 }
+//png fallback images in backgrounds
 %cakefallback {
 	background: url(../img/cake500.png) no-repeat top left;
 }
@@ -23,6 +20,10 @@
 %bannerfallback {
 	background: url(../img/banner.png) no-repeat top left;
 }
+//if javascript is enabled, the bday_animate_with_fallbacks.js has imageFallback(), 
+//	imageFallback() replaces the .obsvg class with .svgfallback when svg is not supported, 
+//	and/or (for #cake_obj, when SMIL is not supported )
+//	.svgfallback&objectID contains a background with the png fallback inside
 .svgfallback {
 	&#cake_obj {
 		@extend %svgfallbackPositioning;
@@ -37,34 +38,38 @@
 		@extend %bannerfallback;
 	}
 }
-.no-svg {
-	#cake_obj {
-		@extend %svgfallbackPositioning;
-		@extend %cakefallback;
-	}
-	#balloons_obj {
-		@extend %svgfallbackPositioning;
-		@extend %balloonsfallback;
-	}
-	#banner_obj {
-		@extend %svgfallbackPositioning;
-		@extend %bannerfallback;
-	}
+// if js is supported, and the objects still have .obsvg, that means that svg is supported, so the object can be scaled
+.js .obsvg {
+	width: 100%;
+	height: 100%;
 }
-// .no-smil.svg #cake_obj {
-// 	@extend %svgfallbackPositioning;
-// 	@extend %cakefallback;
-// }
-.js #cake_fallback,
-.no-js #cake_obj {
-	display: none;
-}
+
+// if js is not enabled, assume that svg is not supported (to cover all bases),
+// serve png fallbacks while hiding objects with svg, just incase svg is available
 .no-js {
+	#cake_obj,
+	#balloons_obj,
+	#banner_obj {
+		display: none;
+	}
 	#cake_fallback {
 		@extend %svgfallbackPositioning;
 		@extend %cakefallback;
 	}
-	// #cake_obj {
-	// 	display: none;
-	// }
+	#balloons_fallback {
+		@extend %svgfallbackPositioning;
+		@extend %balloonsfallback;
+	}
+	#banner_fallback {
+		@extend %svgfallbackPositioning;
+		@extend %bannerfallback;
+	}
+}
+// if javascript is enabled, hid the fallback divs
+.js {
+	#cake_fallback,
+	#balloons_fallback,
+	#banner_fallback {
+		display: none;
+	}
 }
