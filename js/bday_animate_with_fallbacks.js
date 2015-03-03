@@ -19,8 +19,8 @@ $(window).load(function () {
         balloonsObj = document.getElementById("balloons_obj"),
         underlay = document.getElementById("underlay"),
         blowOutButton = document.getElementById("blow_out"),
-        replayButton = document.getElementById("replay"),
-        githubButton = document.getElementById("github"),
+        /* button subGroup is the group of buttons that appears at the end of the animation (#replay and 'view on github' */
+        buttonSubGroup = document.getElementById("button_subg"),
         /* minYDistance used to determine how far to translate balloonsObj and bannerObj in animation */
         minYDistance = (function () {
             var body = document.body,
@@ -41,8 +41,7 @@ $(window).load(function () {
         /* http://julian.com/research/velocity/#uiPack */
         finishingSequence = [
             { elements: balloonsObj, properties: { translateY: [ "0px", minYDistance ] }, options: { duration: 5000, display: "block" } },
-            { elements: replayButton, properties: "fadeIn", options: { duration: 500, display: "inline-block" } },
-            { elements: githubButton, properties: "fadeIn", options: { duration: 500, display: "inline-block", sequenceQueue: false } }
+            { elements: buttonSubGroup, properties: "fadeIn", options: { duration: 500, display: "inline-block" } }
         ],
         /* SMIL animation vars */
         /* flames and smokes refer to classes inside cake.svg. 
