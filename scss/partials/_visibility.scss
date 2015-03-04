@@ -1,6 +1,7 @@
 //================================================
 //	Z-index
 //================================================
+body { z-index: 0; }
 #banner_container { z-index: 20; }
 #cake_container { z-index: 15; }
 #balloon_container { z-index: 10; }
@@ -13,18 +14,19 @@
 #final:target #overlay {
 	z-index: -1;
 	visibility: hidden;
+	// opacity: 0;
 	// display: none;
 }
 #scene_box { z-index: 5; }
 
 
-// if(.cssanimations) { javascript is enabled, modernizr.js has detected that cssanimations are supported, }
+// if(.csstransforms) { javascript is enabled, modernizr.js has detected that csstransforms are supported, }
 //then the following buttons  and objects are hidden until revealed through animation in 'bday_animate_with_fallbacks.js'
-.cssanimations {
-	#blow_out,
-	#button_subg,	// includes #replay and 'view on github'
-	#balloons_obj,
-	#banner_obj { 
-		display: none; //	revealed by js
-	}
-}
+// .csstransforms {
+// 	#blow_out,
+// 	#button_subg,	// includes #replay and 'view on github'
+// 	#balloons_obj,
+// 	#banner_obj { 
+// 		display: none; //	revealed by js
+// 	}
+// }

@@ -10,13 +10,11 @@ a:active, a:hover { outline: 0; }
 
 #overlay { background: #51948e; }
 
-#underlay { background: #acd2ce; }
-
 body { background: #deedeb; }
 
 * { box-sizing: border-box; }
 
-html, body, .body_wrapper, #underlay, #overlay, #scene_box, #alert_box { width: 100%; height: 100%; }
+html, body, #underlay, #overlay, .body_wrapper, #scene_box, #alert_box { width: 100%; height: 100%; }
 
 html, body { margin: 0; padding: 0; }
 
@@ -24,9 +22,9 @@ html { font-family: "Century Gothic", CenturyGothic, AppleGothic, Helvetica, "Tr
 
 #blow_out, #button_subg a, #overlay .button_group a { letter-spacing: 0.025em; }
 
-h1, p { letter-spacing: normal; line-height: 1.5; margin: 1em 8px; }
+h1, p { letter-spacing: normal; line-height: 1.5; }
 
-h1, p { margin: 0.75em 8px; }
+h1, p { margin: 0.5em 8px; }
 
 html, a { color: white; -webkit-font-smoothing: antialiased; }
 
@@ -53,11 +51,11 @@ p a:active { color: #851e31; }
 
 #blow_out, #button_subg a, #overlay .button_group a { display: inline-block; margin: 9px; }
 
-.body_wrapper { display: block; max-width: 999px; margin: 0 auto; }
-
 #underlay, #overlay { position: absolute; top: 0; bottom: 0; right: 0; left: 0; }
 
 .body_wrapper { position: relative; display: block; }
+
+#underlay { display: block; max-width: 999px; margin: 0 auto; }
 
 #overlay { display: table; margin: 0; }
 
@@ -91,6 +89,8 @@ p a:active { color: #851e31; }
 
 .js #cake_fallback, .js #balloons_fallback, .js #banner_fallback { display: none; }
 
+body { z-index: 0; }
+
 #banner_container { z-index: 20; }
 
 #cake_container { z-index: 15; }
@@ -104,7 +104,5 @@ p a:active { color: #851e31; }
 #demo:target #overlay, #final:target #overlay { z-index: -1; visibility: hidden; }
 
 #scene_box { z-index: 5; }
-
-.cssanimations #blow_out, .cssanimations #button_subg, .cssanimations #balloons_obj, .cssanimations #banner_obj { display: none; }
 
 .no-js #blow_out { display: none; }

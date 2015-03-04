@@ -13,7 +13,8 @@ $(window).load(function () {
     =====================*/
     var smilSupport = Modernizr.smil,
         svgSupport = Modernizr.svg,
-        cssAnimationSupport = Modernizr.cssanimations,
+        // cssAnimationSupport = Modernizr.cssanimations,
+        cssTransformsSupport = Modernizr.csstransforms,
         overlay = document.getElementById("overlay"),
         cakeObj = document.getElementById("cake_obj"),
         bannerObj = document.getElementById("banner_obj"),
@@ -71,11 +72,15 @@ $(window).load(function () {
             + browser does not support SVG. Provide PNG fallback for all SVG objects. */
 
     function objSvgToPng(obj) {
-        // console.log(obj.id + ' is being changed to PNG fallback');
+        /* if there is svg content in the object, we need to get to the svg element inside and hide it */
+        /*  done for cakeObj when SMIL is not supported, so that user can see CSS Sprite animation instead */
+        if (obj.contentDocument != null) {
+            obj.contentDocument.querySelector('svg').setAttribute('visibility', 'hidden');
+        }
         obj.removeAttribute('type');
         obj.removeAttribute('data');
         obj.className = 'svgfallback';
-        // console.log(obj.id + ' : new class name = ' + obj.className);
+        console.log(obj.id + ' : new class name = ' + obj.className);
     }
     function imageFallback() {
         if (svgSupport === true) {
@@ -161,6 +166,17 @@ $(window).load(function () {
     /*---------------------
         Animation Functions
     ---------------------*/
+    /* Hide certain elements before animation, to avoid disruptive flash */
+    /* Each element to be revealled in an animation step */
+    function hideEls() {
+        var elsToHide = [ blowOutButton, buttonSubGroup, balloonsObj, bannerObj ],
+            numElsToHide = elsToHide.length,
+            i;
+        for (i = 0; i < numElsToHide; i++) {
+            console.log('calling elsToHide for ' + elsToHide[i].id);
+            elsToHide[i].style.display = 'none';
+        }
+    }
     /* Custom Effect Registration */
     /*  Sprite animation to go along with cake500.png */
     /*  http://julian.com/research/velocity/#uiPack */
@@ -185,6 +201,7 @@ $(window).load(function () {
         -   run openingSequence */
     function scOpeningAnimation() {
         console.log('starting scOpeningAnimation');
+        hideEls();
         $.Velocity(bannerObj, { translateY: [ -minYDistance, "0px" ] });
         $.Velocity(balloonsObj, { translateY: [ minYDistance, "0px" ] });
         $.Velocity.RunSequence(openingSequence);
@@ -208,17 +225,15 @@ $(window).load(function () {
         if (smilSupport === true) {
             console.log('calling smilOpeningAnimation');
             smilOpeningAnimation();
-        } else if (cssAnimationSupport === true) {
+        } else if (cssTransformsSupport === true) {
             console.log('calling scOpeningAnimation');
             scOpeningAnimation();
         } else {
             console.log('no support for anything fun...serving boring fallback');
-            $.Velocity(balloonsObj, { top: [ minYDistance, 0 ] }, { display: "none", complete: function () { console.log('step1 done'); } });
-            $.Velocity(bannerObj, { top: [ -minYDistance, 0 ] }, { display: "none", complete: function () { console.log('step2 done'); } });
-            $.Velocity(overlay, { opacity: [ 0, 1 ] }, { duration: 1500, delay: 100, display: "none", complete: function () { console.log('step3 done'); } });
-            $.Velocity(balloonsObj, { top: [ 0, minYDistance ] }, { duration: 5000, delay: 1600, display: "block", complete: function () { console.log('step4 done'); } });
-            $.Velocity(bannerObj, { top: [ 0, -minYDistance ] }, { duration: 4000, delay: 5600, display: "block", complete: function () { console.log('step5 done'); } });
-            $.Velocity(buttonSubGroup, "fadeIn", { duration: 500, delay: 9600, display: "inline-block", complete: function () { console.log('step6 done'); } });
+            blowOutButton.style.display = 'none'; //hide because there is no blowOut animation 
+            buttonSubGroup.style.display = 'none'; //hide until fadeIn
+            $.Velocity(overlay, "fadeOut", { duration: 1500, delay: 100, display: "none", complete: function () { console.log('step1 done'); } });
+            $.Velocity(buttonSubGroup, "fadeIn", { duration: 600, delay: 1600, display: "inline-block", complete: function () { console.log('step2 done'); } });
         }
     }
 

@@ -15,17 +15,16 @@
 		font-size: 90%;
 	}
 }
-@include mq-large-min {
-	//if less than this size, default value pushes header and footer out of document. 
-	// #overlay,
-	#underlay {
-		// border-radius: $border_radius_standard;
-		// top: $headerHeight;
-		// bottom: $footerHeight;
-		box-shadow: $box_shadow1;
-	}
-	// #scene_box,
-	// #alert_box {
-	// 	border-radius: $border_radius_standard;
-	// }
-}
+// @include mq-large-min {
+// 	//if less than this size, default value pushes header and footer out of document. 
+// 	#overlay {
+// 		// border-radius: $border_radius_standard;
+// 		// top: $headerHeight;
+// 		// bottom: $footerHeight;
+// 		box-shadow: $box_shadow1;
+// 	}
+// 	// #scene_box,
+// 	// #alert_box {
+// 	// 	border-radius: $border_radius_standard;
+// 	// }
+// }

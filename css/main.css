@@ -10,13 +10,11 @@ a:active, a:hover { outline: 0; }
 
 #overlay { background: #51948e; }
 
-#underlay { background: #acd2ce; }
-
 body { background: #deedeb; }
 
 * { box-sizing: border-box; }
 
-html, body, .body_wrapper, #underlay, #overlay, #scene_box, #alert_box { width: 100%; height: 100%; }
+html, body, #underlay, #overlay, .body_wrapper, #scene_box, #alert_box { width: 100%; height: 100%; }
 
 html, body { margin: 0; padding: 0; }
 
@@ -24,9 +22,9 @@ html { font-family: "Century Gothic", CenturyGothic, AppleGothic, Helvetica, "Tr
 
 #blow_out, #button_subg a, #overlay .button_group a { letter-spacing: 0.025em; }
 
-h1, p { letter-spacing: normal; line-height: 1.5; margin: 1em 0.5rem; }
+h1, p { letter-spacing: normal; line-height: 1.5; }
 
-h1, p { margin: 0.75em 0.5rem; }
+h1, p { margin: 0.5em 0.5rem; }
 
 html, a { color: white; -webkit-font-smoothing: antialiased; }
 
@@ -53,11 +51,11 @@ p a:active { color: #851e31; }
 
 #blow_out, #button_subg a, #overlay .button_group a { display: inline-block; margin: 0.5625rem; }
 
-.body_wrapper { display: block; max-width: 62.4375rem; margin: 0 auto; }
-
 #underlay, #overlay { position: absolute; top: 0; bottom: 0; right: 0; left: 0; }
 
 .body_wrapper { position: relative; display: block; }
+
+#underlay { display: block; max-width: 62.4375rem; margin: 0 auto; }
 
 #overlay { display: table; margin: 0; }
 
@@ -91,6 +89,8 @@ p a:active { color: #851e31; }
 
 .js #cake_fallback, .js #balloons_fallback, .js #banner_fallback { display: none; }
 
+body { z-index: 0; }
+
 #banner_container { z-index: 20; }
 
 #cake_container { z-index: 15; }
@@ -105,11 +105,8 @@ p a:active { color: #851e31; }
 
 #scene_box { z-index: 5; }
 
-.cssanimations #blow_out, .cssanimations #button_subg, .cssanimations #balloons_obj, .cssanimations #banner_obj { display: none; }
-
 @media only screen and (max-width: 30rem) { #blow_out, #underlay .button_group { right: 1.125rem; left: 1.125rem; margin: 0 auto; } }
 @media only screen and (max-width: 40rem) { html { font-size: 90%; } }
-@media only screen and (min-width: 62.5rem) { #underlay { box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75); } }
 /*no-js fallbacks */
 @-webkit-keyframes blowOut {
 
@@ -126,6 +123,7 @@ p a:active { color: #851e31; }
 .no-js #demo:target #alert_box { opacity: 0; -webkit-transition: opacity 1s ease; transition: opacity 1s ease; }
 .no-js #demo:target #overlay { visibility: hidden; opacity: 0; z-index: 0; -webkit-transition: opacity 1s ease, z-index 0s linear 1s; transition: opacity 1s ease, z-index 0s linear 1s; }
 .no-js #demo:target #blow_out { -webkit-transition: visibility 0s linear 1s, opacity 0.5s linear 1s; transition: visibility 0s linear 1s, opacity 0.5s linear 1s; }
+.no-js #final:target #overlay { opacity: 0; }
 .no-js #final:target #cake_fallback { -webkit-animation: blowOut 2s steps(6) 1s 1 normal forwards; animation: blowOut 2s steps(6) 1s 1 normal forwards; }
 .no-js #final:target #blow_out { display: none; }
 .no-js #final:target #button_subg { -webkit-transition: visibility 0s linear 4s, opacity 0.5s linear 4s; transition: visibility 0s linear 4s, opacity 0.5s linear 4s; }
