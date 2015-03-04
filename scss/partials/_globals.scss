@@ -27,12 +27,19 @@
 	left: 0; right: 0;
 	margin: auto;  
 }
+//---------- 100% width and height ----------
+%_full-width-and-height {
+	width: 100%;
+	height: 100%;
+}
+//================================================
+//		Applied Styles
+//================================================
 * {
 	@extend %borderBox;
 }
 html, body {
-	height: 100%;
-	width: 100%;
+	@extend %_full-width-and-height; 
 	margin: 0;
 	padding: 0;
 }

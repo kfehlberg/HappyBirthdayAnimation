@@ -2,48 +2,47 @@
 // LAYOUT EXTENDERS
 //================================================
 %wrapper {
-	margin-left: auto;
-	margin-right: auto;
+	@extend %_full-width-and-height;
+	display: block;
     max-width: $bp-medium-max;
-    width: 100%;
-    display: block;
+    margin: 0 auto;  
 }
-%_box {
-	position: relative;
-	margin: auto;
-	height: 100%;
-	width: 100%;
+%_overlay-and-underlay {
+	@extend %_full-width-and-height;
+	position: absolute;
+	top: 0; bottom: 0;
+	right: 0; left: 0;
 }
 //================================================
 // APPLIED LAYOUT
 //================================================
-
 .body_wrapper {
 	@extend %wrapper;
 	position: relative;
-	min-height: 100%;
+	display: block;
+	// min-height: 100%;
 }
-.sub_content_wrapper {
-	// @extend %box_shadow1;			//is in _mediaqueries.scss
+#underlay {
 	@extend %bg_color_light_primary;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	width: 100%;
+	@extend %_overlay-and-underlay;
 }
 
-// #overlay {
-// 	z-index: 750;
-// }
+#overlay {
+	@extend %bg_color_dark_primary;
+	@extend %_overlay-and-underlay;
+	display: table;
+	margin: 0;
+}
 
 #scene_box {
-	@extend %_box ;
-	// z-index: 30;
+	@extend %_full-width-and-height;
+	position: relative;
 }
 
 #alert_box {
-	@extend %_box ;
-	@extend %bg_color_dark_primary;
+	@extend %_full-width-and-height;
+	display: table-cell;	//allow for centering
+	vertical-align: middle;		//vertically center
 	overflow-y: auto;
 	padding: $fontSize32;
 }
