@@ -17,10 +17,10 @@
 }
 #scene_box { z-index: 5; }
 
-//if ( javascript in enabled in browser (html class ="js" declared by modernizr) ) 
+
+// if(.cssanimations) { javascript is enabled, modernizr.js has detected that cssanimations are supported, }
 //then the following buttons  and objects are hidden until revealed through animation in 'bday_animate_with_fallbacks.js'
-// if(.svg) { javascript is enabled, modernizr.js has detected that svg is supported, }
-.js {
+.cssanimations {
 	#blow_out,
 	#button_subg,	// includes #replay and 'view on github'
 	#balloons_obj,
