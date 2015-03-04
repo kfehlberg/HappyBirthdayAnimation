@@ -13,7 +13,6 @@ $(window).load(function () {
     =====================*/
     var smilSupport = Modernizr.smil,
         svgSupport = Modernizr.svg,
-        // cssAnimationSupport = Modernizr.cssanimations,
         cssTransformsSupport = Modernizr.csstransforms,
         overlay = document.getElementById("overlay"),
         cakeObj = document.getElementById("cake_obj"),
@@ -80,7 +79,7 @@ $(window).load(function () {
         obj.removeAttribute('type');
         obj.removeAttribute('data');
         obj.className = 'svgfallback';
-        console.log(obj.id + ' : new class name = ' + obj.className);
+        // console.log(obj.id + ' : new class name = ' + obj.className);
     }
     function imageFallback() {
         if (svgSupport === true) {
@@ -173,7 +172,7 @@ $(window).load(function () {
             numElsToHide = elsToHide.length,
             i;
         for (i = 0; i < numElsToHide; i++) {
-            console.log('calling elsToHide for ' + elsToHide[i].id);
+            // console.log('calling elsToHide for ' + elsToHide[i].id);
             elsToHide[i].style.display = 'none';
         }
     }
@@ -200,7 +199,7 @@ $(window).load(function () {
         -   move balloonsObj out of view.  animated back to place in blowOutSequence
         -   run openingSequence */
     function scOpeningAnimation() {
-        console.log('starting scOpeningAnimation');
+        // console.log('starting scOpeningAnimation');
         hideEls();
         $.Velocity(bannerObj, { translateY: [ -minYDistance, "0px" ] });
         $.Velocity(balloonsObj, { translateY: [ minYDistance, "0px" ] });
@@ -212,10 +211,10 @@ $(window).load(function () {
     /*  -   call scOpeningAnimation
         -   finish with SMIL animation of flames in cakeObj */
     function smilOpeningAnimation() {
-        console.log('starting smilOpeningAnimation');
-        console.log('calling scOpeningAnimation');
+        // console.log('starting smilOpeningAnimation');
+        // console.log('calling scOpeningAnimation');
         scOpeningAnimation();
-        console.log('continuing smilOpeningAnimation of flames flickering');
+        // console.log('continuing smilOpeningAnimation of flames flickering');
         $(flames).velocity({ translateX: [ 0.8, 0 ], translateY: [ 4.8, 0 ], scale: [ 0.8, 1 ] }, { duration: 1000, loop: true });
     }
 
@@ -223,17 +222,17 @@ $(window).load(function () {
     /* call appropriate animation function depending on browser support */
     function determineOpeningAnimation() {
         if (smilSupport === true) {
-            console.log('calling smilOpeningAnimation');
+            // console.log('calling smilOpeningAnimation');
             smilOpeningAnimation();
         } else if (cssTransformsSupport === true) {
-            console.log('calling scOpeningAnimation');
+            // console.log('calling scOpeningAnimation');
             scOpeningAnimation();
         } else {
-            console.log('no support for anything fun...serving boring fallback');
+            // console.log('no support for anything fun...serving boring fallback');
             blowOutButton.style.display = 'none'; //hide because there is no blowOut animation 
             buttonSubGroup.style.display = 'none'; //hide until fadeIn
-            $.Velocity(overlay, "fadeOut", { duration: 1500, delay: 100, display: "none", complete: function () { console.log('step1 done'); } });
-            $.Velocity(buttonSubGroup, "fadeIn", { duration: 600, delay: 1600, display: "inline-block", complete: function () { console.log('step2 done'); } });
+            $.Velocity(overlay, "fadeOut", { duration: 1500, delay: 100, display: "none" });//, complete: function () { console.log('step1 done'); } });
+            $.Velocity(buttonSubGroup, "fadeIn", { duration: 600, delay: 1600, display: "inline-block"});//, complete: function () { console.log('step2 done'); } });
         }
     }
 
@@ -244,16 +243,16 @@ $(window).load(function () {
         -   or else - sprite animation for blow out
         -   run finishing Sequence for all */
     function scFinishingAnimation() {
-        console.log('starting scFinishingAnimation');
+        // console.log('starting scFinishingAnimation');
         $(blowOutButton).velocity("fadeOut", { duration: 500, display: "none" });
         if (smilSupport === true) {
-            console.log('starting smil blow out animation');
+            // console.log('starting smil blow out animation');
             $(flames).velocity("stop");
             $(flames).velocity({ translateX: [ 4, 0 ], translateY: [ 24, 0 ], scale: [ 0, 1 ] }, 1000, function () {
                 $(smokes).velocity({ strokeDashoffset: [ "0", "110"] }, 1500).velocity({ strokeDashoffset: [ "-110", "0"] }, 1500);
             });
         } else {
-            console.log('starting spriteSmotherNSmoke animation');
+            // console.log('starting spriteSmotherNSmoke animation');
             $(cakeObj).velocity("spriteSmotherNSmoke");
         }
         $.Velocity.RunSequence(finishingSequence);
@@ -271,14 +270,14 @@ $(window).load(function () {
     /*  when anything else is clicked within #overlay, stopPropagation so that user may follow any links */
     function initialAnimation(e) {
         var targetObj = getTarget(e);
-        console.log('targetObj for initialAnimation = ' + targetObj.id);
+        // console.log('targetObj for initialAnimation = ' + targetObj.id);
         if (targetObj.id === 'continue') {
             prevDef(e);
-            console.log('(initialAnimation)called prevDef for ' + targetObj.id + ' on click');
-            console.log('calling determineOpeningAnimation');
+            // console.log('(initialAnimation)called prevDef for ' + targetObj.id + ' on click');
+            // console.log('calling determineOpeningAnimation');
             determineOpeningAnimation();
         } else {
-            console.log('(initialAnimation)calling stopProp for ' + targetObj.id + ' on click');
+            // console.log('(initialAnimation)calling stopProp for ' + targetObj.id + ' on click');
             stopProp(e);
         }
     }
@@ -290,16 +289,16 @@ $(window).load(function () {
     /*  when anything else is clicked within #underlay, stopPropagation so that user may follow any links */
     function continuedAnimation(e) {
         var targetObj = getTarget(e);
-        console.log('targetObj for continuedAnimation = ' + targetObj.id);
+        // console.log('targetObj for continuedAnimation = ' + targetObj.id);
         if (targetObj.id === 'blow_out') {               //  * when #blow_out is clicked
             prevDef(e);                                   //    prevent default click behavior
-            console.log('(contiunedAnimation)called prevDef for ' + targetObj.id + ' on click');
-            console.log('calling scFinishingAnimation');
+            // console.log('(contiunedAnimation)called prevDef for ' + targetObj.id + ' on click');
+            // console.log('calling scFinishingAnimation');
             scFinishingAnimation();                       //    call to determine which animation to use/use it 
         } else if (targetObj.id === 'replay') {           //  * when #replay is clicked
             window.location.reload();                     //    reload the page
         } else {                                          //  * when user clicks elsewhere (like #github button) in #underlay
-            console.log('(contiunedAnimation)calling stopProp for ' + targetObj.id + ' on click');
+            // console.log('(contiunedAnimation)calling stopProp for ' + targetObj.id + ' on click');
             stopProp(e);                                  //    stops Propagation so that user may follow link
         }
     }
