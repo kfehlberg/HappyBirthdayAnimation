@@ -3,7 +3,7 @@
 <svg id="balloons_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500px" height="500px" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet" version="1.1" xml:space="preserve" >
 	<style>
 		.color1 { fill: #C32C48; opacity: 0.8; }
-		.color2 { fill: #FD7D50; opacity: 0.8; }
+		.color2 { fill: #FCF8E8; opacity: 0.8; }
 		.color3 { fill: #FFB154; opacity: 0.9; }
 		.color4 { fill: #F0E7C4; opacity: 0.9; }
 		.color5 { fill: #51948E; opacity: 0.8; }
