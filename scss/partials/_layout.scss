@@ -33,6 +33,7 @@
 #scene_box {
 	@extend %_full-width-and-height;
 	position: relative;
+	display: block;
 }
 
 #alert_box {
